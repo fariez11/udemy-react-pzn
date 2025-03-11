@@ -149,3 +149,25 @@ Style
   - namun sekarang kita akan coba dalam file CSS
   - menggunakan Style pada JSX, tidak menggunakan attr class, melainkan className
   https://react.dev/reference/react-dom/components/common#applying-css-styles
+
+___________ 
+Conditional
+  - saat kita membuat halaman web, seringkali kita menampilkan tampilan berbeda pada kondisi tertentu
+  - hal ini juga bisa dilakukan di JSX
+  - kita bisa menambahkan kondisi menggunakan JS, dan mengembalikan Component yang berbeda berdasarkan kondisi yang 
+    diinginkan
+  - contoh kita akan membuat halaman todoList, dna jika Todonya sudah selesai, kita akan coret element textnya
+
+  > Null Component
+    - pada kasus tertentu, mungkin ada kondisi dimana kita ingin mengembalikan Component, atau tidak ingin 
+      mengambalikan apapun
+    - kita bisa mengembalikan null untuk menandai bahwa tidak ada Component yang kita kembalikan
+
+  > Ternary Operator
+    - kadang pada kasus lebih sederhana, kita bisa menggunakan Ternary Operator Javascript di JSX
+
+  > Logical AND
+    - dibeberapa kasus yang lebih sederhana, kadang di JSX sering memanfaatkan Logical AND di JS
+    - misal jika kondisi terpenuhi maka akan menampilkan, jika tidak maka tidak akan menampilkan
+
+
