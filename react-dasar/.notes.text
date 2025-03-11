@@ -1,0 +1,142 @@
+_________
+Component
+  - saat belajar React, kita harus terbiasa dengan istilah Component
+  - Component adalah kumpulan kode yang bisa digunakan secara independen
+  - Component bisa berisikan satu atau lebih HTML Element, kode JS dan CSS
+  - Tidak ada aturan harus sebarapa kecil atau besar sebuah Component
+  - anggap saja seperti functionm kita bisa membuat function yang besar atau kecil, karena tujuan Function adalah agar
+    bisa digunakan secara berulang-ulang, begitu juga tujuan dari Component
+  - struktur Component mirip seperti DOM(Document Object Model), dimana kita bisa membuat Component didalam Component  
+    lain
+
+___
+JSX
+  - React menggunakan JSX ketika membuat Component
+  - JSX (Javascript XML atau JS Syntax Extension), adalah kombinasi kode JS dan XML (HTML), dimana kita bisa membuat 
+    Component dengan mudah menggunakan kode XML dan JS dalam satu file
+  - JSX diperkenalkan oleh Facebook di React, namun saat ini JSX sudah banyak diadopsi oleh banyak Framework JS lainnya
+
+_______________
+Membuat Project
+  - untuk membuat project React, kita akan menggunakan Vite sebagai build toolnya 
+  - kita bisa membuat project React menggunakan beberapa perintah
+  - untuk membuat project React menggunakan JS: 
+      npm create vite@latest nama-aplikasi -- --template react
+  - untuk membuat project React menggunakan Typescript: 
+      npm create Vite@latest nama-aplikasi -- --template-react-ts
+  https://vite/dev//quide/#scaffolding-your-first-vite-project
+
+*notes: 
+  public ~> untuk assets
+  src ~> untuk code
+  index.html ~> sebagai filenya
+
+____________________ 
+Update versi ReactJS
+  - gunakan ReactJS terbaru
+  https://www.npmjs.com/package/react
+  https://www.npmjs.com/package/react-dom
+
+_________________
+Membuat Component
+  - biasanya, Component aka dibuat dalam satu file JSX dengan nama sesuai dengan nama component nya
+  - misal, kita akan membuat Component bernama Hello World
+  - maka, kita bisa membuat file Hello World.JSX
+  - selanjutnya, kita perlu mmebuat default function dengan nama Componentnya, yaitu Hello World
+  - Return dari function tersebut adalah element UI yang akan ditampilkan
+
+_____________________
+Menampilkan Component
+  - untuk menampilkan Component, diperlukan dari React Root
+  - kita bisa membuat React Root menggunakan method createRoot(element)
+  https://react.dev/reference/react-dom/client/createRoot
+  - selanjutnya untuk menampilkan Component di React Root, kita bisa gunakan method render(component)
+  - untuk membantu mncari masalah saat development, React mnenyediakan component StrictMode,kita bisa menggunakan 
+    StrictMode untuk menampilkan component di Root
+  https://react.dev/reference/react/StrictMode
+
+_________ 
+Component
+  - React Component mendukung semua elemen HTML dan SVG
+  - jadi kita tidak perlu khawatir ketika membuat Component, karena semua element pasti didukung
+  https://react.dev/reference/react-dom/components
+
+  > Multiple Component
+    - sebelumnya kita membuat file JSX untuk satu Component
+    - walaupun itu adalah praktek yang baik, tapi bukan berarti itu wajib dilakukan
+    - Component sebenarnya hanyalah sebuah function yang mengembalikan React Element, oleh karena itu jika kita ingin membuat Component, kita hanya cukup membuat function yang mengambalikan React Element
+
+___ 
+JSX
+  - web dibuat menggunakan HTML, CSS dan Javascript. biasanya kita akan menyimpan konten di HTML, desain di CSS dan   
+    logika aplikasi di JS. dan biasanya kita akan simpan di file-file yang terpisah
+  - tapi saat ini, web sudah lebih interaktif, seringnya konten HTML ditampilkan berdasarkan logika aplikasi di JS
+  - oleh karena itu, React menggunakan logika aplikasi dan membuat konten di satu tempat yang sama, JSX
+
+____________________
+Mengubah HTML ke JSX
+  - saat mengubah kode HTML ke JSX, kita tidak bisa lakukan semudah COpy Paste kodenya
+  - JSX memiliki aturan uang lebih ketat dibanding HTML, contohnya saat menggunakan tag element, wajib menggunakan tag  
+    tutup
+  - misal kita tidak bisa menggunakan <img src="">
+  - kita harus gunakan tag ketika menggunakan JSX <img src=""/>
+  - beberapa attribute di tag element pun berbeda, kita akan bahas secara bertahap
+
+__________ 
+Aturan JSX
+  - component hanya boleh mengambalikan satu element, jika kita ingin mengambalikan beberapa element, kita harus bungkus
+    dalam parent element
+  - wajib menutup semua tag element
+  - Attribute menggunakan CamelCase.Attribute di element JSX akan dikonversi ke variable JS, oleh karena itu nama 
+    attribute harus mengikuti cara pembuatan nama variable di JS, yaitu tidak bisa menggunakan - (strip). Karna keterbatasan ini, kebanyakan attr di element JSX akan menggunakan camelCase, contih className (bukan class-name)
+
+  > JSX Converter
+    - jika misal kita sudah punya kode HTML, dan ingin mengkonversi ke JSX
+    - disarankan menggunakan Converter sehingga kita tidak perlu lakukan secara manual lagi
+    https://transform.tools/html-to-jsx
+
+_________________
+Javascript di JSX
+  - kadang-kadang, kita kasus dimana kita ingin mengakses kode Javascript di JSX
+  - pada kasus ini, kita bisa menggunakan kurung kurawal untuk mengakses kode JS di JSX
+
+  > Kurung Kurawal di JSX
+    - penggunaan kurung kurawal di JSX hanya bisa dilakukan pada dua lokasi
+    - sebagai teks, seperti pada contoh sebelumnya
+    - sebagai nilai atribut pada tag element, misal <img src={location}>
+  
+  > Kurung Kurawal Double pada JSX
+    - pada beberapa attr, contohnya style. kita bisa menggunakan JS Object sebagai parameter
+    - oleh karena itu, kadang sekilas terlihat seperti kurung kurawal double, padahal sebenarnya hanya satu kurung kurawal, dan datanya adalaha JS Object
+
+_____ 
+Props
+  - React Component menggunakan Props untuk berkomunikasi
+  - Parent Component bisa mengirim informasi ke Child Component dengan menggunakan Props
+  - Props itu mirip seperti attribute di HTML Element, tapi kita bisa mengirim nilai JS seperti object, array, function
+    atau yang lainnya 
+  
+  > Menambah Props
+    - untuk menambahkan Props pada Component, kita hanya perlu menmabahkan parameter object pada function di Component
+    - Parameter Props tersebut merupakan Javascript Object, sehingga kita bisa mengakses detail attribute yang dikirim 
+      dari parent melalui Props
+
+  > Destructuring Props
+    - salah satu yang biasa dilakukan oleh programmer React adalah, melakukan destructuring parameter pada Props
+    - hal ini untuk mempermudah ketika membaca, sehingga kita tahu attribute apa yang tersedia pada Component tersebut
+    - Karena Props adalah JS Object, jadi kita juga bisa menambahkan fitur seperti Default Value pada Props
+
+  > Mengirim Props
+    - untuk mengirim Props, kita bisa menggunakan attr seperti HTML Element untuk menggunakan Component
+
+_____________
+Spread Syntax
+  - kadang-kadang, mengirim Props dari Parent Component ke Child Component sangat merepotkan
+  - jika kita hanya ingin melakukan forward semua Props ke Child Component, kita bisa menggunakan Spread Syntax di JS
+
+________________
+Nested Component
+  - JSX mendukung pembuatan Nested Component
+  - hal ini memungkinkan kita bisa membuat Component yang didalamnya bisa ditambahkan Component lain secara dinamis
+  - agar component bisa memiliki Component lain didalamnya, kita bisa menggunakan attr children pada Props
+  - misal sekarang kita akan membuat Component bernama Container, dan didalamnya kita bisa berisi Component lainnya
