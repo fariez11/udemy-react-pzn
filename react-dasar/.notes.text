@@ -140,3 +140,12 @@ Nested Component
   - hal ini memungkinkan kita bisa membuat Component yang didalamnya bisa ditambahkan Component lain secara dinamis
   - agar component bisa memiliki Component lain didalamnya, kita bisa menggunakan attr children pada Props
   - misal sekarang kita akan membuat Component bernama Container, dan didalamnya kita bisa berisi Component lainnya
+
+_____ 
+Style
+  - sampai saat ini, kita hanya baru membahas HTML dan JS di JSX, bagaimana dengan CSS?
+  - CSS sendiri bukan bagian dari JSX, jika kita ingin membuat style CSS, maka kita perlu buat dalam file CSS, atau 
+    langsung di attr style menggunakan kurung kurawal double yang pernah dicontohkan sebelumnya
+  - namun sekarang kita akan coba dalam file CSS
+  - menggunakan Style pada JSX, tidak menggunakan attr class, melainkan className
+  https://react.dev/reference/react-dom/components/common#applying-css-styles

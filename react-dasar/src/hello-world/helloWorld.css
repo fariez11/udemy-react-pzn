@@ -1,0 +1,26 @@
+.header {
+  color: salmon;
+  text-align: center;
+}
+
+.paragraph {
+  color: #0dcaf0;
+  background-color: #cff4fc;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
