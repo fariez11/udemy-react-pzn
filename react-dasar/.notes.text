@@ -170,4 +170,13 @@ Conditional
     - dibeberapa kasus yang lebih sederhana, kadang di JSX sering memanfaatkan Logical AND di JS
     - misal jika kondisi terpenuhi maka akan menampilkan, jika tidak maka tidak akan menampilkan
 
+____________________ 
+Collection Component
+  - kita pasti akan sering menampilkan Component yang ssama berkali kali sesuai koleksi data. JSX sendiri tidak 
+    memiliki fitur perulangan
+  - untuk menampilkan multiple Component, sama seperti Conditional, kita akan memanfaatkan Javascript
+  - kita bisa menggunakan Javascript Array untuk mengubah data Array menjadi Copmonent, misal menggunakan method map()
+    pada Array
+  - misal sekarang kita akan coba ubah TodoList yang sebelumnya kita buat menjadi array
+
 
