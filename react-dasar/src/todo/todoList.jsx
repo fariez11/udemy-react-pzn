@@ -37,7 +37,7 @@ export default function TodoList() {
     // const todos = listData.map((todo) => (<Todo {...todo} />))
     return (
         <ul className="text-start">
-            {listData.map((todo) => (<Todo {...todo} />))}                  {/* Collection of Component */}
+            {listData.map((todo) => (<Todo key={todo.id} {...todo} />))}                  {/* Collection of Component */}
         </ul>
     )
 }

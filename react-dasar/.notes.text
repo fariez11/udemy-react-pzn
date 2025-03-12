@@ -179,4 +179,11 @@ Collection Component
     pada Array
   - misal sekarang kita akan coba ubah TodoList yang sebelumnya kita buat menjadi array
 
+  > Component Key
+  - jika kita di text editor, mungkin kita akan melihat pesan peringatan "Missing key prop for element iterator"
+  - saat membuat Collection Component, tiap Component diperlukan id (unique, string dan number) menggunakan attr key
+  - kenapa butuh Component Key?, hal ini agar react bisa mengenali Component ketika berubah, seperti posisinya 
+
+______________
+Pure Component
 
