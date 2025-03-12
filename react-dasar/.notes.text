@@ -208,3 +208,27 @@ Pure Component
       useEffect()
     https://react.dev/reference/react/useEffect
 
+_____________
+Event Handler
+  - seperti yang kita tahu di HTML Element, kita bisa menambahkan Event Handler
+  - sama juga dengan React Component, kita bisa menambahkan Event Handler pada Element di React Component
+  - ada banyak sekali jenis Event Handler yang bisa kita tambahkan
+  https://react.dev/reference/react-dom/components/common
+  
+  > Menambah Event Handler
+    - untuk menambah Event Handler, biasanya kita akan tambahkan Function sebagai Handlernya
+    - Bisa dalam bentuk Anonymous Function, Arrow Function, atau membuat Function terlebih dahulu didalam scope 
+      Componentnya
+    - nama Function untuk Handler biasanya diawali dengan nama "handle" dan diikuti dengan  jenis Event Handler, misal 
+      handleClick(), handleMouseEnter(), dan lain-lain
+
+  > Membaca props di Event Handler
+    - salah satu keuntungan membuat Function Event Handler di dalam Component adalah, kita bisa membaca Props yang 
+      digunakan oleh Component tersebut
+
+  > Event Handler sebagai Props
+    - seperti yang dimateri Props dibahas, Props sebenarnya adalah Javascript Object
+    - Javascript Object bisa memiliki attr dengan tipe function
+    - oleh karena itu, kita juga bisa membuat Event Handler di Props
+    - saat membuat attr di Props yang berisikan Event Handler, biasanya nama attributenya akan di awali dengan "on"
+      misal "onSmash", "onHit" dll

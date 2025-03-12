@@ -3,7 +3,7 @@ export default function Todo({ text, isComplete, isDeleted = false }) {
         return null
     } else {
         return (
-            <li>
+            <li className="text-center">
                 {/* {isComplete ? <del>{text}</del> : text} */}
                 {text} {isComplete && "(done)"}
             </li>
