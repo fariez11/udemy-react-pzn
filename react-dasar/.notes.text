@@ -232,3 +232,10 @@ Event Handler
     - oleh karena itu, kita juga bisa membuat Event Handler di Props
     - saat membuat attr di Props yang berisikan Event Handler, biasanya nama attributenya akan di awali dengan "on"
       misal "onSmash", "onHit" dll
+
+____________ 
+Event Object 
+  - saat kita membuat Event Handler Function, kita bisa menambah Event Object sebagai paramater di Function tersebut
+  - React Event Object kompatibel dengan standard DOM Event Object
+  https://react.dev/reference/react-dom/components/common#react-event-object
+  https://developer.mozilla.org/en-US/docs/Web/API/Event
