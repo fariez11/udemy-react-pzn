@@ -5,7 +5,7 @@ export default function Footer() {
         //  </footer> 
 
         <footer className="bg-body-tertiary text-center fixed-bottom" >
-            <div className="container p-4 pb-0">
+            {/* <div className="container p-4 pb-0">
                 <section className="mb-4">
                     <a data-mdb-ripple-init="" className="btn text-white btn-floating m-1"
                         style={{ backgroundColor: "#3b5998" }} href="#!" role="button">
@@ -32,9 +32,9 @@ export default function Footer() {
                         <i className="bi bi-github" />
                     </a>
                 </section>
-            </div>
+            </div> */}
             <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
-                © 2035 Copyright:
+                © 2025 Copyright:
                 <a className="text-body" href="https://www.programmerzamannow.com/">Programmer Zaman Now</a>
             </div>
         </footer>

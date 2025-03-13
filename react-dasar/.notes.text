@@ -239,3 +239,18 @@ Event Object
   - React Event Object kompatibel dengan standard DOM Event Object
   https://react.dev/reference/react-dom/components/common#react-event-object
   https://developer.mozilla.org/en-US/docs/Web/API/Event
+
+_________________
+Event Propagation
+  - event di React Component akan selalu disebarkan ke Component yang ada diatas (Event Propagation)
+  - misal kita memiliki div dengan Event onClick, lalu didalamnya kita memiliki Button dengan event onClick
+  - ketika button di klik, maka onClick di button akan dipicu dan selanjutnya on onClick div juga akan di picu
+  - kadang mungkin kita tidak ingin hal itu terjadi, maka kita bisa hentikan proses event Propagation tersebut
+    menggunakan method stopPropagation()
+  https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation
+
+  > Prevent Default
+    - Selain menghantikan Event Propagation, hal yang biasa kita lakukan ketika membuat Event Handler adalah  
+      menghentikan defualt action menggunakan preventDefault()
+    https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+    - misal : kita membuat Form, ketika div dipicu event onClick, kita ingin hentikan default action Form Submit
