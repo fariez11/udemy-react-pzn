@@ -254,3 +254,15 @@ Event Propagation
       menghentikan defualt action menggunakan preventDefault()
     https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
     - misal : kita membuat Form, ketika div dipicu event onClick, kita ingin hentikan default action Form Submit
+
+___________
+Side Effect
+  - apakah Component boleh memiliki Side Effect (efek samping)?
+  - tentu saja boleh, namun biasanya Side Effect terjadi dikarenakan adanya interaksi dari pengguna melalui event
+    handler
+  - misal, kita akan membuat Form Say Hello, dimana ketika Button di klik, kita ingin menampilkan Hello + nama pada text
+
+  > DOM Manipulation
+    - sebelumnya, kita menggunakan DOM Manipulation untuk mengubah Component di React
+    - hal ini sebenarnya tidak terlalu direkomandasikan, terutama jika misal data yang memicu perubahan Element di
+      Component bersumber dari berbagai Event Handler
