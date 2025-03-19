@@ -266,3 +266,36 @@ Side Effect
     - sebelumnya, kita menggunakan DOM Manipulation untuk mengubah Component di React
     - hal ini sebenarnya tidak terlalu direkomandasikan, terutama jika misal data yang memicu perubahan Element di
       Component bersumber dari berbagai Event Handler
+
+_____ 
+Hooks
+  - adalah fitur di React yang bisa digunakan di Component
+  - ada banyak sekali fitur yang bisa kita gunakan di React Hooks, akan dibahas secara bertahap
+  https://react.dev/reference/react/hooks
+
+
+_____
+State
+  - component kadang perlu untuk berubah dikarenakan interaksi yang dilakukan pengguna
+  - misal, input di klik bisa menaikkan data counter. tombol next bisa mengubah gambar banner yang sedang muncul, dan 
+    lain-lain
+  - Component harus bisa mengingat nilai saat ini, seperti counter saat ini, gambar saat ini, dan lain-lain
+  - di React, memori spesific di Component disebut State
+
+  > State Menggunakan Local Variable Biasa
+    - apakah local variable biasa di Component bisa digunakan untuk State? Sayangnya hal ini tidak bisa dilakukan
+    - Ketika React melakukan render Component untuk yang kedua kali dan seterusnya, maka semua kode Component akan 
+      dieksekusi ulang, oleh karena itu local variable akan kembali ke nilai awal
+    - perubahan di local variable, tidak akan memicu render ulang Component
+
+  > useState
+    - untuk membuat State, kita bisa menggunakan function useState(initial)
+    httpS://react.dev/reference/react/useState
+    - function useState akan mengembalikan array dengan 2 nilai, pertama adalah State-nya, dan kedua ada function untuk
+      mengubah value dari State tersebut
+    - Component yang menggunakan State tersebut, secara otomatis akan di render
+
+  > State Terisolasi dan Private
+    - State merupakan data yang terisolasi dan private secara local terhadap Copmonent yang menggunakan
+    - artinya, jika kita me-render Componentyang sama berkali-kali, maka State dari tiap Component tsb akan terpisah
+      satu sama lain
