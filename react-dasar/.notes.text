@@ -204,7 +204,7 @@ Pure Component
     - React menyediakan tempat khusus jika kita ingin membuat Component yang bisa menghasilkan efek samping
     - efek samping dari Component biasanya ditempatkan di Event Handler, yaitu aksi yang terjadi ketika berinteraksi
       dengan Component
-    - atau ketika misal Component tergantung dengan external system (misal API), maka Reack menyediakan function 
+    - atau ketika misal Component tergantung dengan external system (misal API), maka React menyediakan function 
       useEffect()
     https://react.dev/reference/react/useEffect
 
@@ -299,3 +299,37 @@ State
     - State merupakan data yang terisolasi dan private secara local terhadap Copmonent yang menggunakan
     - artinya, jika kita me-render Componentyang sama berkali-kali, maka State dari tiap Component tsb akan terpisah
       satu sama lain
+
+______ 
+Render
+  - Sebelum Component yang kita buat ditampilkan di layar, Component harus dirender olhe react
+  - Oleh karena itu, kita perlu tahu bagaimana cara kerja proses React ini ketika menampilkan Component yang kita buat
+  - terdapat 3 proses menampilkan Component di React :
+        ~ trigger proses render
+        ~ melakukan proses render Component
+        ~ menempatkan hasil render Component ke DOM (Document Object Model)
+
+  > Proses Render di React
+    Trigger Render        ~>          Render Component        ~>        Commit to DOM 
+
+  > Trigger Render
+    - pemicu render biasanya terjadi karena 2 hal: 
+      ~ pertama adalah inisialisasi awal Component, yang kita lakukan menggunakan method render()
+      ~ kedua adalah ketika ada pemicu perubahan State
+    - setiap terjado perubahan State, secara otomatis React akan mengirimkan antrian untuk memicu proses render ulang
+
+  > Render Compoenent
+    - setelah proses Trigger Render terjadi, React akan memanggil Compoenent yang kita buat untuk mencari tahu apa yang 
+      harus ditampilkan di layar
+    - Rendering adalah proses React memanggil Compoenent yang kita buat
+    - pada proses inisialisasi awal, React akan memanggil Root Compoenent (paling atas)
+    - pada saat proses render ulang, React hanya akan memanggil ulang Compoenent yang state nya berubah
+    - Serelah proses render selesai, React akan melakukan proses Commit
+
+  > Commit Changes
+    - setelah proses render selesai, React akan melakukan proses commit changes (menyimpan perubahan) ke DOM
+    - untuk inisialisasi awal, karena baru pertama kali, artinya element di DOM belum ada, maka React akan Menggunakan
+      appendChild() untuk menambahkan element ke DOM
+    - sedangkan untuk proses render ulang, React akan mencoba melakukan perubahan seminimal mungkin untuk menyamakan DOM
+      saat ini dengan hasil rendering
+    - React hanya akan mengubah element di DOM, jika memang element tersebut berbeda dari hasil rendering
