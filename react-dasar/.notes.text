@@ -404,3 +404,17 @@ Object di State
     - kita cukup mengganti useState() menjadi useImmer()
     - dan untuk mengupdate Object di State, kita bisa meggunakan Function sebagai parameter di Update Method nya
     - npm i immer use-immer
+
+______________ 
+Array di State 
+  - sama seperti object, array di State juga harus kita perlakukan sebagai immutable data
+  - artinya operasi menambah, mengubah atau menghapus data di array, kita harus buat array baru di update ke State
+  - hal ini memang agak menyulitkan, oleh karena itu dengan bantuan library seperti Immer, hal ini jadi lebih mudah 
+
+                    |             Hindari              |              Gunakan              |
+                    |:-----------:|:------------------:|:---------------------------------:|
+                    | menambah    | push, unshift      | concat, […arr] (spread syntax)    |
+                    | menghapus   | pop, shift, splice | filter, slice                     |
+                    | mengubah    | splice, arr[i] = … | map                               |
+                    | mengurutkan | reverse, sort      | buat array baru                   |
+    
