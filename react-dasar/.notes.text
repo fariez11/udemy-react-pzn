@@ -264,7 +264,7 @@ Side Effect
 
   > DOM Manipulation
     - sebelumnya, kita menggunakan DOM Manipulation untuk mengubah Component di React
-    - hal ini sebenarnya tidak terlalu direkomandasikan, terutama jika misal data yang memicu perubahan Element di
+    - hal ini sebenarnya tidak terlalu direkome ndasikan, terutama jika misal data yang memicu perubahan Element di
       Component bersumber dari berbagai Event Handler
 
 _____ 
@@ -365,3 +365,42 @@ State Update
   - dan jika kita memang ingin mengubah data di State dengan data yang harapannya sudah diubah sebelumnya (walaupun 
     belum di render ulang)
   - kita bisa menggunakan lambda sebagai parameter ketika memanggil function untuk update data State
+
+_______________
+Object di State
+  - state bisa menyimpan jenis data JS apapun, termasuk Object
+  - tapi tidak disarankan untuk mengubah object yang terdapat di State
+  - jika kita ingin mengubah object di State, kita disarankan membuat object baru lalu mengubah data di State tersebut
+    dengan object baru
+
+  > Immutable Data
+    - saat kita membuat data di State, kita harus memperlakukan data di State sebagai Immutable data (tidak bisa 
+      berubah)
+    - artinya data di State hanya bisa digunakan untuk dibaca (read only)
+    - jika kita ingin mengubah data di State, maka kita harus ubah menggunakan data baru, artinya data lama tidak 
+      dimodifikasi
+    - ini adalah praktek yang bisa dilakukan di React, walaupun pada kenyataannya object di JS tidak immutable
+    - hal ini direkomendasikan agar kita tidak salah mengubah data langsung, padahal kita tahu bahwa mengubah data tidak
+      akan memicu proses render ulang
+    - untungnya di JS kita bisa menggunakan Spread Syntax untuk membantu meng-copy attribute di Object
+
+  > Nested Object
+    - kadang ada kasus kita menggunakan Nested Object
+    - sama seperti sebelumnya, kita disarankan untuk selalu membuat object baru ketika mengubah State
+    - kadang memang menyulitkan ketika Nested Objectnya terlalu besar, oleh karena itu disarankan tidak terlalu dalam 
+      membuat Nested Object nya
+    
+  > Immer Library
+    - salah satu yang sering digunakan ketika develop aplikasi menggunakan React adalah Immer
+    - Immer adalah library yang digunakan untuk membuat immutable object dari object saat ini
+    - menggunakan Immer akan lebih mudah dibandingkan menggunakan Spread Syntax, terutama untuk Object yang kompleks 
+      dan Nested
+    https://github.com/immerjs/immer
+
+  > Use Immer Library
+    - Library Immer juga bisa diintegerasikan dengan React State dengan mudah
+    - kita bisa menggunakan library Use-Immer
+    https://github.com/immerjs/use-immer
+    - kita cukup mengganti useState() menjadi useImmer()
+    - dan untuk mengupdate Object di State, kita bisa meggunakan Function sebagai parameter di Update Method nya
+    - npm i immer use-immer
