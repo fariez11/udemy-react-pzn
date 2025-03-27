@@ -4,8 +4,14 @@ export default function Counter() {
     let [number, setCounter] = useState(0)
 
     function handleClick() {
-        setCounter(number + 1)
-        // console.log(number);
+
+        // setCounter(number + 1)
+
+        // jika ingin mengubah state berkali kali dalam 1 function
+        setCounter((n) => n + 1)
+        setCounter((n) => n + 1)
+        setCounter((n) => n + 1)
+        console.log(number);
 
     }
     return (

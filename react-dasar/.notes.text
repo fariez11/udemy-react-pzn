@@ -356,3 +356,12 @@ Snapshoot
     - saat kita memanggil setCounter() sebanyak 3X, bukan berarti React akan melakukan render ulang sebanyak 3x, React 
       akan menunggu sampat Event Handler selesai, jika ada perubahan State, maka akan dilakukan render ulang
     - artinya render ulang akan dilakukan sekali saja, walaupun kita mengubah State berkali-kali
+
+____________ 
+State Update
+  - seperti yang sebelumnya dibahas, melakukan update State berkali-kali, tidak akan mengubah data State di Snapshoot
+    saat itu, melainkan hanya memicu untuk render ulang dengan data State baru
+  - tapi, kadang-kadang, kita memang mungkin ada keperluan untuk mengubah data di State yang sama berkali-kali
+  - dan jika kita memang ingin mengubah data di State dengan data yang harapannya sudah diubah sebelumnya (walaupun 
+    belum di render ulang)
+  - kita bisa menggunakan lambda sebagai parameter ketika memanggil function untuk update data State
