@@ -316,15 +316,15 @@ Render
     - pemicu render biasanya terjadi karena 2 hal: 
       ~ pertama adalah inisialisasi awal Component, yang kita lakukan menggunakan method render()
       ~ kedua adalah ketika ada pemicu perubahan State
-    - setiap terjado perubahan State, secara otomatis React akan mengirimkan antrian untuk memicu proses render ulang
+    - setiap terjadi perubahan State, secara otomatis React akan mengirimkan antrian untuk memicu proses render ulang
 
-  > Render Compoenent
-    - setelah proses Trigger Render terjadi, React akan memanggil Compoenent yang kita buat untuk mencari tahu apa yang 
+  > Render Component
+    - setelah proses Trigger Render terjadi, React akan memanggil Component yang kita buat untuk mencari tahu apa yang 
       harus ditampilkan di layar
-    - Rendering adalah proses React memanggil Compoenent yang kita buat
-    - pada proses inisialisasi awal, React akan memanggil Root Compoenent (paling atas)
-    - pada saat proses render ulang, React hanya akan memanggil ulang Compoenent yang state nya berubah
-    - Serelah proses render selesai, React akan melakukan proses Commit
+    - Rendering adalah proses React memanggil Component yang kita buat
+    - pada proses inisialisasi awal, React akan memanggil Root Component (paling atas)
+    - pada saat proses render ulang, React hanya akan memanggil ulang Component yang state nya berubah
+    - Setelah proses render selesai, React akan melakukan proses Commit
 
   > Commit Changes
     - setelah proses render selesai, React akan melakukan proses commit changes (menyimpan perubahan) ke DOM
@@ -333,3 +333,26 @@ Render
     - sedangkan untuk proses render ulang, React akan mencoba melakukan perubahan seminimal mungkin untuk menyamakan DOM
       saat ini dengan hasil rendering
     - React hanya akan mengubah element di DOM, jika memang element tersebut berbeda dari hasil rendering
+
+_________
+Snapshoot
+  - variable State sekilas mungkin terlihat seperti variable JS biasa
+  - tapi sebenarnya, State itu mirip seperti snapshoot (kondisi saat itu). mengubah nilai variable State tidak akan 
+    mengubah Snapshoot, melainkan akan memicu render ulang untuk membuat Snapshoot baru
+  - kita mungkin berpikir bahwa tampilan web berubah secara langsung karena response dari event yang dilakukan oleh
+    pengguna, seperti klik tombol
+  - namun sebenarnya tidak seperti itu, kita sudah tahu di materi sebelumnya, ketika terjadi perubahan State, itu akan
+    memicu render ulang, sehingga akan membuat Snapshoot baru yang ditampilkan di layar
+
+  > Kesalahan Mengubah State 
+    - paham tentang Snapshoot ini, akan memberi gambaran cara pandang kita terhadap data di State
+    - berikut adalah contoh Kesalahan yang biasa dilakukan ketika mengubah State
+    - kita berfikir jika mengubah State, saat itu juga data akan berubah, padahal menghubah state sebenarnya hanyalah
+      mentrigger render ulang dengan nilai state yang baru
+
+  > Kenapa counter tidak berubah 3x?
+    - hal ini dikarenakan, setCounter() tidak akan mengubah data counter yang ada di snapshoot saat ini
+    - setCounter() hanya akan melakukan render ulang dengan data counter yang baru
+    - saat kita memanggil setCounter() sebanyak 3X, bukan berarti React akan melakukan render ulang sebanyak 3x, React 
+      akan menunggu sampat Event Handler selesai, jika ada perubahan State, maka akan dilakukan render ulang
+    - artinya render ulang akan dilakukan sekali saja, walaupun kita mengubah State berkali-kali
