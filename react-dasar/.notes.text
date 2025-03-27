@@ -418,3 +418,12 @@ Array di State
                     | mengubah    | splice, arr[i] = … | map                               |
                     | mengurutkan | reverse, sort      | buat array baru                   |
     
+_____________ 
+Sharing State
+  - kadang, kita ingin membuat State untuk beberapa Component yang selalu berubah bersama-sama, atau sedrhananya adalah
+    Sharing State
+  - untuk melakukan ini, kita harus mengubah lokasi State dari Component2 itu, ke Parent Component2 mereka, lalu kita
+    kirim State nya melalui Props
+  - misal, pada Form Task sebelumnya, kita akan buat 2 Child Component, Component untuk TaskForm nya, dan Component 
+    untuk TaskListnya
+  - kita akan share State nya dari Task ke TaskForm dan TaskList melalui Props
