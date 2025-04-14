@@ -455,3 +455,7 @@ Mempertahankan State
     - hal ini terjadi karena secara struktur UI, posisi Component ada di posisi yang sama
     - jika posisi Component dan jenis Componentnya sama, secara ototmatis React akan mempertahankan State
     - kecuali posisinya berubah atau componentnya berbeda, maka React menghapus Statenya
+    
+*note : 
+  - walaupun componentnya berbeda tetapi posisinya masih sama maka Statenya tidak akan berubah (karena mengikuti)
+    struktur UI
