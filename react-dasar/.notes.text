@@ -427,3 +427,31 @@ Sharing State
   - misal, pada Form Task sebelumnya, kita akan buat 2 Child Component, Component untuk TaskForm nya, dan Component 
     untuk TaskListnya
   - kita akan share State nya dari Task ke TaskForm dan TaskList melalui Props
+
+____________________
+Mempertahankan State
+  - state terisolasi antar Component. React melacak State mana yang dimiliki oleh Component berdasarkan tempatnya di 
+    struktur UI
+  - kita bisa mengatur, kapan kita ingin mempertahankan State, kapan kita mereset State
+  - State sendiri tidak disimpan di dalam Component. State itu disimpan diReact, sedangkan ketika kita menggunakan State
+    di Component, maka sebenarnya kita akan menggunakan State yang ada di React
+  - cara React bisa tahu State mana yang digunakan di Component adalah, melihat posisi Component di struktur UI
+
+  > Posisi Component
+    - seperti dijelaskan sebelumnya, React menyimpan State sesuai dengan posisi Component
+    - ketika posisi Component berubah, misal hilang dari tampilan layar
+    - secara otomatis State akan dihapus dari react
+    - misal, kita akan membuat Component Counter bisa dihilangkan
+    - ketika nanti Component tersebut dihilangkan dari tampilan, maka secara otomatis State nya juga akan hilang
+  
+  > Component sama di Posisi sama
+    - jika terdapat kasus kita menampilkan component yang sama
+    - tapi secara struktur UI dia berada di posisi yang sama
+    - maka State akan dipertahankan oleh React, yang artinya tidak akan dihapus
+    - hal ini mungkin akan membingungkanm tapi kita harus mengerti hal ini, karena React akan menyimpan informasi
+      State mengikuti Posisi Component, jika Component nya sama, dan posisinya sama, maka State akan dipertahankan
+
+  > Kenapa State masih sama? 
+    - hal ini terjadi karena secara struktur UI, posisi Component ada di posisi yang sama
+    - jika posisi Component dan jenis Componentnya sama, secara ototmatis React akan mempertahankan State
+    - kecuali posisinya berubah atau componentnya berbeda, maka React menghapus Statenya
