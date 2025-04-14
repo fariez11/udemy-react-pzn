@@ -12,9 +12,13 @@ export default function TaskForm({ setItems }) {
     function handleClick(e) {
         e.preventDefault()
         // onSubmit(item)                               jika param menggunakan onSubmit
-        setItems((draft) => {
-            draft.push(item)
-        })
+        if (!item) {
+            alert('task cannot be null')
+        } else {
+            setItems((draft) => {
+                draft.push(item)
+            })
+        }
         setItem("")
     }
 
