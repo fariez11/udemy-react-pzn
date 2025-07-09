@@ -1,0 +1,461 @@
+_________
+Component
+  - saat belajar React, kita harus terbiasa dengan istilah Component
+  - Component adalah kumpulan kode yang bisa digunakan secara independen
+  - Component bisa berisikan satu atau lebih HTML Element, kode JS dan CSS
+  - Tidak ada aturan harus sebarapa kecil atau besar sebuah Component
+  - anggap saja seperti functionm kita bisa membuat function yang besar atau kecil, karena tujuan Function adalah agar
+    bisa digunakan secara berulang-ulang, begitu juga tujuan dari Component
+  - struktur Component mirip seperti DOM(Document Object Model), dimana kita bisa membuat Component didalam Component  
+    lain
+
+___
+JSX
+  - React menggunakan JSX ketika membuat Component
+  - JSX (Javascript XML atau JS Syntax Extension), adalah kombinasi kode JS dan XML (HTML), dimana kita bisa membuat 
+    Component dengan mudah menggunakan kode XML dan JS dalam satu file
+  - JSX diperkenalkan oleh Facebook di React, namun saat ini JSX sudah banyak diadopsi oleh banyak Framework JS lainnya
+
+_______________
+Membuat Project
+  - untuk membuat project React, kita akan menggunakan Vite sebagai build toolnya 
+  - kita bisa membuat project React menggunakan beberapa perintah
+  - untuk membuat project React menggunakan JS: 
+      npm create vite@latest nama-aplikasi -- --template react
+  - untuk membuat project React menggunakan Typescript: 
+      npm create Vite@latest nama-aplikasi -- --template-react-ts
+  https://vite/dev//quide/#scaffolding-your-first-vite-project
+
+*notes: 
+  public ~> untuk assets
+  src ~> untuk code
+  index.html ~> sebagai filenya
+
+____________________ 
+Update versi ReactJS
+  - gunakan ReactJS terbaru
+  https://www.npmjs.com/package/react
+  https://www.npmjs.com/package/react-dom
+
+_________________
+Membuat Component
+  - biasanya, Component aka dibuat dalam satu file JSX dengan nama sesuai dengan nama component nya
+  - misal, kita akan membuat Component bernama Hello World
+  - maka, kita bisa membuat file Hello World.JSX
+  - selanjutnya, kita perlu mmebuat default function dengan nama Componentnya, yaitu Hello World
+  - Return dari function tersebut adalah element UI yang akan ditampilkan
+
+_____________________
+Menampilkan Component
+  - untuk menampilkan Component, diperlukan dari React Root
+  - kita bisa membuat React Root menggunakan method createRoot(element)
+  https://react.dev/reference/react-dom/client/createRoot
+  - selanjutnya untuk menampilkan Component di React Root, kita bisa gunakan method render(component)
+  - untuk membantu mncari masalah saat development, React mnenyediakan component StrictMode,kita bisa menggunakan 
+    StrictMode untuk menampilkan component di Root
+  https://react.dev/reference/react/StrictMode
+
+_________ 
+Component
+  - React Component mendukung semua elemen HTML dan SVG
+  - jadi kita tidak perlu khawatir ketika membuat Component, karena semua element pasti didukung
+  https://react.dev/reference/react-dom/components
+
+  > Multiple Component
+    - sebelumnya kita membuat file JSX untuk satu Component
+    - walaupun itu adalah praktek yang baik, tapi bukan berarti itu wajib dilakukan
+    - Component sebenarnya hanyalah sebuah function yang mengembalikan React Element, oleh karena itu jika kita ingin membuat Component, kita hanya cukup membuat function yang mengambalikan React Element
+
+___ 
+JSX
+  - web dibuat menggunakan HTML, CSS dan Javascript. biasanya kita akan menyimpan konten di HTML, desain di CSS dan   
+    logika aplikasi di JS. dan biasanya kita akan simpan di file-file yang terpisah
+  - tapi saat ini, web sudah lebih interaktif, seringnya konten HTML ditampilkan berdasarkan logika aplikasi di JS
+  - oleh karena itu, React menggunakan logika aplikasi dan membuat konten di satu tempat yang sama, JSX
+
+____________________
+Mengubah HTML ke JSX
+  - saat mengubah kode HTML ke JSX, kita tidak bisa lakukan semudah COpy Paste kodenya
+  - JSX memiliki aturan uang lebih ketat dibanding HTML, contohnya saat menggunakan tag element, wajib menggunakan tag  
+    tutup
+  - misal kita tidak bisa menggunakan <img src="">
+  - kita harus gunakan tag ketika menggunakan JSX <img src=""/>
+  - beberapa attribute di tag element pun berbeda, kita akan bahas secara bertahap
+
+__________ 
+Aturan JSX
+  - component hanya boleh mengambalikan satu element, jika kita ingin mengambalikan beberapa element, kita harus bungkus
+    dalam parent element
+  - wajib menutup semua tag element
+  - Attribute menggunakan CamelCase.Attribute di element JSX akan dikonversi ke variable JS, oleh karena itu nama 
+    attribute harus mengikuti cara pembuatan nama variable di JS, yaitu tidak bisa menggunakan - (strip). Karna keterbatasan ini, kebanyakan attr di element JSX akan menggunakan camelCase, contih className (bukan class-name)
+
+  > JSX Converter
+    - jika misal kita sudah punya kode HTML, dan ingin mengkonversi ke JSX
+    - disarankan menggunakan Converter sehingga kita tidak perlu lakukan secara manual lagi
+    https://transform.tools/html-to-jsx
+
+_________________
+Javascript di JSX
+  - kadang-kadang, kita kasus dimana kita ingin mengakses kode Javascript di JSX
+  - pada kasus ini, kita bisa menggunakan kurung kurawal untuk mengakses kode JS di JSX
+
+  > Kurung Kurawal di JSX
+    - penggunaan kurung kurawal di JSX hanya bisa dilakukan pada dua lokasi
+    - sebagai teks, seperti pada contoh sebelumnya
+    - sebagai nilai atribut pada tag element, misal <img src={location}>
+  
+  > Kurung Kurawal Double pada JSX
+    - pada beberapa attr, contohnya style. kita bisa menggunakan JS Object sebagai parameter
+    - oleh karena itu, kadang sekilas terlihat seperti kurung kurawal double, padahal sebenarnya hanya satu kurung kurawal, dan datanya adalaha JS Object
+
+_____ 
+Props
+  - React Component menggunakan Props untuk berkomunikasi
+  - Parent Component bisa mengirim informasi ke Child Component dengan menggunakan Props
+  - Props itu mirip seperti attribute di HTML Element, tapi kita bisa mengirim nilai JS seperti object, array, function
+    atau yang lainnya 
+  
+  > Menambah Props
+    - untuk menambahkan Props pada Component, kita hanya perlu menmabahkan parameter object pada function di Component
+    - Parameter Props tersebut merupakan Javascript Object, sehingga kita bisa mengakses detail attribute yang dikirim 
+      dari parent melalui Props
+
+  > Destructuring Props
+    - salah satu yang biasa dilakukan oleh programmer React adalah, melakukan destructuring parameter pada Props
+    - hal ini untuk mempermudah ketika membaca, sehingga kita tahu attribute apa yang tersedia pada Component tersebut
+    - Karena Props adalah JS Object, jadi kita juga bisa menambahkan fitur seperti Default Value pada Props
+
+  > Mengirim Props
+    - untuk mengirim Props, kita bisa menggunakan attr seperti HTML Element untuk menggunakan Component
+
+_____________
+Spread Syntax
+  - kadang-kadang, mengirim Props dari Parent Component ke Child Component sangat merepotkan
+  - jika kita hanya ingin melakukan forward semua Props ke Child Component, kita bisa menggunakan Spread Syntax di JS
+
+________________
+Nested Component
+  - JSX mendukung pembuatan Nested Component
+  - hal ini memungkinkan kita bisa membuat Component yang didalamnya bisa ditambahkan Component lain secara dinamis
+  - agar component bisa memiliki Component lain didalamnya, kita bisa menggunakan attr children pada Props
+  - misal sekarang kita akan membuat Component bernama Container, dan didalamnya kita bisa berisi Component lainnya
+
+_____ 
+Style
+  - sampai saat ini, kita hanya baru membahas HTML dan JS di JSX, bagaimana dengan CSS?
+  - CSS sendiri bukan bagian dari JSX, jika kita ingin membuat style CSS, maka kita perlu buat dalam file CSS, atau 
+    langsung di attr style menggunakan kurung kurawal double yang pernah dicontohkan sebelumnya
+  - namun sekarang kita akan coba dalam file CSS
+  - menggunakan Style pada JSX, tidak menggunakan attr class, melainkan className
+  https://react.dev/reference/react-dom/components/common#applying-css-styles
+
+___________ 
+Conditional
+  - saat kita membuat halaman web, seringkali kita menampilkan tampilan berbeda pada kondisi tertentu
+  - hal ini juga bisa dilakukan di JSX
+  - kita bisa menambahkan kondisi menggunakan JS, dan mengembalikan Component yang berbeda berdasarkan kondisi yang 
+    diinginkan
+  - contoh kita akan membuat halaman todoList, dna jika Todonya sudah selesai, kita akan coret element textnya
+
+  > Null Component
+    - pada kasus tertentu, mungkin ada kondisi dimana kita ingin mengembalikan Component, atau tidak ingin 
+      mengambalikan apapun
+    - kita bisa mengembalikan null untuk menandai bahwa tidak ada Component yang kita kembalikan
+
+  > Ternary Operator
+    - kadang pada kasus lebih sederhana, kita bisa menggunakan Ternary Operator Javascript di JSX
+
+  > Logical AND
+    - dibeberapa kasus yang lebih sederhana, kadang di JSX sering memanfaatkan Logical AND di JS
+    - misal jika kondisi terpenuhi maka akan menampilkan, jika tidak maka tidak akan menampilkan
+
+____________________ 
+Collection Component
+  - kita pasti akan sering menampilkan Component yang ssama berkali kali sesuai koleksi data. JSX sendiri tidak 
+    memiliki fitur perulangan
+  - untuk menampilkan multiple Component, sama seperti Conditional, kita akan memanfaatkan Javascript
+  - kita bisa menggunakan Javascript Array untuk mengubah data Array menjadi Copmonent, misal menggunakan method map()
+    pada Array
+  - misal sekarang kita akan coba ubah TodoList yang sebelumnya kita buat menjadi array
+
+  > Component Key
+  - jika kita di text editor, mungkin kita akan melihat pesan peringatan "Missing key prop for element iterator"
+  - saat membuat Collection Component, tiap Component diperlukan id (unique, string dan number) menggunakan attr key
+  - kenapa butuh Component Key?, hal ini agar react bisa mengenali Component ketika berubah, seperti posisinya 
+
+______________
+Pure Component
+  - dalam pemrogramman, kita mengenal yang namanya Pure Function
+  https://en.wikipedia.org/wiki/Pure_function
+  - sebuah function kita sebut sebagai Pure Function jika memenuhi dua kriteria berikut :
+    ~> function akan mengembalikan nilai yang sama untuk nilai parameter yang sama
+    ~> function tidak memiliki efek samping, tidak ada perubahan pada variable non local (variable yang berada diluar
+       function)
+
+  - react mengasumsikan bahwa setiap Component yang kita buat adalah Pure Function
+  - ini brarti bahwa React Component yang kita buat harus selalu mengembalikan JSX yang sama dengan input yang sama
+  - walaupun  sebenarnya kita bisa saja membuat React Component yang tidak Pure, tapi sangat tidak disarankan, karena
+    setiap memanggil Component dengan input sama bisa menghasilkan nilai yang tidak konsisten 
+
+  - kita harus menghapus efek samping dari Component, contohnya kita bisa pindahkan variable counter menjadi local variable di Table, dan gunakan Props sebagai counternya
+
+  > Dimana bisa melakukan efek samping? 
+    - React menyediakan tempat khusus jika kita ingin membuat Component yang bisa menghasilkan efek samping
+    - efek samping dari Component biasanya ditempatkan di Event Handler, yaitu aksi yang terjadi ketika berinteraksi
+      dengan Component
+    - atau ketika misal Component tergantung dengan external system (misal API), maka React menyediakan function 
+      useEffect()
+    https://react.dev/reference/react/useEffect
+
+_____________
+Event Handler
+  - seperti yang kita tahu di HTML Element, kita bisa menambahkan Event Handler
+  - sama juga dengan React Component, kita bisa menambahkan Event Handler pada Element di React Component
+  - ada banyak sekali jenis Event Handler yang bisa kita tambahkan
+  https://react.dev/reference/react-dom/components/common
+  
+  > Menambah Event Handler
+    - untuk menambah Event Handler, biasanya kita akan tambahkan Function sebagai Handlernya
+    - Bisa dalam bentuk Anonymous Function, Arrow Function, atau membuat Function terlebih dahulu didalam scope 
+      Componentnya
+    - nama Function untuk Handler biasanya diawali dengan nama "handle" dan diikuti dengan  jenis Event Handler, misal 
+      handleClick(), handleMouseEnter(), dan lain-lain
+
+  > Membaca props di Event Handler
+    - salah satu keuntungan membuat Function Event Handler di dalam Component adalah, kita bisa membaca Props yang 
+      digunakan oleh Component tersebut
+
+  > Event Handler sebagai Props
+    - seperti yang dimateri Props dibahas, Props sebenarnya adalah Javascript Object
+    - Javascript Object bisa memiliki attr dengan tipe function
+    - oleh karena itu, kita juga bisa membuat Event Handler di Props
+    - saat membuat attr di Props yang berisikan Event Handler, biasanya nama attributenya akan di awali dengan "on"
+      misal "onSmash", "onHit" dll
+
+____________ 
+Event Object 
+  - saat kita membuat Event Handler Function, kita bisa menambah Event Object sebagai paramater di Function tersebut
+  - React Event Object kompatibel dengan standard DOM Event Object
+  https://react.dev/reference/react-dom/components/common#react-event-object
+  https://developer.mozilla.org/en-US/docs/Web/API/Event
+
+_________________
+Event Propagation
+  - event di React Component akan selalu disebarkan ke Component yang ada diatas (Event Propagation)
+  - misal kita memiliki div dengan Event onClick, lalu didalamnya kita memiliki Button dengan event onClick
+  - ketika button di klik, maka onClick di button akan dipicu dan selanjutnya on onClick div juga akan di picu
+  - kadang mungkin kita tidak ingin hal itu terjadi, maka kita bisa hentikan proses event Propagation tersebut
+    menggunakan method stopPropagation()
+  https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation
+
+  > Prevent Default
+    - Selain menghantikan Event Propagation, hal yang biasa kita lakukan ketika membuat Event Handler adalah  
+      menghentikan defualt action menggunakan preventDefault()
+    https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+    - misal : kita membuat Form, ketika div dipicu event onClick, kita ingin hentikan default action Form Submit
+
+___________
+Side Effect
+  - apakah Component boleh memiliki Side Effect (efek samping)?
+  - tentu saja boleh, namun biasanya Side Effect terjadi dikarenakan adanya interaksi dari pengguna melalui event
+    handler
+  - misal, kita akan membuat Form Say Hello, dimana ketika Button di klik, kita ingin menampilkan Hello + nama pada text
+
+  > DOM Manipulation
+    - sebelumnya, kita menggunakan DOM Manipulation untuk mengubah Component di React
+    - hal ini sebenarnya tidak terlalu direkome ndasikan, terutama jika misal data yang memicu perubahan Element di
+      Component bersumber dari berbagai Event Handler
+
+_____ 
+Hooks
+  - adalah fitur di React yang bisa digunakan di Component
+  - ada banyak sekali fitur yang bisa kita gunakan di React Hooks, akan dibahas secara bertahap
+  https://react.dev/reference/react/hooks
+
+
+_____
+State
+  - component kadang perlu untuk berubah dikarenakan interaksi yang dilakukan pengguna
+  - misal, input di klik bisa menaikkan data counter. tombol next bisa mengubah gambar banner yang sedang muncul, dan 
+    lain-lain
+  - Component harus bisa mengingat nilai saat ini, seperti counter saat ini, gambar saat ini, dan lain-lain
+  - di React, memori spesific di Component disebut State
+
+  > State Menggunakan Local Variable Biasa
+    - apakah local variable biasa di Component bisa digunakan untuk State? Sayangnya hal ini tidak bisa dilakukan
+    - Ketika React melakukan render Component untuk yang kedua kali dan seterusnya, maka semua kode Component akan 
+      dieksekusi ulang, oleh karena itu local variable akan kembali ke nilai awal
+    - perubahan di local variable, tidak akan memicu render ulang Component
+
+  > useState
+    - untuk membuat State, kita bisa menggunakan function useState(initial)
+    httpS://react.dev/reference/react/useState
+    - function useState akan mengembalikan array dengan 2 nilai, pertama adalah State-nya, dan kedua ada function untuk
+      mengubah value dari State tersebut
+    - Component yang menggunakan State tersebut, secara otomatis akan di render
+
+  > State Terisolasi dan Private
+    - State merupakan data yang terisolasi dan private secara local terhadap Copmonent yang menggunakan
+    - artinya, jika kita me-render Componentyang sama berkali-kali, maka State dari tiap Component tsb akan terpisah
+      satu sama lain
+
+______ 
+Render
+  - Sebelum Component yang kita buat ditampilkan di layar, Component harus dirender olhe react
+  - Oleh karena itu, kita perlu tahu bagaimana cara kerja proses React ini ketika menampilkan Component yang kita buat
+  - terdapat 3 proses menampilkan Component di React :
+        ~ trigger proses render
+        ~ melakukan proses render Component
+        ~ menempatkan hasil render Component ke DOM (Document Object Model)
+
+  > Proses Render di React
+    Trigger Render        ~>          Render Component        ~>        Commit to DOM 
+
+  > Trigger Render
+    - pemicu render biasanya terjadi karena 2 hal: 
+      ~ pertama adalah inisialisasi awal Component, yang kita lakukan menggunakan method render()
+      ~ kedua adalah ketika ada pemicu perubahan State
+    - setiap terjadi perubahan State, secara otomatis React akan mengirimkan antrian untuk memicu proses render ulang
+
+  > Render Component
+    - setelah proses Trigger Render terjadi, React akan memanggil Component yang kita buat untuk mencari tahu apa yang 
+      harus ditampilkan di layar
+    - Rendering adalah proses React memanggil Component yang kita buat
+    - pada proses inisialisasi awal, React akan memanggil Root Component (paling atas)
+    - pada saat proses render ulang, React hanya akan memanggil ulang Component yang state nya berubah
+    - Setelah proses render selesai, React akan melakukan proses Commit
+
+  > Commit Changes
+    - setelah proses render selesai, React akan melakukan proses commit changes (menyimpan perubahan) ke DOM
+    - untuk inisialisasi awal, karena baru pertama kali, artinya element di DOM belum ada, maka React akan Menggunakan
+      appendChild() untuk menambahkan element ke DOM
+    - sedangkan untuk proses render ulang, React akan mencoba melakukan perubahan seminimal mungkin untuk menyamakan DOM
+      saat ini dengan hasil rendering
+    - React hanya akan mengubah element di DOM, jika memang element tersebut berbeda dari hasil rendering
+
+_________
+Snapshoot
+  - variable State sekilas mungkin terlihat seperti variable JS biasa
+  - tapi sebenarnya, State itu mirip seperti snapshoot (kondisi saat itu). mengubah nilai variable State tidak akan 
+    mengubah Snapshoot, melainkan akan memicu render ulang untuk membuat Snapshoot baru
+  - kita mungkin berpikir bahwa tampilan web berubah secara langsung karena response dari event yang dilakukan oleh
+    pengguna, seperti klik tombol
+  - namun sebenarnya tidak seperti itu, kita sudah tahu di materi sebelumnya, ketika terjadi perubahan State, itu akan
+    memicu render ulang, sehingga akan membuat Snapshoot baru yang ditampilkan di layar
+
+  > Kesalahan Mengubah State 
+    - paham tentang Snapshoot ini, akan memberi gambaran cara pandang kita terhadap data di State
+    - berikut adalah contoh Kesalahan yang biasa dilakukan ketika mengubah State
+    - kita berfikir jika mengubah State, saat itu juga data akan berubah, padahal menghubah state sebenarnya hanyalah
+      mentrigger render ulang dengan nilai state yang baru
+
+  > Kenapa counter tidak berubah 3x?
+    - hal ini dikarenakan, setCounter() tidak akan mengubah data counter yang ada di snapshoot saat ini
+    - setCounter() hanya akan melakukan render ulang dengan data counter yang baru
+    - saat kita memanggil setCounter() sebanyak 3X, bukan berarti React akan melakukan render ulang sebanyak 3x, React 
+      akan menunggu sampat Event Handler selesai, jika ada perubahan State, maka akan dilakukan render ulang
+    - artinya render ulang akan dilakukan sekali saja, walaupun kita mengubah State berkali-kali
+
+____________ 
+State Update
+  - seperti yang sebelumnya dibahas, melakukan update State berkali-kali, tidak akan mengubah data State di Snapshoot
+    saat itu, melainkan hanya memicu untuk render ulang dengan data State baru
+  - tapi, kadang-kadang, kita memang mungkin ada keperluan untuk mengubah data di State yang sama berkali-kali
+  - dan jika kita memang ingin mengubah data di State dengan data yang harapannya sudah diubah sebelumnya (walaupun 
+    belum di render ulang)
+  - kita bisa menggunakan lambda sebagai parameter ketika memanggil function untuk update data State
+
+_______________
+Object di State
+  - state bisa menyimpan jenis data JS apapun, termasuk Object
+  - tapi tidak disarankan untuk mengubah object yang terdapat di State
+  - jika kita ingin mengubah object di State, kita disarankan membuat object baru lalu mengubah data di State tersebut
+    dengan object baru
+
+  > Immutable Data
+    - saat kita membuat data di State, kita harus memperlakukan data di State sebagai Immutable data (tidak bisa 
+      berubah)
+    - artinya data di State hanya bisa digunakan untuk dibaca (read only)
+    - jika kita ingin mengubah data di State, maka kita harus ubah menggunakan data baru, artinya data lama tidak 
+      dimodifikasi
+    - ini adalah praktek yang bisa dilakukan di React, walaupun pada kenyataannya object di JS tidak immutable
+    - hal ini direkomendasikan agar kita tidak salah mengubah data langsung, padahal kita tahu bahwa mengubah data tidak
+      akan memicu proses render ulang
+    - untungnya di JS kita bisa menggunakan Spread Syntax untuk membantu meng-copy attribute di Object
+
+  > Nested Object
+    - kadang ada kasus kita menggunakan Nested Object
+    - sama seperti sebelumnya, kita disarankan untuk selalu membuat object baru ketika mengubah State
+    - kadang memang menyulitkan ketika Nested Objectnya terlalu besar, oleh karena itu disarankan tidak terlalu dalam 
+      membuat Nested Object nya
+    
+  > Immer Library
+    - salah satu yang sering digunakan ketika develop aplikasi menggunakan React adalah Immer
+    - Immer adalah library yang digunakan untuk membuat immutable object dari object saat ini
+    - menggunakan Immer akan lebih mudah dibandingkan menggunakan Spread Syntax, terutama untuk Object yang kompleks 
+      dan Nested
+    https://github.com/immerjs/immer
+
+  > Use Immer Library
+    - Library Immer juga bisa diintegerasikan dengan React State dengan mudah
+    - kita bisa menggunakan library Use-Immer
+    https://github.com/immerjs/use-immer
+    - kita cukup mengganti useState() menjadi useImmer()
+    - dan untuk mengupdate Object di State, kita bisa meggunakan Function sebagai parameter di Update Method nya
+    - npm i immer use-immer
+
+______________ 
+Array di State 
+  - sama seperti object, array di State juga harus kita perlakukan sebagai immutable data
+  - artinya operasi menambah, mengubah atau menghapus data di array, kita harus buat array baru di update ke State
+  - hal ini memang agak menyulitkan, oleh karena itu dengan bantuan library seperti Immer, hal ini jadi lebih mudah 
+
+                    |             Hindari              |              Gunakan              |
+                    |:-----------:|:------------------:|:---------------------------------:|
+                    | menambah    | push, unshift      | concat, […arr] (spread syntax)    |
+                    | menghapus   | pop, shift, splice | filter, slice                     |
+                    | mengubah    | splice, arr[i] = … | map                               |
+                    | mengurutkan | reverse, sort      | buat array baru                   |
+    
+_____________ 
+Sharing State
+  - kadang, kita ingin membuat State untuk beberapa Component yang selalu berubah bersama-sama, atau sedrhananya adalah
+    Sharing State
+  - untuk melakukan ini, kita harus mengubah lokasi State dari Component2 itu, ke Parent Component2 mereka, lalu kita
+    kirim State nya melalui Props
+  - misal, pada Form Task sebelumnya, kita akan buat 2 Child Component, Component untuk TaskForm nya, dan Component 
+    untuk TaskListnya
+  - kita akan share State nya dari Task ke TaskForm dan TaskList melalui Props
+
+____________________
+Mempertahankan State
+  - state terisolasi antar Component. React melacak State mana yang dimiliki oleh Component berdasarkan tempatnya di 
+    struktur UI
+  - kita bisa mengatur, kapan kita ingin mempertahankan State, kapan kita mereset State
+  - State sendiri tidak disimpan di dalam Component. State itu disimpan diReact, sedangkan ketika kita menggunakan State
+    di Component, maka sebenarnya kita akan menggunakan State yang ada di React
+  - cara React bisa tahu State mana yang digunakan di Component adalah, melihat posisi Component di struktur UI
+
+  > Posisi Component
+    - seperti dijelaskan sebelumnya, React menyimpan State sesuai dengan posisi Component
+    - ketika posisi Component berubah, misal hilang dari tampilan layar
+    - secara otomatis State akan dihapus dari react
+    - misal, kita akan membuat Component Counter bisa dihilangkan
+    - ketika nanti Component tersebut dihilangkan dari tampilan, maka secara otomatis State nya juga akan hilang
+  
+  > Component sama di Posisi sama
+    - jika terdapat kasus kita menampilkan component yang sama
+    - tapi secara struktur UI dia berada di posisi yang sama
+    - maka State akan dipertahankan oleh React, yang artinya tidak akan dihapus
+    - hal ini mungkin akan membingungkanm tapi kita harus mengerti hal ini, karena React akan menyimpan informasi
+      State mengikuti Posisi Component, jika Component nya sama, dan posisinya sama, maka State akan dipertahankan
+
+  > Kenapa State masih sama? 
+    - hal ini terjadi karena secara struktur UI, posisi Component ada di posisi yang sama
+    - jika posisi Component dan jenis Componentnya sama, secara ototmatis React akan mempertahankan State
+    - kecuali posisinya berubah atau componentnya berbeda, maka React menghapus Statenya
+    
+*note : 
+  - walaupun componentnya berbeda tetapi posisinya masih sama maka Statenya tidak akan berubah (karena mengikuti)
+    struktur UI
