@@ -15,6 +15,11 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      "@assets": "/src/assets",
+    },
+  },
   server: {
     host: "0.0.0.0",
     port: 3000,
