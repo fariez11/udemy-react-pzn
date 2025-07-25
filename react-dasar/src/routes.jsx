@@ -13,7 +13,7 @@ import Materi14 from "./pages/materi14";
 import Materi15 from "./pages/materi15";
 import Materi16 from "./pages/materi16";
 import Materi17 from "./pages/materi17";
-// import Materi18 from "./pages/materi18";
+import Materi18 from "./pages/materi18";
 // import Materi19 from "./pages/materi19";
 import Materi20 from "./pages/materi20";
 import Materi21 from "./pages/materi21";
@@ -40,7 +40,8 @@ const routes = [
     { path: "/materi-15", element: <Materi15 /> },
     { path: "/materi-16", element: <Materi16 /> },
     { path: "/materi-17", element: <Materi17 /> },
-
+    { path: "/materi-18", element: <Materi18 /> },
+    // { path: "/materi-19", element: <Materi19 /> },
     { path: "/materi-20", element: <Materi20 /> },
     { path: "/materi-21", element: <Materi21 /> },
     { path: "/materi-22", element: <Materi22 /> },

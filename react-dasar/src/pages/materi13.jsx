@@ -11,27 +11,25 @@ export default function Materi13() {
 
 function Note() {
     return (
-        <div className="tab-pane fade show active" id="notes" role="tabpanel" aria-labelledby="notes-tab">
-            <div className="row catatan fst-italic">
-                <h3>Collection Component</h3>
-                <ul>
-                    <li>Kita sering kali ingin menampilkan Component yang sama berulang-ulang berdasarkan koleksi data.</li>
-                    <li>JSX sendiri tidak memiliki fitur perulangan seperti <code>for</code> atau <code>foreach</code>. </li>
-                    <li>Untuk menampilkan banyak Component, kita memanfaatkan JavaScript, seperti method <code>map()</code> pada array.</li>
-                    <li>Misalnya, kita bisa mengubah data to-do list menjadi array, dan gunakan <code>map()</code> untuk menampilkan setiap item sebagai Component.</li>
-                </ul>
+        <>
+            <h3>Collection Component</h3>
+            <ul>
+                <li>Kita sering kali ingin menampilkan Component yang sama berulang-ulang berdasarkan koleksi data.</li>
+                <li>JSX sendiri tidak memiliki fitur perulangan seperti <code>for</code> atau <code>foreach</code>. </li>
+                <li>Untuk menampilkan banyak Component, kita memanfaatkan JavaScript, seperti method <code>map()</code> pada array.</li>
+                <li>Misalnya, kita bisa mengubah data to-do list menjadi array, dan gunakan <code>map()</code> untuk menampilkan setiap item sebagai Component.</li>
+            </ul>
 
-                <h6>Component Key</h6>
-                <ul>
-                    <li>
-                        Saat menggunakan method <code>map()</code>, kamu mungkin akan melihat peringatan seperti:
-                        <em>"Missing key prop for element iterator"</em>.
-                    </li>
-                    <li>React membutuhkan setiap Component dalam list memiliki atribut <code>key</code> yang unik (string atau number).</li>
-                    <li>Kenapa butuh key? Agar React bisa mengenali Component tersebut ketika ada perubahan, seperti posisi atau isinya.</li>
-                </ul>
-            </div>
-        </div>
+            <h6>Component Key</h6>
+            <ul>
+                <li>
+                    Saat menggunakan method <code>map()</code>, kamu mungkin akan melihat peringatan seperti:
+                    <em>"Missing key prop for element iterator"</em>.
+                </li>
+                <li>React membutuhkan setiap Component dalam list memiliki atribut <code>key</code> yang unik (string atau number).</li>
+                <li>Kenapa butuh key? Agar React bisa mengenali Component tersebut ketika ada perubahan, seperti posisi atau isinya.</li>
+            </ul>
+        </>
     )
 }
 

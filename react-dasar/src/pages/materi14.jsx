@@ -10,34 +10,31 @@ export default function Materi14() {
 
 function Note() {
     return (
-        <div className="tab-pane fade show active" id="notes" role="tabpanel" aria-labelledby="notes-tab">
-            <div className="row catatan fst-italic">
-                <h3>Pure Component</h3>
-                <ul>
+        <>
+            <h3>Pure Component</h3>
+            <ul>
 
-                    <li>Dalam pemrograman, kita mengenal yang namanya <strong>Pure Function</strong>.</li>
-                    <li>Sumber: <a href="https://en.wikipedia.org/wiki/Pure_function" target="_blank">https://en.wikipedia.org/wiki/Pure_function</a></li>
-                    <li>Sebuah function disebut sebagai <strong>Pure Function</strong> jika memenuhi dua kriteria berikut:</li>
-                    <li>Function akan mengembalikan nilai yang sama untuk nilai parameter yang sama.</li>
-                    <li>Function tidak memiliki efek samping, tidak ada perubahan pada variable non-local (variable yang berada di luar function).</li>
-                    <br />
-                    <li>React mengasumsikan bahwa setiap <strong>Component</strong> yang kita buat adalah <strong>Pure Function</strong>.</li>
-                    <li>Ini berarti bahwa React Component yang kita buat harus selalu mengembalikan <strong>JSX</strong> yang sama dengan input yang sama.</li>
-                    <li>Walaupun sebenarnya kita bisa saja membuat React Component yang tidak pure, tapi hal ini sangat tidak disarankan, karena setiap memanggil Component dengan input sama bisa menghasilkan nilai yang tidak konsisten.</li>
-                    <br />
-                    <li>Kita harus menghapus efek samping dari Component. Contohnya, kita bisa memindahkan variabel <code>counter</code> menjadi local variable di <code>Table</code>, dan gunakan Props sebagai counternya.</li>
-                </ul>
-                <h6>Dimana bisa melakukan efek samping?</h6>
-                <ul>
-                    <li>React menyediakan tempat khusus jika kita ingin membuat Component yang bisa menghasilkan efek samping.</li>
-                    <li>Efek samping dari Component biasanya ditempatkan di <strong>Event Handler</strong>, yaitu aksi yang terjadi ketika berinteraksi dengan Component.</li>
-                    <li>Atau ketika misalnya Component tergantung dengan external system (misalnya API), maka React menyediakan function <code>useEffect()</code>.</li>
-                </ul>
+                <li>Dalam pemrograman, kita mengenal yang namanya <strong>Pure Function</strong>.</li>
+                <li>Sumber: <a href="https://en.wikipedia.org/wiki/Pure_function" target="_blank">https://en.wikipedia.org/wiki/Pure_function</a></li>
+                <li>Sebuah function disebut sebagai <strong>Pure Function</strong> jika memenuhi dua kriteria berikut:</li>
+                <li>Function akan mengembalikan nilai yang sama untuk nilai parameter yang sama.</li>
+                <li>Function tidak memiliki efek samping, tidak ada perubahan pada variable non-local (variable yang berada di luar function).</li>
+                <br />
+                <li>React mengasumsikan bahwa setiap <strong>Component</strong> yang kita buat adalah <strong>Pure Function</strong>.</li>
+                <li>Ini berarti bahwa React Component yang kita buat harus selalu mengembalikan <strong>JSX</strong> yang sama dengan input yang sama.</li>
+                <li>Walaupun sebenarnya kita bisa saja membuat React Component yang tidak pure, tapi hal ini sangat tidak disarankan, karena setiap memanggil Component dengan input sama bisa menghasilkan nilai yang tidak konsisten.</li>
+                <br />
+                <li>Kita harus menghapus efek samping dari Component. Contohnya, kita bisa memindahkan variabel <code>counter</code> menjadi local variable di <code>Table</code>, dan gunakan Props sebagai counternya.</li>
+            </ul>
+            <h6>Dimana bisa melakukan efek samping?</h6>
+            <ul>
+                <li>React menyediakan tempat khusus jika kita ingin membuat Component yang bisa menghasilkan efek samping.</li>
+                <li>Efek samping dari Component biasanya ditempatkan di <strong>Event Handler</strong>, yaitu aksi yang terjadi ketika berinteraksi dengan Component.</li>
+                <li>Atau ketika misalnya Component tergantung dengan external system (misalnya API), maka React menyediakan function <code>useEffect()</code>.</li>
+            </ul>
 
-                <p>sumber: <a href="https://react.dev/reference/react/useEffect" target="_blank">https://react.dev/reference/react/useEffect</a></p>
-
-            </div>
-        </div>
+            <p>sumber: <a href="https://react.dev/reference/react/useEffect" target="_blank">https://react.dev/reference/react/useEffect</a></p>
+        </>
     )
 }
 
