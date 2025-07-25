@@ -1,6 +1,5 @@
 import '@assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
-import LogDisplay from '../components/logDisplay';
 
 export default function Materi14() {
     return (
@@ -65,10 +64,8 @@ function Result() {
         <>
             <div className="col d-grid gap-2">
                 <button className='btn btn-primary' onClick={AlertButton}> named function</button>
-
                 <MyButton text="smash button" onSmash={() => alert('you smash me')}></MyButton>
-            </div>
-            
+            </div> 
         </>
     );
 }
