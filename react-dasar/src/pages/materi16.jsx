@@ -2,7 +2,7 @@ import '@assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
 import LogDisplay from '../components/logDisplay';
 
-export default function Materi14() {
+export default function Materi16() {
     return (
         <TabbedCard noteContent={<Note />} resultContent={<Result />} />
     );

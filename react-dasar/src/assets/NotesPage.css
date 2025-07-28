@@ -1,10 +1,9 @@
-
-h3{
-    font-weight: bold;                 /* fw-bold */
-    border-bottom: 1px solid #dee2e6;  /* border-bottom */
-    padding-bottom: 0.25rem;          /* pb-1 */
-    text-align: center;               /* text-center */
-    font-style: normal; 
+h3 {
+  font-weight: bold; /* fw-bold */
+  border-bottom: 1px solid #dee2e6; /* border-bottom */
+  padding-bottom: 0.25rem; /* pb-1 */
+  text-align: center; /* text-center */
+  font-style: normal;
 }
 
 h6 {
@@ -20,12 +19,12 @@ h6 {
   -o-border-radius: 0.2rem;
 }
 
-ul{
-    margin-bottom: 1px !important; /* mb-2 */
+ul {
+  margin-bottom: 1px !important; /* mb-2 */
 }
 
-p{
-    margin: 1px 0px 2px 0px !important; /* mt-2 */
+p {
+  margin: 1px 0px 2px 0px !important; /* mt-2 */
 }
 
 .nav-link.active {
@@ -47,7 +46,7 @@ p{
 
 .catatan li {
   list-style-type: disc;
-  margin-left: 1rem ;
+  margin-left: 1rem;
 }
 code {
   background: #f4f4f4;
@@ -61,4 +60,43 @@ pre {
   padding: 10px;
   border-radius: 4px;
   overflow-x: auto;
+}
+.divider {
+  border-left: 4px solid var(--border-color, #ccc);
+  background-color: var(--bg-color, rgba(200, 200, 200, 0.1));
+  color: var(--text-color, #333);
+  padding: 0.5rem; /* p-2 */
+  border-radius: 0.25rem; /* rounded-1 */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+/* Variasi warna */
+.c-warn {
+  --border-color: #ffc107;
+  --bg-color: rgba(255, 193, 7, 0.1);
+  --text-color: #856404;
+}
+
+.c-red {
+  --border-color: #dc3545;
+  --bg-color: rgba(220, 53, 69, 0.1);
+  --text-color: #721c24;
+}
+
+.c-green {
+  --border-color: #28a745;
+  --bg-color: rgba(40, 167, 69, 0.1);
+  --text-color: #155724;
+}
+
+.c-blue {
+  --border-color: #007bff;
+  --bg-color: rgba(0, 123, 255, 0.1);
+  --text-color: #004085;
+}
+
+.c-gray {
+  --border-color: #6c757d;
+  --bg-color: rgba(108, 117, 125, 0.1);
+  --text-color: #383d41;
 }

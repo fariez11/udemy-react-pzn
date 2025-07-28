@@ -1,7 +1,7 @@
 import '@assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
 
-export default function Materi14() {
+export default function Materi18() {
     return (
         <TabbedCard noteContent={<Note />} resultContent={<Result />} />
     );
@@ -47,7 +47,7 @@ function Result() {
 
     return (
         <>
-            <p className='border-start border-4 border-warning bg-warning bg-opacity-10 p-2 rounded-1 mb-2'>tidak direkomendasikan</p>
+            <p className='border-start border-4 border-warning bg-warning bg-opacity-10 p-2 rounded-1 mb-2'>tidak direkomendasikan (karena masih menggunakan DOM) </p>
             <form className="d-flex">
                 <input type="text" className="form-control w-75 me-2" id='textName' />
                 <button type="submit" className="btn btn-primary w-25" onClick={handleClick}>say hello</button>

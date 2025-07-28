@@ -1,46 +1,15 @@
 import '@assets/NotesPage.css';
-import TabbedCard from '../components/tabCard';
 import React, { useState, useRef } from "react";
+import TabbedCard from '../components/tabCard';
+import LoggerDisplay from '../components/logDisplay';
 
 export default function Materi22() {
     return (
-        <>
-            <div className="card w-100">
-                <Menu />
-                <div className="card-body overflow-y-auto" style={{ maxHHeight: "calc(99vh - 100px)" }}>
-                    <div className="tab-content" id="myTabsContent">
-                        <NoteContent />
-                        <ResultContent />
-                    </div>
-                </div>
-            </div>
-        </>
+        <TabbedCard noteContent={<Note />} resultContent={<Result />} />
     );
 }
 
-function Menu() {
-    return (
-        <div className="card-header py-2 px-2 bg-card-header">
-            <ul className="nav nav-pills d-flex">
-                <li className="nav-item flex-fill text-center me-1" role="presentation">
-                    <a className="nav-link active text-success" id="note-tab" data-bs-toggle="tab" data-bs-target="#note"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">
-                        catatan
-                    </a>
-                </li>
-                <li className="nav-item flex-fill text-center mx-1" role="presentation">
-                    <a className="nav-link text-success" id="result-tab" data-bs-toggle="tab" data-bs-target="#result" type="button"
-                        role="tab" aria-controls="profile" aria-selected="true">
-                        hasil
-                    </a>
-                </li>
-            </ul>
-        </div>
-    )
-}
-
-
-function NoteContent() {
+function Note() {
     return (
         <div className="tab-pane fade show active" id="note" role="tabpanel" aria-labelledby="note-tab">
             <div className="row mx-1 catatan fst-italic">
@@ -62,66 +31,60 @@ function NoteContent() {
 
                 <h6>Kesalahan Umum dalam Mengubah State</h6>
                 <ul>
-                    <li>
-                        Memahami konsep Snapshoot akan membantu kita memahami bagaimana cara kerja data di dalam State.
-                    </li>
-                    <li>
-                        Salah satu kesalahan umum adalah berpikir bahwa ketika kita mengubah State, maka data langsung berubah saat itu juga.
-                    </li>
-                    <li>
-                        Padahal, mengubah State sebenarnya hanya <strong>mentrigger proses render ulang</strong> dengan nilai baru.
-                    </li>
+                    <li>Memahami konsep Snapshoot akan membantu kita memahami bagaimana cara kerja data di dalam State.</li>
+                    <li>Salah satu kesalahan umum adalah berpikir bahwa ketika kita mengubah State, maka data langsung berubah saat itu juga.</li>
+                    <li>Padahal, mengubah State sebenarnya hanya <strong>mentrigger proses render ulang</strong> dengan nilai baru.</li>
                 </ul>
 
                 <h6 className="mt-3">Kenapa Counter Tidak Berubah 3x?</h6>
                 <ul>
-                    <li>
-                        Hal ini terjadi karena <code>setCounter()</code> tidak langsung mengubah nilai counter pada Snapshoot saat ini.
-                    </li>
-                    <li>
-                        <code>setCounter()</code> hanya akan menjadwalkan render ulang dengan nilai counter terbaru.
-                    </li>
-                    <li>
-                        Ketika kita memanggil <code>setCounter()</code> sebanyak 3x berturut-turut dalam satu event handler, React tidak akan langsung melakukan render ulang 3x.
-                    </li>
-                    <li>
-                        React akan menunggu sampai event handler selesai dijalankan, lalu baru menjalankan render ulang sekali saja dengan hasil akhir dari perubahan State.
-                    </li>
+                    <li>Hal ini terjadi karena <code>setCounter()</code> tidak langsung mengubah nilai counter pada Snapshoot saat ini.</li>
+                    <li><code>setCounter()</code> hanya akan menjadwalkan render ulang dengan nilai counter terbaru.</li>
+                    <li>Ketika kita memanggil <code>setCounter()</code> sebanyak 3x berturut-turut dalam satu event handler, React tidak akan langsung melakukan render ulang 3x.</li>
+                    <li>React akan menunggu sampai event handler selesai dijalankan, lalu baru menjalankan render ulang sekali saja dengan hasil akhir dari perubahan State.</li>
                 </ul>
-
             </div>
         </div>
     )
 }
 
-function ResultContent() {
-    const [logs, setLogs] = useState([]);
-    const logContainerRef = useRef(null);
-    const resetLogs = () => {
-        setLogs([]);
-        console.clear();
-    }
+function Result() {
+    let [counter, setCounter] = useState(0)
+    let [number, setNumber] = useState(0)
+    console.log(`render counter ${counter}`);
+    console.log(`render number ${number}`);
 
-    let counter = 0;
-    function witoutUseState() {
-        counter++;
+    function handleClick() {
+        setCounter(counter + 1)
+        setCounter(counter + 1)
+        setCounter(counter + 1)
         console.log(counter);
-
-        setLogs((prev) => [...prev, counter]);
     }
 
-    let [jumlah, setCount] = useState(0);
-    function withUseState() {
 
-        setCount(jumlah + 1);
-        console.info("jumlah sebelum diubah", jumlah);
-        console.log(jumlah + 1);
-
-        setLogs((prev) => [...prev, jumlah + 1]);
+    function solution() {
+        setNumber(number + 3)
+        console.log(number);
     }
+
     return (
-        <div className="tab-pane fade show" id="result" role="tabpanel" aria-labelledby="result-tab">
+        <div className='row'>
+            <div className="col m-auto">
+                <p className='divider c-warn'> contoh yang belum benar</p>
+                <div className="d-flex justify-content-around mt-3 mb-4">
+                    <button className='btn btn-outline-primary' onClick={handleClick}>increment</button>
+                    <h4 className='my-auto'>hasilnya : {counter}</h4>
+                </div>
 
+                <p className='divider c-green'> contoh yang benar</p>
+                <div className="d-flex justify-content-around my-3">
+                    <button className='btn btn-outline-primary mb-2' onClick={solution}>increment</button>
+                    <h4>hasilnya : {number}</h4>
+                </div>
+            </div>
+            <div className="col">
+                <LoggerDisplay />
+            </div>
         </div>
     )
 }

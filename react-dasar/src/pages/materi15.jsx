@@ -1,7 +1,7 @@
 import '@assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
 
-export default function Materi14() {
+export default function Materi15() {
     return (
         <TabbedCard noteContent={<Note />} resultContent={<Result />} />
     );
