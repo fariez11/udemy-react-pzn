@@ -1,7 +1,7 @@
 import '../assets/NotesPage.css';
 import LoggerDisplay from '../components/logDisplay';
 import TabbedCard from '../components/tabCard';
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 export default function Materi23() {
     return (

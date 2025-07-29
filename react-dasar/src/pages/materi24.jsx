@@ -1,7 +1,7 @@
 import { useImmer } from 'use-immer';
 import '../assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 export default function Materi24() {
     return (

@@ -9,7 +9,6 @@ export default defineConfig({
       input: {
         index: "index.html",
         // contact: "contact.html",
-        task: "task.html",
       },
     },
   },

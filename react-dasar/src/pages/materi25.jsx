@@ -1,7 +1,7 @@
 import { useImmer } from 'use-immer';
 import '../assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 export default function Materi25() {
     return (
@@ -17,17 +17,9 @@ function Note() {
             <div className="row mx-1 catatan fst-italic">
                 <h3>Array di State</h3>
                 <ul>
-                    <li>
-                        Sama seperti <strong>object</strong>, <strong>array</strong> di State juga harus kita perlakukan sebagai data yang <em>immutable</em>.
-                    </li>
-
-                    <li>
-                        Artinya, untuk melakukan operasi seperti menambah, menghapus, atau mengubah isi array, kita harus membuat array baru lalu memperbarui State dengan array tersebut.
-                    </li>
-
-                    <li>
-                        Memang hal ini bisa terasa menyulitkan, tapi kita bisa menggunakan bantuan library seperti <strong>Immer</strong> agar lebih mudah menangani array di State.
-                    </li>
+                    <li>Sama seperti <strong>object</strong>, <strong>array</strong> di State juga harus kita perlakukan sebagai data yang <em>immutable</em>.</li>
+                    <li>Artinya, untuk melakukan operasi seperti menambah, menghapus, atau mengubah isi array, kita harus membuat array baru lalu memperbarui State dengan array tersebut.</li>
+                    <li>Memang hal ini bisa terasa menyulitkan, tapi kita bisa menggunakan bantuan library seperti <strong>Immer</strong> agar lebih mudah menangani array di State.</li>
                 </ul>
 
                 <table border="1" cellPadding="6" cellSpacing="0" className=' mt-3 mx-2 text-center'>

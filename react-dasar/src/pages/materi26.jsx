@@ -1,46 +1,18 @@
 import '../assets/NotesPage.css';
+import { useImmer } from 'use-immer';
 import TabbedCard from '../components/tabCard';
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function Materi26() {
     return (
         <>
-            <div className="card w-100">
-                <Menu />
-                <div className="card-body overflow-y-auto" style={{ maxHeight: "calc(99vh - 100px)" }}>
-                    <div className="tab-content" id="myTabsContent">
-                        <NoteContent />
-                        <ResultContent />
-                    </div>
-                </div>
-            </div>
+            <TabbedCard noteContent={<Note />} resultContent={<Result />} />
         </>
     );
 }
 
-function Menu() {
-    return (
-        <div className="card-header py-2 px-2 bg-card-header">
-            <ul className="nav nav-pills d-flex">
-                <li className="nav-item flex-fill text-center me-1" role="presentation">
-                    <a className="nav-link active text-success" id="note-tab" data-bs-toggle="tab" data-bs-target="#note"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">
-                        catatan
-                    </a>
-                </li>
-                <li className="nav-item flex-fill text-center mx-1" role="presentation">
-                    <a className="nav-link text-success" id="result-tab" data-bs-toggle="tab" data-bs-target="#result" type="button"
-                        role="tab" aria-controls="profile" aria-selected="true">
-                        hasil
-                    </a>
-                </li>
-            </ul>
-        </div>
-    )
-}
 
-
-function NoteContent() {
+function Note() {
     return (
         <div className="tab-pane fade show active" id="note" role="tabpanel" aria-labelledby="note-tab">
             <div className="row mx-1 catatan fst-italic">
@@ -54,8 +26,7 @@ function NoteContent() {
                         Untuk melakukan ini, kita harus memindahkan lokasi State dari masing-masing Component ke <strong>Parent Component</strong>-nya.
                         Kemudian, kita mengirim State tersebut ke anak-anaknya melalui <strong>Props</strong>.
                     </li>
-                    <li>
-                        Misalnya, pada kasus <em>Form Task</em>, kita bisa membaginya menjadi dua Child Component:
+                    <li>Misalnya, pada kasus <em>Form Task</em>, kita bisa membaginya menjadi dua Child Component:
                     </li>
                     <ul>
                         <li>Satu untuk <strong>TaskForm</strong></li>
@@ -72,19 +43,50 @@ function NoteContent() {
     )
 }
 
-function ResultContent() {
-    const [logs, setLogs] = useState([]);
-    const logContainerRef = useRef(null);
-    const resetLogs = () => {
-        setLogs([]);
-        console.clear();
+function TaskForm({ setItems }) {                             // bisa jadi file sendiri
+    const [item, setItem] = useState("")
+    const handleChange = (e) => setItem(e.target.value)
+    function handleClick(e) {
+        e.preventDefault();
+        // onSubmit(item);
+        // setItems((draft) => draft.push(item));            ~> error dikarenakan Immer tidak memperbolehkan kamu memodifikasi draft dan mengembalikan nilai selain undefined.
+        // setItems((draft) => void draft.push(item));       ~> void adalah operator di JavaScript yang: Menjalankan (draft.push(item)) tetapi selalu mengembalikan undefined
+        setItems((draft) => {
+            draft.push(item)
+        })
+        setItem("");
     }
 
+    return (
+        <>
+            <h4 className='text-center'>Create Task</h4>
+            <form className='d-flex gap-3 mb-3'>
+                <input type="text" className='form-control w-75' value={item} onChange={handleChange} />
+                <button className='btn btn-outline-primary w-25' onClick={handleClick}><i className='bi bi-plus-circle'></i> add</button>
+            </form>
+        </>
+    )
+}
+
+function TaskList({ items = [] }) {                          // bisa jadi file sendiri
+    return (
+        <div className='text-center'>
+            <h4 className='text-center'>List Task</h4>
+            {items.map((item, index) =>
+                <li key={index} className='list-unstyled'>{item}</li>
+            )}
+        </div>
+    )
+}
+
+function Result() {
+    const [items, setItems] = useImmer([])
 
     return (
-        <div className="tab-pane fade show" id="result" role="tabpanel" aria-labelledby="result-tab">
-
-        </div>
+        <>
+            <TaskForm setItems={setItems} />
+            <TaskList items={items} />
+        </>
     )
 }
 

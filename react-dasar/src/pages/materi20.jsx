@@ -78,16 +78,16 @@ function Result() {
     function witoutUseState() {
         counter++;
         console.log(counter);
-
     }
 
     let [jumlah, setCount] = useState(0);
     function withUseState() {
-
         setCount(jumlah + 1);
         console.info("jumlah sebelum diubah", jumlah);
         console.log(jumlah + 1);
     }
+
+
     return (
         <div className="tab-pane fade show" id="result" role="tabpanel" aria-labelledby="result-tab">
             <div className="row">
