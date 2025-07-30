@@ -1,7 +1,5 @@
 import React from "react";
 import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
-import Footer from "./components/footer";
 import { Routes, Route } from "react-router-dom";
 import routes from "./routes";
 import FloatingToggle from "./components/floatingToggle";

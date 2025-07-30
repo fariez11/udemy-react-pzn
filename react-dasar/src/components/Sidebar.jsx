@@ -1,6 +1,6 @@
 // components/Sidebar.jsx
 import { Link } from "react-router-dom";
-import './style.css';
+import '@assets/sidebar.css';
 
 export default function Sidebar() {
   const sidebarLinks = [
