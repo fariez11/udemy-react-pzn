@@ -12,7 +12,7 @@ export default function TabbedCard({ noteContent, resultContent }) {
                     </li>
                     <li className="nav-item flex-fill text-center mx-1" role="presentation">
                         <a className="nav-link text-success" id="result-tab" data-bs-toggle="tab" data-bs-target="#result" type="button"
-                            role="tab" aria-controls="profile" aria-selected="true" disdabled>
+                            role="tab" aria-controls="profile" aria-selected="true" >
                             hasil
                         </a>
                     </li>

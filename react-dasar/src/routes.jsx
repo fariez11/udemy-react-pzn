@@ -23,33 +23,35 @@ import Materi24 from "./pages/materi24";
 import Materi25 from "./pages/materi25";
 import Materi26 from "./pages/materi26";
 import Materi27 from "./pages/materi27";
+import Materi28 from "./pages/materi28";
+
 
 
 const routes = [
     { path: "/", element: <NotesPage /> },
-    { path: "/component", element: <Materi6 /> },
-
-    { path: "/materi-7", element: <Materi7 /> },
-    { path: "/materi-8", element: <Materi8 /> },
-    { path: "/materi-9", element: <Materi9 /> },
-    { path: "/materi-10", element: <Materi10 /> },
-    { path: "/materi-11", element: <Materi11 /> },
-    { path: "/materi-12", element: <Materi12 /> },
-    { path: "/materi-13", element: <Materi13 /> },
-    { path: "/materi-14", element: <Materi14 /> },
-    { path: "/materi-15", element: <Materi15 /> },
-    { path: "/materi-16", element: <Materi16 /> },
-    { path: "/materi-17", element: <Materi17 /> },
-    { path: "/materi-18", element: <Materi18 /> },
-    { path: "/materi-19", element: <Materi19 /> },
-    { path: "/materi-20", element: <Materi20 /> },
-    { path: "/materi-21", element: <Materi21 /> },
-    { path: "/materi-22", element: <Materi22 /> },
-    { path: "/materi-23", element: <Materi23 /> },
-    { path: "/materi-24", element: <Materi24 /> },
-    { path: "/materi-25", element: <Materi25 /> },
-    { path: "/materi-26", element: <Materi26 /> },
-    { path: "/materi-27", element: <Materi27 /> },
+    { path: "/component", element: <Materi6 />, label:'component'},
+    { path: "/materi-7", element: <Materi7 />, label:'jsx'},
+    { path: "/materi-8", element: <Materi8 />, label:'javascript di jsx'},
+    { path: "/materi-9", element: <Materi9 />, label:'props'},
+    { path: "/materi-10", element: <Materi10 />, label:'nested component'},
+    { path: "/materi-11", element: <Materi11 />, label:'style'},
+    { path: "/materi-12", element: <Materi12 />, label:'conditional'},
+    { path: "/materi-13", element: <Materi13 />, label:'collection component'},
+    { path: "/materi-14", element: <Materi14 />, label:'pure component'},
+    { path: "/materi-15", element: <Materi15 />, label:'event handler'},
+    { path: "/materi-16", element: <Materi16 />, label:'event object'},
+    { path: "/materi-17", element: <Materi17 />, label:'event propagation'},
+    { path: "/materi-18", element: <Materi18 />, label:'side effect'},
+    { path: "/materi-19", element: <Materi19 />, label:'hooks'},
+    { path: "/materi-20", element: <Materi20 />, label:'state'},
+    { path: "/materi-21", element: <Materi21 />, label:'render'},
+    { path: "/materi-22", element: <Materi22 />, label:'snapshot'},
+    { path: "/materi-23", element: <Materi23 />, label:'state update'},
+    { path: "/materi-24", element: <Materi24 />, label:'object di state'},
+    { path: "/materi-25", element: <Materi25 />, label:'array di state'},
+    { path: "/materi-26", element: <Materi26 />, label:'sharing state'},
+    { path: "/materi-27", element: <Materi27 />, label:'mempertahankan state'},
+    { path: "/materi-28", element: <Materi28 />, label:'reset state'},
 ];
 
 export default routes;

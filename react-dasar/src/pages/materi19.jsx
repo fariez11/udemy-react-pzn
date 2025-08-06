@@ -25,10 +25,10 @@ function Note() {
             </ul>
 
             <h6>*tambahan dari gpt</h6>
-            <table border="1" cellpadding="8" cellspacing="0">
+            <table border="1" cellPadding="8" cellSpacing="0">
                 <thead>
                     <tr className='text-center'>
-                        <th>Hook</th>
+                        <th>Hooks</th>
                         <th>Fungsi</th>
                     </tr>
                 </thead>

@@ -79,12 +79,10 @@ function Result() {
         setShow(e.target.checked)
     }
 
-
-
     return (
         <div className='d-flex flex-column gap-1 mx-3'>
-            <div class="form-check form-switch d-flex justify-content-center mb-3">
-                <input class="form-check-input me-2" type="checkbox" value="" id="checkNativeSwitch" switch onChange={handleChange} checked={show} />
+            <div className="form-check form-switch d-flex justify-content-center mb-3">
+                <input className="form-check-input me-2" type="checkbox" value="" id="checkNativeSwitch" switch onChange={handleChange} checked={show} />
                 <p className='my-auto'>ubah ini untuk melihat perubahan</p>
             </div>
             <p className='divider c-info'> hide show component</p>

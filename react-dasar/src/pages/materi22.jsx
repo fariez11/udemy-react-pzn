@@ -61,7 +61,6 @@ function Result() {
         console.log(counter);
     }
 
-
     function solution() {
         setNumber(number + 3)
         console.log(number);

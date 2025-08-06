@@ -347,7 +347,7 @@ Snapshoot
   > Kesalahan Mengubah State 
     - paham tentang Snapshoot ini, akan memberi gambaran cara pandang kita terhadap data di State
     - berikut adalah contoh Kesalahan yang biasa dilakukan ketika mengubah State
-    - kita berfikir jika mengubah State, saat itu juga data akan berubah, padahal menghubah state sebenarnya hanyalah
+    - kita berfikir jika mengubah State, saat itu juga data akan berubah, padahal mengubah state sebenarnya hanyalah
       mentrigger render ulang dengan nilai state yang baru
 
   > Kenapa counter tidak berubah 3x?
@@ -459,3 +459,29 @@ Mempertahankan State
 *note : 
   - walaupun componentnya berbeda tetapi posisinya masih sama maka Statenya tidak akan berubah (karena mengikuti)
     struktur UI
+
+___________
+Reset State
+  - Bagaimana jika pada kondisi tertentu, kita memang ingin melakukan Reset State, tidak mau mempertahanakan State nya?
+  - Ada beberapa cara yaitu : 
+      ~> menghapus Component dari tampilan UI (ketika Component hilang dari tampilan UI, secara otomatis State akan hilang ikut hilang)
+      ~> mengubah dengan component lain
+      ~> mengubah posisi component
+      ~> posisi component berubah (didalam kondisi yang terpisah)
+      ~> menggunakan key
+
+  > Mengubah Dengan Component lain  
+    - ketika posisi yang sama masih ada di struktur UI, tapi Compoenent nya berbeda, secara otomatis State juga akan di reset
+        ex: menampilkan Component Counter, lalu diubah menjadi paragraph. Secara otomatis di Component Counter akan di hapus
+       
+  > Mengubah Posisi Component
+    - karena react akan menyimpan State sesuai dengan Component dan posisinya
+    - artinya jika posisi Component diubah atau dipindahkan, secara otomatis State juga akan direset
+
+  > Posisi Component Berubah
+    - selain mengubah posisi, kita juga bisa jika Component sama berada di posisi yang berbeda, secara otomatis State nya juaga akan berbeda
+    - ini mungkin akan membingungkan, karena secara DOM mungkin posisinya sama, tapi secara posisi di Compoenent berbeda
+
+  > Menggunakan Key
+    - Cara yang umum biasanya digunakan untuk mereset State, yaitu menambahkan key pada Component
+    - Saat Component yang sama ditampilkan di posisi yang sama, jika key nya beda, maka akan dianggap Compoenent yang berbeda (secara otomatis State akan di reset) *yang paling direkomendasikan
