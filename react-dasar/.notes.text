@@ -484,4 +484,33 @@ Reset State
 
   > Menggunakan Key
     - Cara yang umum biasanya digunakan untuk mereset State, yaitu menambahkan key pada Component
-    - Saat Component yang sama ditampilkan di posisi yang sama, jika key nya beda, maka akan dianggap Compoenent yang berbeda (secara otomatis State akan di reset) *yang paling direkomendasikan
+    - Saat Component yang sama ditampilkan di posisi yang sama, jika key nya beda, maka akan dianggap Compoenent yang berbeda 
+      (secara otomatis State akan di reset) *yang paling direkomendasikan
+
+_______
+Reducer 
+  - sebelumnya kita sudah bahas banyak tentang Hooks State menggunakan useState()
+  - selain itu, terdapat fitur Hooks State lain, yaitu Reducer, menggunakan 
+  https://react.dev/reference/react/useReducer
+
+  > Reducer
+    - pada kasus membuat Component yang memiliki banyak proses update State, kadang mneyulitkan untuk maintain-nya, karena banyak 
+      Event Handler yang aharus diubuat juga untuk mengubah data Statenya
+    - pada kasus seperti ini, kita bisa mengkonsolidasi semua logic untuk update State di sebuah Function di luar Component, atau kita sebut dengan reducer
+  
+  > Menggunakan Reducer
+    - sekarang kita akan fokus ke NoteAppnya
+    - kita bisa liat bahwa terdapat 3 aksi untuk update notes, ada add, update dan delete. dan itu semua disimpan didalam function yang 
+      berbeda-beda dan Event Handler yang berbeda-beda juga
+    - Menggunakan reducer agak sedikit berbeda dengan mengubah State secara langsung, alih-alih memberi tahu ke React apa yang harus 
+      dilakukan dengan mengubah State, menggunakan Reducer kita memberi tahu React apa yang sudah dilakukan pengguna (action)
+    - implementasi logic dari actionnya dilakukan ditempat yang terpisah
+  
+  > Membuat Reducer Function
+    - Reducer Function adalah kode dimana kita menyimpan logic kita
+    - Reducer Function memiliki dua parameter, State saat inimm dan Action Object
+    - Return functionnya adalah state selanjutnya
+
+  > useImmer
+    - Library Use-Immer juga mendukung Reducer, sehingga kita bisa lebih mudah karena kita bisa mengedit data draft dibanding membuat data baru dari State yang ada
+    - kita bisa menggunakan method useImmerReducer()

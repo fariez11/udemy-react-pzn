@@ -2,7 +2,7 @@ import '@assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
 import React, { useState, useRef } from "react";
 
-export default function Materi27() {
+export default function Materi28() {
     return (
         <>
             <TabbedCard noteContent={<Note />} resultContent={<Result />} />
@@ -42,7 +42,7 @@ function Note() {
                 <li>State-nya pun akan berbeda, meskipun secara tampilan (DOM) terlihat sama.</li>
             </ul>
 
-            <h6>Menggunakan Key</h6>
+            <h6>Menggunakan Key <em><span className='recomended'>*paling direkomendasikan</span></em></h6>
             <ul>
                 <li>Cara yang paling umum dan direkomendasikan untuk mereset State adalah dengan menambahkan <code>key</code> pada Component.</li>
                 <li>Ketika Component yang sama ditampilkan di posisi yang sama, jika <code>key</code>-nya berbeda, maka React akan menganggapnya sebagai Component yang berbeda dan State akan di-reset.</li>
