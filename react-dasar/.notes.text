@@ -290,14 +290,14 @@ State
 
   > useState
     - untuk membuat State, kita bisa menggunakan function useState(initial)
-    httpS://react.dev/reference/react/useState
+    https://react.dev/reference/react/useState
     - function useState akan mengembalikan array dengan 2 nilai, pertama adalah State-nya, dan kedua ada function untuk
       mengubah value dari State tersebut
     - Component yang menggunakan State tersebut, secara otomatis akan di render
 
   > State Terisolasi dan Private
     - State merupakan data yang terisolasi dan private secara local terhadap Copmonent yang menggunakan
-    - artinya, jika kita me-render Componentyang sama berkali-kali, maka State dari tiap Component tsb akan terpisah
+    - artinya, jika kita me-render Component yang sama berkali-kali, maka State dari tiap Component tsb akan terpisah
       satu sama lain
 
 ______ 
@@ -471,7 +471,7 @@ Reset State
       ~> menggunakan key
 
   > Mengubah Dengan Component lain  
-    - ketika posisi yang sama masih ada di struktur UI, tapi Compoenent nya berbeda, secara otomatis State juga akan di reset
+    - ketika posisi yang sama masih ada di struktur UI, tapi Component nya berbeda, secara otomatis State juga akan di reset
         ex: menampilkan Component Counter, lalu diubah menjadi paragraph. Secara otomatis di Component Counter akan di hapus
        
   > Mengubah Posisi Component
@@ -480,11 +480,11 @@ Reset State
 
   > Posisi Component Berubah
     - selain mengubah posisi, kita juga bisa jika Component sama berada di posisi yang berbeda, secara otomatis State nya juaga akan berbeda
-    - ini mungkin akan membingungkan, karena secara DOM mungkin posisinya sama, tapi secara posisi di Compoenent berbeda
+    - ini mungkin akan membingungkan, karena secara DOM mungkin posisinya sama, tapi secara posisi di Component berbeda
 
   > Menggunakan Key
     - Cara yang umum biasanya digunakan untuk mereset State, yaitu menambahkan key pada Component
-    - Saat Component yang sama ditampilkan di posisi yang sama, jika key nya beda, maka akan dianggap Compoenent yang berbeda 
+    - Saat Component yang sama ditampilkan di posisi yang sama, jika key nya beda, maka akan dianggap Component yang berbeda 
       (secara otomatis State akan di reset) *yang paling direkomendasikan
 
 _______
@@ -514,3 +514,25 @@ Reducer
   > useImmer
     - Library Use-Immer juga mendukung Reducer, sehingga kita bisa lebih mudah karena kita bisa mengedit data draft dibanding membuat data baru dari State yang ada
     - kita bisa menggunakan method useImmerReducer()
+
+_______
+Context
+  - selain State Hooks yang sudah dibahas sebelumnya menggunakan useState() dan useReduce()
+  - masih ada hooks yang lainnya, salah satunya adalah Context Hooks, menggunakan useContext()
+  https://react.dev/reference/react/useContext
+
+  > Context
+    - biasanya, untuk mengirim informasi dari parent Component ke child Component, kita biasa menggunakan props
+    - tapi mengirim informasi melalui banyak Component, mungkin akan terlalu sulit melakukan maintain Propsnya
+    - misal saja jika punya satu informasi yang digunakan oleh banyak Component, maka mengirim ke semua Component juga akan terlalu sulit
+    - Context memperbolehkan parent Component membuat informasi dan bisa digunakan oleh Component manapun dibawahnya, tidak peduli seberapa dalam Component di didalamnya
+    - banyak juga yang bilang jika Context adalah Global State
+  
+  > Membuat Context
+    - untuk membuat Context, kita bisa menggunakan function createContext()
+    https://react.dev/reference/react/createContext
+    - setelah membuat Context, untuk menggunakan Context tersebut, kita bisa menggunakan useContext()
+    https://react.dev/reference/react/useContext
+    - untuk mengubah data di Context, kita gunakan Provider yang terdapat di Context, secara otomatis semua Componentdibawahnya akan mendapatkan nilai sesuai yang kita ubah
+      di Context Provider
+    https://react.dev/reference/react/createContext#provider
