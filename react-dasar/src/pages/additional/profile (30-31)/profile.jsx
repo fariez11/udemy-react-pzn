@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { ProfileContext } from "./profileContext";
 
-export default function ProfileAddress() {
+export default function Profile(){
     const profile = useContext(ProfileContext);
     return(
         <>
-            <h2>Profile Address</h2>
-            <span>Alamat {profile}</span>
+            <h4>Profile</h4>
+            <span>Hello {profile}</span>
         </>
     )
 }

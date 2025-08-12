@@ -1,10 +1,10 @@
 import '@assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
-import { ProfileContext } from './additional/materi30.jsx/profileContext';
-import Profile from './additional/materi30.jsx/profile';
-import ProfileAddress from './additional/materi30.jsx/profileAddress';
+import { ProfileContext } from './additional/profile (30-31)/profileContext';
+import Profile from './additional/profile (30-31)/profile';
+import ProfileAddress from './additional/profile (30-31)/profileAddress';
 
-export default function Materi29() {
+export default function Materi30() {
     return (
         <>
             <TabbedCard noteContent={<Catatan />} resultContent={<Result />} />
@@ -44,7 +44,7 @@ function Result() {
     return (
         <div className='text-center'>
             <ProfileContext.Provider value="Zhafira">
-                <h2>Profile App</h2>
+                <h3>Profile App</h3>
                 <Profile />
                 <ProfileAddress />
             </ProfileContext.Provider>

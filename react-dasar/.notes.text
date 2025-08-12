@@ -175,7 +175,7 @@ Collection Component
   - kita pasti akan sering menampilkan Component yang ssama berkali kali sesuai koleksi data. JSX sendiri tidak 
     memiliki fitur perulangan
   - untuk menampilkan multiple Component, sama seperti Conditional, kita akan memanfaatkan Javascript
-  - kita bisa menggunakan Javascript Array untuk mengubah data Array menjadi Copmonent, misal menggunakan method map()
+  - kita bisa menggunakan Javascript Array untuk mengubah data Array menjadi Component, misal menggunakan method map()
     pada Array
   - misal sekarang kita akan coba ubah TodoList yang sebelumnya kita buat menjadi array
 
@@ -296,7 +296,7 @@ State
     - Component yang menggunakan State tersebut, secara otomatis akan di render
 
   > State Terisolasi dan Private
-    - State merupakan data yang terisolasi dan private secara local terhadap Copmonent yang menggunakan
+    - State merupakan data yang terisolasi dan private secara local terhadap Component yang menggunakan
     - artinya, jika kita me-render Component yang sama berkali-kali, maka State dari tiap Component tsb akan terpisah
       satu sama lain
 
@@ -536,3 +536,16 @@ Context
     - untuk mengubah data di Context, kita gunakan Provider yang terdapat di Context, secara otomatis semua Componentdibawahnya akan mendapatkan nilai sesuai yang kita ubah
       di Context Provider
     https://react.dev/reference/react/createContext#provider
+
+_________________
+Context dan State
+  - untuk mengubah Context, kita harus menggunakan Provider
+  - hal ini karena Context itu hanya bisa diakses oleh Component di bawahnya, tidak bisa Component diatasnya atau sejajar
+  - selain itu, Component dibawahnya hanya bisa membaca data dari Context, tidak bisa mengubah data
+  - Oleh karena itu, jika igin membuat data di Context bisa diubah dengan mudah, bisa menggunakan bantuan State
+
+  > Sebelum menggunakan Context
+    - Context mungkin lebih  mudah digunakan dibanding mengirim semua data State via Props
+    - tapi jangan terlalu sering menggunakan Context sampai ke hal yang sederhana
+    - gunakan Context jika memang perlu, jika masih sederhana, bisa gunakan State dan Props dulu, jika sudah terlalu komplek dan terlalu  dalam megirim Props nya,
+      baru diubah ke Context
