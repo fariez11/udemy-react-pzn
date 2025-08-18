@@ -1,8 +1,8 @@
 import '@assets/NotesPage.css';
 import TabbedCard from '../components/tabCard';
-import { ProfileContext } from './additional/profile (30-31)/profileContext';
-import Profile from './additional/profile (30-31)/profile';
-import ProfileAddress from './additional/profile (30-31)/profileAddress';
+import { ProfileContext } from './additional/profile/profileContext';
+import Profile from './additional/profile/profile';
+import ProfileAddress from './additional/profile/profileAddress';
 
 export default function Materi30() {
     return (

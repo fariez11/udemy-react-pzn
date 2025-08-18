@@ -549,3 +549,14 @@ Context dan State
     - tapi jangan terlalu sering menggunakan Context sampai ke hal yang sederhana
     - gunakan Context jika memang perlu, jika masih sederhana, bisa gunakan State dan Props dulu, jika sudah terlalu komplek dan terlalu  dalam megirim Props nya,
       baru diubah ke Context
+
+_________________
+Context & Reducer
+  - Sebelumnya kita sudah bahas tentang Reducer, sama seperti State, Reducer juga bisa kita integrasikan dengan Context
+  - pada kasus ketika membuat Component yang sudah komplek, dan menggunakan Reducer, kita bisa mengirim State danm Reducer menggunakan Context ke Child Component
+  - Sehingga lebih mudah dibanding menggunakan Props
+  - Misal kita coba modifikasi halaman Notes yang sebelumnya sudah kita buat
+
+  > Pindahkan Event Handler
+    - karena method Dispatch ada di Context, jadi kita tidak perlu mengirim Event Handler lagi dari Parent Component ke Child Component melalui Props
+    - kita bisa langsung pindahkan ke Child Component, karena Child Component bisa mengakses Dispatch Function

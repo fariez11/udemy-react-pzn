@@ -27,6 +27,7 @@ import Materi28 from "./pages/materi28";
 import Materi29 from "./pages/materi29";
 import Materi30 from "./pages/materi30";
 import Materi31 from "./pages/materi31";
+import Materi32 from "./pages/materi32";
 
 
 
@@ -58,6 +59,7 @@ const routes = [
     { path: "/materi-29", element: <Materi29 />, label:'reducer'},
     { path: "/materi-30", element: <Materi30 />, label:'context'},
     { path: "/materi-31", element: <Materi31 />, label:'context dan state'},
+    { path: "/materi-32", element: <Materi32 />, label:'context dan reducer'},
 ];
 
 export default routes;

@@ -1,14 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react";
+import { NoteDispatchContext } from "./noteContext";
 
-export default function Note({ note, onChange, onDelete }) {
-
+export default function Note({ note }) {
     const [isEditing, setIsEditing] = useState(false);
-    let component;
+    const dispatch = useContext(NoteDispatchContext);
 
-    function handleChangeText(e) {
-        const newNote = { ...note, text: e.target.value }
-        onChange(newNote)
-    }
+    let component;
 
     if (isEditing) {
         component = (
@@ -26,20 +23,25 @@ export default function Note({ note, onChange, onDelete }) {
         )
     }
 
+    function handleChangeText(e) {
+        dispatch({ ...note, type: "UPDATE_NOTE", text: e.target.value });
+    }
+
     function handleChangeDone(e) {
-        const newNote = { ...note, done: e.target.checked }
-        onChange(newNote)
+        dispatch({ ...note, type: "UPDATE_NOTE", done: e.target.checked });
+    }
+
+    function handleDelete() {
+        dispatch({ type: "DELETE_NOTE", id: note.id });
     }
 
     return (
-        
         <div className="d-flex align-items-center justify-content-between mb-2">
             <div className="d-flex align-items-center gap-2">
                 <input type="checkbox" className='form-check-input' id="checkDefault" checked={note.done} onChange={handleChangeDone} />
                 {component}
-                <button className='btn btn-outline-primary btn-sm' onClick={() => onDelete(note)} disabled={note.done ? true : false }> delete</button>
+                <button className='btn btn-outline-primary btn-sm' onClick={handleDelete} disabled={note.done ? true : false}> delete</button>
             </div>
         </div>
     )
-
 }
