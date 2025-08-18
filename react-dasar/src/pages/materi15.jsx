@@ -48,7 +48,7 @@ function Note() {
 
 
 function Result() {
-    function AlertButton() {
+    function handleClick() {
         alert('Button Clicked')
     }
 
@@ -61,7 +61,7 @@ function Result() {
     return (
         <>
             <div className="col d-grid gap-2">
-                <button className='btn btn-primary' onClick={AlertButton}> named function</button>
+                <button className='btn btn-primary' onClick={handleClick}> named function</button>
                 <MyButton text="smash button" onSmash={() => alert('you smash me')}></MyButton>
             </div>
         </>

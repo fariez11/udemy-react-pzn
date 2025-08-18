@@ -560,3 +560,25 @@ Context & Reducer
   > Pindahkan Event Handler
     - karena method Dispatch ada di Context, jadi kita tidak perlu mengirim Event Handler lagi dari Parent Component ke Child Component melalui Props
     - kita bisa langsung pindahkan ke Child Component, karena Child Component bisa mengakses Dispatch Function
+
+___
+Ref
+  > Ref Hooks
+    - fitur Hooks yang lain selain State dan Context, adalah Ref Hooks
+    - ketika ingin Component mnegingat informasi, tapi tidak mau memicu render ulangm maka kita bisa menggunakan Ref
+    - menggunakan Ref Hooks bisa menggunakan method useRef()
+    - https://react.dev/reference/react/useRef
+    - Function useRef() mengembalikan Object yang memiliki attribute current, dimana attribute current berisi value yang dipegang oleh Ref
+
+    +------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+    |                                         Ref                                        |                                    State                                    |  
+    +------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+    | useRef(initial) mengembalikan object {current: initial}                            | useState(initial) mengembalikan [value,setValue]                            |
+    +------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+    | tidak memicu render ulang ketika diubah                                            | memicu render ulang ketika diubah                                           |
+    +------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+    | Mutable, bisa dimodifikasi dan diubah current valuenya                             | Immutable, kita hanya bisa mengubah menggunakan function setValue           |
+    +------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+    | Tidak direkomendasikan membaca atau menulis current value ketika proses rendering, | bisa dibaca kapanpun, tapi tiap render akan memiliki Snapshot masing-masing |
+    | lebih cocok dibaca atau diubah pada Event Handler                                  |                                                                             |
+    +------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
