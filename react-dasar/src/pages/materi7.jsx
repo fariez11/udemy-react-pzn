@@ -48,10 +48,9 @@ function Note() {
 
 
             <h6>JSX Converter</h6>
-            <p>Jika misalnya kita sudah punya kode HTML dan ingin mengkonversinya ke JSX, disarankan menggunakan converter agar tidak perlu dilakukan secara manual:</p>
-            <p></p><a href="https://transform.tools/html-to-jsx" target="_blank" rel="noopener noreferrer">
-                https://transform.tools/html-to-jsx
-            </a>
+            <p>Jika misalnya kita sudah punya kode HTML dan ingin mengkonversinya ke JSX, disarankan menggunakan converter agar tidak perlu dilakukan secara manual :
+                <a href="https://transform.tools/html-to-jsx" target="_blank" rel="noopener noreferrer">https://transform.tools/html-to-jsx</a>
+            </p>
         </>
 
     )

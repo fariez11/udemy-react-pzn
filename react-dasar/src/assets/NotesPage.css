@@ -1,3 +1,33 @@
+
+
+.tab-card.active {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: white !important;
+}
+
+.tab-card:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: white !important;
+}
+
+.card-header {
+  background-color: #005C5A!important;
+  /* background-color: #002B2A !important; */
+}
+
+.card-body{
+  background-color: #E6F6F5 !important;
+}
+
+/* .catatan ul li::before {
+  content: "•";
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+  width: 15px;
+} */
+
+
 h3 {
   font-weight: bold; /* fw-bold */
   border-bottom: 1px solid #dee2e6; /* border-bottom */
@@ -27,25 +57,8 @@ p {
   margin: 1px 0px 2px 0px !important; /* mt-2 */
 }
 
-.nav-link.active {
-  background-color: #4da7a5 !important;
-  color: white !important;
-}
-
-.bg-card-header {
-  background-color: #d3e9e9 !important;
-}
-
-/* .catatan ul li::before {
-  content: "•";
-  color: black;
-  font-weight: bold;
-  display: inline-block;
-  width: 15px;
-} */
-
 .catatan li {
-  list-style-type: disc;
+  /* list-style-type: disc; */
   margin-left: 1rem;
 }
 

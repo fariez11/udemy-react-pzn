@@ -30,7 +30,7 @@ function Timer() {
 
         timer.current = setInterval(() => {
             setNow(Date.now());
-        }, 400);
+        }, 10);
     }
 
     function handleStop() {
@@ -42,8 +42,8 @@ function Timer() {
         <>
             <h4>timer : {now - start} ms</h4>
             <div className="d-flex gap-2">
-                <button className='btn btn-primary' onClick={handleStart}>start</button>
-                <button className='btn btn-warning' onClick={handleStop}>stop</button>
+                <button className='btn btn-outline-info' onClick={handleStart}> <i className='bi bi-play-circle-fill' ></i></button>
+                <button className='btn btn-outline-info' onClick={handleStop}> <i className='bi bi-pause-circle-fill'></i></button>
             </div>
         </>
     )

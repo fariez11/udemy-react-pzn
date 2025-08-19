@@ -47,9 +47,9 @@ function Result() {
             <h5 className='fw-lighter'>
                 halaman ini adalah hasil dari component yang sudah kamu buat
             </h5>
-            <h5>You can do it!</h5>
-            <h5>Success is MENTALITY!</h5>
             <h5 className='fw-lighter'>Selamat & Semangat Belajar :)</h5>
+            <h5>You can do it!</h5>
+            <h5 className='fw-lighter'>ingat!</h5><h5>Success is MENTALITY!</h5>
         </div>
     )
 }

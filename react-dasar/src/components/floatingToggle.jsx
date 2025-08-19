@@ -21,7 +21,7 @@ const styles = `
 const bubble = {
     maxWidth: "650px",
     backgroundColor: "rgba(1, 129, 127, 0.6)",
-    borderRadius: "17px 3px 17px 17px",
+    borderRadius: "16px 3px 16px 16px",
 };
 
 const messages = [
