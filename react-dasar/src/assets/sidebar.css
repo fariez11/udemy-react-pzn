@@ -2,7 +2,7 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.nav-item:hover {
+.nav-link:hover {
   border-radius: 5px;
   background-color: #002b2a !important;
   color: white !important;
