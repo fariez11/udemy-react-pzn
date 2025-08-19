@@ -90,14 +90,14 @@ function Result() {
 
     return (
         <div className="tab-pane fade show" id="result" role="tabpanel" aria-labelledby="result-tab">
-            <div className="row">
+            <div className="row m-0">
                 <div className="col-4">
-                    <p className='border-start border-4 border-warning bg-warning bg-opacity-10 p-2 rounded-1 mb-1'> tanpa menggunakan useState</p>
+                    <p className='divider c-warn mb-2'> tanpa menggunakan useState</p>
                     <button className='btn btn-primary d-inline me-3' onClick={witoutUseState}> increment</button>
                     counter : {counter}
                 </div>
                 <div className="col-4">
-                    <p className='border-start border-4 border-success bg-success bg-opacity-10 p-2 rounded-1 mb-1'> menggunakan useState</p>
+                    <p className='divider c-green mb-2'> menggunakan useState</p>
                     <button className='btn btn-primary d-inline me-3' onClick={withUseState}> increment</button>
                     counter : {jumlah}
                 </div>

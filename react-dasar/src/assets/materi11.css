@@ -16,11 +16,11 @@
 }
 
 .example:hover {
-  transform: scale(1.02);
-  -webkit-transform: scale(1.02);
-  -moz-transform: scale(1.02);
-  -ms-transform: scale(1.02);
-  -o-transform: scale(1.02);
+  transform: scale(1.01);
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  -o-transform: scale(1.01);
 }
 
 /* Awalnya, quote (en) tampak penuh */
@@ -31,11 +31,11 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-  -webkit-transition: opacity 0.7s ease, transform 0.7s ease;
-  -moz-transition: opacity 0.7s ease, transform 0.7s ease;
-  -ms-transition: opacity 0.7s ease, transform 0.7s ease;
-  -o-transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 1s ease, transform 1s ease;
+  -webkit-transition: opacity 1s ease, transform 1s ease;
+  -moz-transition: opacity 1s ease, transform 1s ease;
+  -ms-transition: opacity 1s ease, transform 1s ease;
+  -o-transition: opacity 1s ease, transform 1s ease;
 }
 
 .card-title {
@@ -52,9 +52,17 @@
 .example:hover .card-title {
   opacity: 0;
   transform: translateY(-60%);
+  -webkit-transform: translateY(-60%);
+  -moz-transform: translateY(-60%);
+  -ms-transform: translateY(-60%);
+  -o-transform: translateY(-60%);
 }
 
 .example:hover .card-translation {
   opacity: 1;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
 }

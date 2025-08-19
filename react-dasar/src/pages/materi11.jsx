@@ -29,7 +29,7 @@ function Note() {
 
 function Result() {
 
-    const slicedMotivations = motivations.slice(10);
+    const slicedMotivations = motivations.slice(7);
     const MotivationCard = ({ quote, translation }) => (
         <div className="card example text-center">
             <div className="card-title">{quote}</div>

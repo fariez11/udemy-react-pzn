@@ -53,8 +53,8 @@ function Result() {
     function SearchForm() {
         return (
             <form className='d-flex' action="">
-                <input type="text" className='form-control me-2' />
-                <button className='btn btn-primary' onClick={(e) => {
+                <input type="text" className='form-control me-2 w-75'/>
+                <button className='btn btn-primary w-25' onClick={(e) => {
                     e.preventDefault();
                     alert('wait searcing ...')
                 }}> search</button>
@@ -64,13 +64,13 @@ function Result() {
 
     return (
         <>
-            <div className='gap-2'>
-                <p className='border-start border-4 border-info bg-info bg-opacity-10 p-2 rounded-1 mb-1'>menggunakan stopPropagation</p>
-                <Toolbar onClick={(e) => { e.stopPropagation(); alert('you click toolbar') }} />
 
-                <p className='border-start border-4 border-info bg-info bg-opacity-10 p-2 rounded-1 mt-4 mb-1'>menggunakan preventDefault</p>
-                <SearchForm />
-            </div>
+            <p className='divider c-green mb-2'>menggunakan stopPropagation</p>
+            <Toolbar onClick={(e) => { e.stopPropagation(); alert('you click toolbar') }} />
+
+            <p className='divider c-green mt-3 mb-2'>menggunakan preventDefault</p>
+            <SearchForm />
+
         </>
     );
 }

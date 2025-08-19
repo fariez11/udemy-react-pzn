@@ -51,8 +51,8 @@ function Result() {
     }
     return (
         <>
-            <div className="row">
-                <div className="col-4">
+            <div className="row mx-2">
+                <div className="col-7 d-flex flex-column align-items-center justify-content-center">
                     <MyButton text={'arrow function'} message='you click me'> arrow function</MyButton>
                 </div>
                 <div className="col">

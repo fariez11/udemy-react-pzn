@@ -13,7 +13,6 @@ function Note() {
         <>
             <h3>Pure Component</h3>
             <ul>
-
                 <li>Dalam pemrograman, kita mengenal yang namanya <strong>Pure Function</strong>.</li>
                 <li>Sumber: <a href="https://en.wikipedia.org/wiki/Pure_function" target="_blank">https://en.wikipedia.org/wiki/Pure_function</a></li>
                 <li>Sebuah function disebut sebagai <strong>Pure Function</strong> jika memenuhi dua kriteria berikut:</li>
@@ -64,7 +63,7 @@ function Result() {
 
     return (
         <>
-            <div className="row">
+            <div className="row mx-1">
                 <div className="col">
                     <p className='border-start border-4 border-warning bg-warning bg-opacity-10 p-2 rounded-1 mb-1'>tidak direkomendasikan (ada side effectnya) *menggunakan StrictMode</p>
                     <table border='1' className='table-bordered text-center'>

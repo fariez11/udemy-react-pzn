@@ -12,7 +12,7 @@ export default function App() {
       </div>
 
       <div className="flex-grow-1 d-flex flex-column" style={{ overflow: "hidden" }}>
-        <main className="flex-grow-1 p-4 overflow-y-auto">
+        <main className="flex-grow-1 p-4">
           <div style={{ maxWidth: "960px", margin: "0 auto", width: "100%" }}>
             <Routes>
               {

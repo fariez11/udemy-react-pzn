@@ -142,7 +142,7 @@ function Result() {
         <div>
             <h3>Note App</h3>
             <NoteForm onAddNote={handleAddNoteReducer} />
-            <div className="row">
+            <div className="row m-0">
                 <div className="col">
                     <p className='divider c-green my-3'>sebelum menggunakan reducer</p>
                     <NoteList notes={notes} onChange={handleChangeNote} onDelete={handleDeleteNote} />

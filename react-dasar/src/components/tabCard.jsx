@@ -1,6 +1,6 @@
 export default function TabbedCard({ noteContent, resultContent }) {
     return (
-        <div className="card w-100 p-0 mt-3 border-0">
+        <div className="card w-100 p-0 border-0">
             <div className="card-header py-2 px-2">
                 <ul className="nav nav-pills d-flex text-light">
                     <li className="nav-item flex-fill text-center me-1" role="presentation">

@@ -31,13 +31,13 @@ export default function LoggerDisplay() {
 
     return (
         <div className="card-body m-0 p-0">
-            <pre className="my-0 rounded-bottom-0">
-                result log
-                <button onClick={() => setLogs([])} className="btn btn-outline-secondary btn-sm float-end">
+            <pre className="my-0 rounded-bottom-0 bg-secondary">
+                <span className='text-light mt-5'>result log</span>
+                <button onClick={() => setLogs([])} className="btn btn-secondary btn-sm float-end">
                     <i className="bi bi-arrow-counterclockwise"></i>
                 </button>
             </pre>
-            <pre className="mb-0 rounded-top-0 px-3" style={{ maxHeight: '200px', overflowY: 'auto' }}>
+            <pre className="mb-0 rounded-top-0 px-3 bg-dark text-light" style={{ maxHeight: '200px', overflowY: 'auto' }}>
                 {logs.map((log, i) => (
                     <div key={i}>{log}</div>
                 ))}

@@ -67,7 +67,7 @@ function Result() {
     }
 
     return (
-        <div className='row'>
+        <div className='row m-0'>
             <div className="col m-auto">
                 <p className='divider c-warn'> contoh yang belum benar</p>
                 <div className="d-flex justify-content-around mt-3 mb-4">

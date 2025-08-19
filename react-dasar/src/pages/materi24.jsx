@@ -81,7 +81,7 @@ function Result() {
     } 
 
     return (
-        <div className='row p-2'>
+        <div className='row p-2 m-0'>
             <div className="col">
                 <h4>Contact Form</h4>
                 <form>

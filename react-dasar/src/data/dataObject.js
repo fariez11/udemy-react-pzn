@@ -112,17 +112,17 @@ export const motivations = [
   {
     id: 11,
     en: "Believe in yourself",
-    id: "Percayalah pada dirimu sendiri",
+    idn: "Percayalah pada dirimu sendiri",
   },
   {
     id: 12,
     en: "Keep moving forward",
-    id: "Teruslah maju",
+    idn: "Teruslah maju",
   },
   {
     id: 13,
     en: "Start today",
-    id: "Mulailah hari ini",
+    idn: "Mulailah hari ini",
   },
 ];
 

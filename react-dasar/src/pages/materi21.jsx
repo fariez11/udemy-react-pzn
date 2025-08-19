@@ -80,15 +80,15 @@ function Result() {
         console.log(jumlah + 1);
     }
     return (
-        <div className="row">
-            <div className="col-9">
+        <div className="row m-0">
+            <div className="col-9 row">
                 <div className="col">
-                    <p className='divider c-warn'> tanpa menggunakan useState</p>
+                    <p className='divider c-warn mb-2'> tanpa menggunakan useState</p>
                     <button className='btn btn-primary d-inline me-3' onClick={witoutUseState}> increment</button>
                     counter : {counter}
                 </div>
-                <div className="col mt-3">
-                    <p className='divider c-green'> menggunakan useState</p>
+                <div className="col">
+                    <p className='divider c-green mb-2'> menggunakan useState</p>
                     <button className='btn btn-primary d-inline me-3' onClick={withUseState}> increment</button>
                     counter : {jumlah}
                 </div>

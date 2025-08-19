@@ -39,8 +39,8 @@ function Result() {
     }
 
     return (
-        <div className="row">
-            <div className="col m-auto">
+        <div className="row m-0">
+            <div className="col-8 m-auto">
                 <div className="d-flex justify-content-around mt-3 mb-4">
                     <button className='btn btn-outline-primary' onClick={handleClick}>increment</button>
                     <h4 className='my-auto'>hasilnya : {counter}</h4>
