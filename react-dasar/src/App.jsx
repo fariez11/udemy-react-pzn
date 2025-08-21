@@ -5,8 +5,15 @@ import routes from "./routes";
 import FloatingToggle from "./components/floatingToggle";
 
 export default function App() {
+
+  const base = {
+    height: "100vh",
+    overflow: "hidden",
+    background: 'linear-gradient(to right, #002B2A 20%, #001D1C)'
+  }
+
   return (
-    <div className="d-flex" style={{ height: "100vh", overflow: "hidden", backgroundColor: "#002B2A" }}>
+    <div className="d-flex" style={ base }>
       <div style={{ width: "240px", flexShrink: 0, overflow: "auto" }}>
         <Sidebar />
       </div>
