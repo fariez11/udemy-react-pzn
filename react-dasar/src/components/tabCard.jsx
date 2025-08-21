@@ -2,7 +2,7 @@ export default function TabbedCard({ noteContent, resultContent }) {
     return (
         <div className="card w-100 p-0 border-0">
             <div className="card-header py-2 px-2">
-                <ul className="nav nav-pills d-flex text-light">
+                <ul className="nav nav-pills d-flex">
                     <li className="nav-item flex-fill text-center me-1" role="presentation">
                         <a className="nav-link active tab-card text-light" id="notes-tab" data-bs-toggle="tab" data-bs-target="#notes"
                             type="button" role="tab" aria-controls="home" aria-selected="true">

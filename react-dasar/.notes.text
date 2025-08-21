@@ -582,3 +582,23 @@ Ref
     | Tidak direkomendasikan membaca atau menulis current value ketika proses rendering, | bisa dibaca kapanpun, tapi tiap render akan memiliki Snapshot masing-masing |
     | lebih cocok dibaca atau diubah pada Event Handler                                  |                                                                             |
     +------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+_________________________
+Manipulasi DOM dengan Ref
+  - React secara otomatis akan mengupdate DOM ketika melakukan render ulang jadi kita tidak perlu memanipulasi DOM
+    secara manual lagi
+  - tapi, kadang kita mungkin perlu mengakses DOM secara manual, contoh memindahkan fokus ke salah satu element, atau scroll 
+    ke element tertentu, dan lain lain
+  - Sayangya, tidak ada cara untuk melakukan hal ini menggunakan React, jadi kita perlu tangani hal ini secara manual
+  - Salah satu cara kita menggunakan Ref menuju DOM element
+  - caranya pada elementnya kita tambahkan attribute Ref
+
+  > Ref untuk component 
+    - Ref hanya bisa digunakan di DOM element, kita tidak bisa menggunakan ref di Component
+    - jika kita ingin menambahkan Ref ke Component, maka attribute current akan bernilai null
+
+  > Mengakses Component DOM element
+    - kerena Component tidak bisa dijadikan sebagai Ref, oleh karena itu, jika kita ingin menggunakan Ref untuk Compoenent, kita bisa
+      menggunakan props
+    - bisa menggunakan Props ref yang berisi Ref
+    - Props ref bisa kita gunakan pada DOM element di dalam Component tersebut

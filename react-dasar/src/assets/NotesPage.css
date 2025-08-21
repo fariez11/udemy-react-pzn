@@ -1,22 +1,36 @@
 
 
 .tab-card.active {
-  background-color: rgba(251, 251, 251, 0.5) !important;
+  /*background-color: rgba(251, 251, 251, 0.5) !important;
+  */background-color: rgba(251, 251, 251, 0.0) !important;
   color: white !important;
+  border-bottom: #E6F6F5 2px solid !important;
+  border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
 }
 
 .tab-card:hover {
-  background-color: rgba(251, 251, 251, 0.5) !important;
+  background-color: rgba(251, 251, 251, 0.1) !important;
   color: white !important;
+  border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
 }
 
 .card-header {
-  background-color: #005C5A!important;
+  /* background-color: #005C5A!important; */
+  background-color: #063a40 !important;
   /* background-color: #002B2A !important; */
 }
 
 .card-body{
-  background-color: #E6F6F5 !important;
+  /* background-color: #E6F6F5 !important; */
+  background-color: #d0d6da !important;
 }
 
 /* .catatan ul li::before {
