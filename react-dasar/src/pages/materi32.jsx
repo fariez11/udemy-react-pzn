@@ -1,4 +1,4 @@
-import '@assets/NotesPage.css';
+import '@assets/css/NotesPage.css';
 import TabbedCard from '../components/tabCard';
 import { useImmerReducer } from 'use-immer';
 import { NoteDispatchContext, NotesContext } from './additional/note/context & reducer/noteContext';

@@ -1,36 +1,39 @@
 
+.tab-card{
+  border-radius: 5px 5px 0px 0px !important;
+  -webkit-border-radius: 5px 5px 0px 0px !important;
+  -moz-border-radius: 5px 5px 0px 0px !important;
+  -ms-border-radius: 5px 5px 0px 0px !important;
+  -o-border-radius: 5px 5px 0px 0px !important;
+}
 
 .tab-card.active {
-  /*background-color: rgba(251, 251, 251, 0.5) !important;
-  */background-color: rgba(251, 251, 251, 0.0) !important;
+  background-color: #005C5A !important;
   color: white !important;
-  border-bottom: #E6F6F5 2px solid !important;
-  border-radius: 0px !important;
-  -webkit-border-radius: 0px !important;
-  -moz-border-radius: 0px !important;
-  -ms-border-radius: 0px !important;
-  -o-border-radius: 0px !important;
+  border-bottom: white 2px solid !important;
+  border-radius: 0% !important;
+  -webkit-border-radius: 0% !important;
+  -moz-border-radius: 0% !important;
+  -ms-border-radius: 0% !important;
+  -o-border-radius: 0% !important;
 }
 
 .tab-card:hover {
-  background-color: rgba(251, 251, 251, 0.1) !important;
+  background-color: rgba(251, 251, 251, 0.2) !important;
   color: white !important;
-  border-radius: 0px !important;
-  -webkit-border-radius: 0px !important;
-  -moz-border-radius: 0px !important;
-  -ms-border-radius: 0px !important;
-  -o-border-radius: 0px !important;
+  border-radius: 5px 5px 0px 0px !important;
+  -webkit-border-radius: 5px 5px 0px 0px !important;
+  -moz-border-radius: 5px 5px 0px 0px !important;
+  -ms-border-radius: 5px 5px 0px 0px !important;
+  -o-border-radius: 5px 5px 0px 0px !important;
 }
 
 .card-header {
-  /* background-color: #005C5A!important; */
-  background-color: #063a40 !important;
-  /* background-color: #002B2A !important; */
+  background-color: #005C5A!important;
 }
 
 .card-body{
-  /* background-color: #E6F6F5 !important; */
-  background-color: #d0d6da !important;
+  background-color: #E6F6F5 !important;
 }
 
 /* .catatan ul li::before {

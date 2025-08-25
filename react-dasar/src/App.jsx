@@ -9,7 +9,7 @@ export default function App() {
   const base = {
     height: "100vh",
     overflow: "hidden",
-    background: 'linear-gradient(to right, #002B2A 20%, #001D1C)'
+    background: 'linear-gradient(to left, #002B2A 10%, #001D1C)'
   }
 
   return (

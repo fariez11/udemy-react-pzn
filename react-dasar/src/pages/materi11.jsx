@@ -1,7 +1,7 @@
-import '@assets/NotesPage.css';
-import '@assets/materi11.css'
+import '@assets/css/NotesPage.css';
+import '@assets/css/materi11.css'
 import TabbedCard from '../components/tabCard';
-import { motivations } from '../data/dataObject';
+import { motivations } from '@assets/data/dataObject';
 
 export default function Materi11() {
     return (

@@ -1,6 +1,6 @@
-import '@assets/NotesPage.css';
+import '@assets/css/NotesPage.css';
 import TabbedCard from '../components/tabCard';
-import { todos } from '../data/dataObject';
+import { todos } from '@assets/data/dataObject';
 import Todo from './additional/Todo';
 
 export default function Materi13() {

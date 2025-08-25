@@ -1,6 +1,6 @@
-import '@assets/NotesPage.css';
+import '@assets/css/NotesPage.css';
 import TabbedCard from '../components/tabCard';
-import { messages } from '../data/dataObject';
+import { messages } from '@assets/data/dataObject';
 
 export default function Materi7() {
     return (

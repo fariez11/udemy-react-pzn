@@ -1,4 +1,4 @@
-import '@assets/NotesPage.css';
+import '@assets/css/NotesPage.css';
 import TabbedCard from '../components/tabCard';
 import { ProfileContext } from './additional/profile/profileContext';
 import Profile from './additional/profile/profile';

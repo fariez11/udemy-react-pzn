@@ -585,10 +585,8 @@ Ref
 
 _________________________
 Manipulasi DOM dengan Ref
-  - React secara otomatis akan mengupdate DOM ketika melakukan render ulang jadi kita tidak perlu memanipulasi DOM
-    secara manual lagi
-  - tapi, kadang kita mungkin perlu mengakses DOM secara manual, contoh memindahkan fokus ke salah satu element, atau scroll 
-    ke element tertentu, dan lain lain
+  - React secara otomatis akan mengupdate DOM ketika melakukan render ulang jadi kita tidak perlu memanipulasi DOM secara manual lagi
+  - tapi, kadang kita mungkin perlu mengakses DOM secara manual, contoh memindahkan fokus ke salah satu element, atau scroll ke element tertentu, dan lain lain
   - Sayangya, tidak ada cara untuk melakukan hal ini menggunakan React, jadi kita perlu tangani hal ini secara manual
   - Salah satu cara kita menggunakan Ref menuju DOM element
   - caranya pada elementnya kita tambahkan attribute Ref
@@ -598,7 +596,21 @@ Manipulasi DOM dengan Ref
     - jika kita ingin menambahkan Ref ke Component, maka attribute current akan bernilai null
 
   > Mengakses Component DOM element
-    - kerena Component tidak bisa dijadikan sebagai Ref, oleh karena itu, jika kita ingin menggunakan Ref untuk Compoenent, kita bisa
+    - kerena Component tidak bisa dijadikan sebagai Ref, oleh karena itu, jika kita ingin menggunakan Ref untuk nent, kita bisa
       menggunakan props
     - bisa menggunakan Props ref yang berisi Ref
     - Props ref bisa kita gunakan pada DOM element di dalam Component tersebut
+
+______
+Effect
+  > Effect Hooks
+    - beberapa component mungkin untuk berkomunikasi dengan external system, misal berkomunikasi dengan Non-React Component, berlomunikasi dengan Server, dll
+    - Effect Hooks memungkinkan kita membuat kode yang dijalankan setelah proses render sehingga kita bisa berkomunikasi dengan system diluar React
+    - Effect terjadi setelah proses render selesai
+    - bisa menggunakan useEffect() untuk membuat Effect
+    - https://react.dev/reference/react/useEffect
+  
+  > Kenapa tidak cukup dengan Event Handler 
+    - kita tahu bahwa Component itu harus Pure, dan tidak memiliki efek samping
+    - untuk kode yang memiliki efek samping, biasanya kita gunakan Event Handler
+    - namun, kadang ada kebutuhan kita memang perlu membuat Component yang memiliki (efek samping) sesuai dengan response Server (disinilah Effect Hooks dibutuhkan)

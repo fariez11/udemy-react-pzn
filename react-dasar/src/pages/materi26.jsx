@@ -1,4 +1,4 @@
-import '@assets/NotesPage.css';
+import '@assets/css/NotesPage.css';
 import { useImmer } from 'use-immer';
 import TabbedCard from '../components/tabCard';
 import { useState } from "react";

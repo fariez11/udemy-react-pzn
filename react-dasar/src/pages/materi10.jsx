@@ -1,6 +1,6 @@
-import '@assets/NotesPage.css';
+import '@assets/css/NotesPage.css';
 import TabbedCard from '../components/tabCard';
-import { motivations } from '../data/dataObject';
+import { motivations } from '@assets/data/dataObject';
 export default function Materi10() {
     return (
         <TabbedCard noteContent={<Note />} resultContent={<Result />} />
