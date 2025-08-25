@@ -495,7 +495,7 @@ Reducer
 
   > Reducer
     - pada kasus membuat Component yang memiliki banyak proses update State, kadang mneyulitkan untuk maintain-nya, karena banyak 
-      Event Handler yang aharus diubuat juga untuk mengubah data Statenya
+      Event Handler yang harus diubuat juga untuk mengubah data Statenya
     - pada kasus seperti ini, kita bisa mengkonsolidasi semua logic untuk update State di sebuah Function di luar Component, atau kita sebut dengan reducer
   
   > Menggunakan Reducer
@@ -642,3 +642,9 @@ Effect Dependencies
     - pada kasus seperti itu, kita bisa gunakan empty array sebagai dependencies, maka Effect hanya akan dipanggil sekali saja setelah render pertama kali, selanjutnya
       tidak akan dipanggil lagi.
     
+____________________
+Async Code di Effect
+  - Kadang, saat berhubungan dengan System External, misal memanggil API, biasanya kita akan membuat kode Async Await
+  - Sayangnya, Effect tidak akan mendukung Async Function, oleh karena itu jika kita bisa menggunakan Promie secara langsung, kita bisa langsung saja gunakan Promise,
+    tanpa menggunakan Async Await
+  - namun, jika kita memang mau menggunakan Async Await, maka kita harus buat function yang nanti dipanggil di useEffect()
