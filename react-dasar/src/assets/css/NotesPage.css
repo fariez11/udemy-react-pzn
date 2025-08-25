@@ -8,20 +8,23 @@
 }
 
 .tab-card.active {
-  background-color: #005C5A !important;
-  color: white !important;
-  border-bottom: white 2px solid !important;
-  border-radius: 0% !important;
-  -webkit-border-radius: 0% !important;
-  -moz-border-radius: 0% !important;
-  -ms-border-radius: 0% !important;
-  -o-border-radius: 0% !important;
+  /*background-color: #005C5A !important;*/
+  background-color: #E6F6F5 !important;
+  color: #005C5A !important;
+  border-bottom: #E6F6F5 3px solid !important;
+  border-radius: 5px 5px 0px 0px !important;
+}
+
+.tab-card.active:hover{
+  background-color: #E6F6F5 !important;
+  color: #005C5A !important;
 }
 
 .tab-card:hover {
-  background-color: rgba(251, 251, 251, 0.2) !important;
+  background-color: rgba(251, 251, 251, 0.2)  !important;
   color: white !important;
   border-radius: 5px 5px 0px 0px !important;
+  border-bottom: rgba(251, 251, 251, 0.2) 3px solid !important;
   -webkit-border-radius: 5px 5px 0px 0px !important;
   -moz-border-radius: 5px 5px 0px 0px !important;
   -ms-border-radius: 5px 5px 0px 0px !important;
@@ -29,11 +32,17 @@
 }
 
 .card-header {
-  background-color: #005C5A!important;
+  background-color: #005C5A !important;
+  border:none !important;
 }
 
 .card-body{
   background-color: #E6F6F5 !important;
+}
+
+.scroll-body{
+  scrollbar-color: #3B8280 rgba(0, 0, 0, 0);
+  padding-left: 10px;
 }
 
 /* .catatan ul li::before {

@@ -1,15 +1,15 @@
 export default function TabbedCard({ noteContent, resultContent }) {
     return (
         <div className="card w-100 p-0 border-0">
-            <div className="card-header py-2 px-2">
-                <ul className="nav nav-pills d-flex">
-                    <li className="nav-item flex-fill text-center me-1" role="presentation">
-                        <a className="nav-link active tab-card text-light" id="notes-tab" data-bs-toggle="tab" data-bs-target="#notes"
+            <div className="card-header pt-2 pb-0 px-0">
+                <ul className="nav nav-pills d-flex mb-0 pb-0">
+                    <li className="nav-item flex-fill text-center" role="presentation">
+                        <a className="nav-link tab-card active text-light" id="notes-tab" data-bs-toggle="tab" data-bs-target="#notes"
                             type="button" role="tab" aria-controls="home" aria-selected="true">
                             catatan
                         </a>
                     </li>
-                    <li className="nav-item flex-fill text-center mx-1" role="presentation">
+                    <li className="nav-item flex-fill text-center" role="presentation">
                         <a className="nav-link tab-card text-light" id="result-tab" data-bs-toggle="tab" data-bs-target="#result" type="button"
                             role="tab" aria-controls="profile" aria-selected="true" >
                             hasil
@@ -19,7 +19,7 @@ export default function TabbedCard({ noteContent, resultContent }) {
             </div>
 
             <div className="card-body px-3 pb-3 rounded-bottom-3">
-                <div className="overflow-y-auto" style={{ maxHeight: "calc(95vh - 100px)" }}>
+                <div className="overflow-y-auto scroll-body" style={{ maxHeight: "calc(95vh - 100px)" }}>
 
                     <div className="tab-content" id="myTabsContent">
                         <div className="tab-content" id="myTabsContent">
