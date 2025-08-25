@@ -648,3 +648,22 @@ Async Code di Effect
   - Sayangnya, Effect tidak akan mendukung Async Function, oleh karena itu jika kita bisa menggunakan Promie secara langsung, kita bisa langsung saja gunakan Promise,
     tanpa menggunakan Async Await
   - namun, jika kita memang mau menggunakan Async Await, maka kita harus buat function yang nanti dipanggil di useEffect()
+
+_____________________
+Jangan Gunakan Effect
+  - Effect Hooks adalah cara di luar dari yang biasa di lakukan di React
+  - Effect memungkinkan kita keluar dari kebiasan di React, dan memungkinkan Component kita berinteraksi dengan External System seperti Non React Component, Network, dll
+  - jika tidak ada interaksi dengan External System, maka sebaiknya jangan gunakan Effect
+  - meminimalisir penggunaan Effect akan membuat kode kita mudah untuk dibaca, cepat dieksekusi dan minim error
+
+  > Jangan gunakan Effect untuk inisialisasi Aplikasi
+    - kadang beberapa proses dilakukan di awal sebelum halaman di tampilkan
+    - pada kasus ini, gunakan saja kode Javascript langsung di luar React
+    - jangan gunakan Effect untuk melakukan inisialisasi aplikasi
+    - hal ini karena Effect akan dieksekusi setelah Render (setelah ditampilkan), dan akan dieksekusi ulang jika terjadi render ulang (bisa berkali-kali)
+
+  > Jangan gunakan Effect untuk mengubah data di Server
+    - jika terdapat logic di Effect melakukan perubahan data di Server, perlu hati-hati, karena bisa saja Effect dieksekusi berkali-kali karena proses render ulang
+    - oleh karena itu, tidak direkomendasikan menggunakan Effect untuk mengubah data di Server 
+    - gunakan Event Handler, jika ingin mengubah data di Server, sehingga jelas kapan perubahan terjadi
+    - menggunakan Effect bisa menyebabkan perubahan data di Server terjadi berkali-kali karena render ulang Component

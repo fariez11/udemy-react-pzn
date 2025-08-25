@@ -33,6 +33,7 @@ import Materi34 from "./pages/materi34";
 import Materi35 from "./pages/materi35";
 import Materi36 from "./pages/materi36";
 import Materi37 from "./pages/materi37";
+import Materi38 from "./pages/materi38";
 
 
 
@@ -70,6 +71,7 @@ const routes = [
     { path: "/materi-35", element: <Materi35 />, label:'effect'},
     { path: "/materi-36", element: <Materi36 />, label:'effect dependencies'},
     { path: "/materi-37", element: <Materi37 />, label:'async code di effect'},
+    { path: "/materi-38", element: <Materi38 />, label:'jangan gunakan effect'},
 ];
 
 export default routes;
