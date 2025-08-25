@@ -1,4 +1,5 @@
 import TabbedCard from "../components/tabCard";
+import ProductList from "./additional/product/productList";
 
 export default function Materi35() {
     return (
@@ -11,7 +12,9 @@ export default function Materi35() {
 
     function Result() {
         return (
-            <></>
+            <>
+                <ProductList />
+            </>
         )
     }
 

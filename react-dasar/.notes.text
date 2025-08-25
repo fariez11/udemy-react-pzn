@@ -614,3 +614,8 @@ Effect
     - kita tahu bahwa Component itu harus Pure, dan tidak memiliki efek samping
     - untuk kode yang memiliki efek samping, biasanya kita gunakan Event Handler
     - namun, kadang ada kebutuhan kita memang perlu membuat Component yang memiliki (efek samping) sesuai dengan response Server (disinilah Effect Hooks dibutuhkan)
+
+  > *Infinite Loop
+    - secara default, Effect akan dieksekusi setelah proses render
+    - oleh karena itu, kita perlu hati-hati, karena jika dalam Effect kita mengubah State, maka bisa terjadi infinite loop yang menyebabkan proses render ulang
+      terus-terusan terjadi tanpa henti
