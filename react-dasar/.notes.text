@@ -625,4 +625,20 @@ Effect
     - misal di Try Catch, terdapat Finally
     - di Effect terdapat proses yang namanya Clean Up, Clean Up akan dieksekusi setelah proses Effect selesai
     - caranya cukup mudah, kita tinggal return kan Closure Function di dalam Effect
+
+___________________ 
+Effect Dependencies
+  - secara default, Effect akan dieksekusi setiap selesai proses render
+  - artinya jika proses dilakukan berkali-kali, Effect akan dieksekusi juga berkali-kali setelah proses render selesai
+  - hal ini menjadikan kita harus melakukan pengecekan secara manual seperti di materi sebelumnya jika tidak ingin kode Effect dijalankan berkali-kali
+  - useEffect() memiliki parameter kedua yaitu Dependencies
+  - kita bisa menggunakan Dependencies dengan Array dari State, dimana artinya Effect hanya akan dieksekusi jika State tersebut berubah, jika tidak berubah maka Effect
+    tidak akan dieksekusi
+  - hal ini mungkin lebih mudah dibanding manual melakukan if else
+
+  > Empty Dependencies
+    - kadang, mungkin kita hanya ingin memanggil Effect sekali saja setelah pertama kali Component di Render, setelah itu kita tidak mau memanggil Effect lagi, 
+      bahkan jika terjadi render ulang
+    - pada kasus seperti itu, kita bisa gunakan empty array sebagai dependencies, maka Effect hanya akan dipanggil sekali saja setelah render pertama kali, selanjutnya
+      tidak akan dipanggil lagi.
     

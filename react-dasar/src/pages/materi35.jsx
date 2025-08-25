@@ -1,5 +1,7 @@
+import { useEffect, useState,useRef } from "react";
 import TabbedCard from "../components/tabCard";
-import ProductList from "./additional/product/productList";
+import Product from "./additional/product/Product";
+
 
 export default function Materi35() {
     return (
@@ -45,12 +47,37 @@ export default function Materi35() {
     }
 
     function Result() {
+        const [products, setProducts] = useState([])
+        const loaded = useRef(false)
+
+        useEffect(() => {
+            if (loaded.current === false) {             // agar tidak terjadi infinite loop
+                fetch('/data/products.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        setProducts(data)
+                        loaded.current = true
+                    })
+            }
+
+            return () => {
+                console.log('Product List component unmounting');
+
+            }
+        })
+
         return (
             <>
-                <ProductList />
+                <h4 className="text-center">Product List</h4>
+                <div className="row m-0 justify-content-center">
+                    {products.map(product => (
+                        <div className="col-5">
+                            <Product key={product.id} product={product} />
+                        </div>
+                    ))}
+
+                </div>
             </>
-        )
+        );
     }
-
-
 }

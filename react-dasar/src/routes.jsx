@@ -31,6 +31,7 @@ import Materi32 from "./pages/materi32";
 import Materi33 from "./pages/materi33";
 import Materi34 from "./pages/materi34";
 import Materi35 from "./pages/materi35";
+import Materi36 from "./pages/materi36";
 
 
 
@@ -66,6 +67,7 @@ const routes = [
     { path: "/materi-33", element: <Materi33 />, label:'ref'},
     { path: "/materi-34", element: <Materi34 />, label:'manipulasi dom dengan ref'},
     { path: "/materi-35", element: <Materi35 />, label:'effect'},
+    { path: "/materi-36", element: <Materi36 />, label:'effect dependencies'},
 ];
 
 export default routes;
