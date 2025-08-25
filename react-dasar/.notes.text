@@ -619,3 +619,10 @@ Effect
     - secara default, Effect akan dieksekusi setelah proses render
     - oleh karena itu, kita perlu hati-hati, karena jika dalam Effect kita mengubah State, maka bisa terjadi infinite loop yang menyebabkan proses render ulang
       terus-terusan terjadi tanpa henti
+    
+  > Effect Clean Up
+    - Pada beberapa kasus, mungkin kita butuh melakukan sesuatu setelah eksekusi Effect selesai dilakukan
+    - misal di Try Catch, terdapat Finally
+    - di Effect terdapat proses yang namanya Clean Up, Clean Up akan dieksekusi setelah proses Effect selesai
+    - caranya cukup mudah, kita tinggal return kan Closure Function di dalam Effect
+    
