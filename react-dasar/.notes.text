@@ -667,3 +667,17 @@ Jangan Gunakan Effect
     - oleh karena itu, tidak direkomendasikan menggunakan Effect untuk mengubah data di Server 
     - gunakan Event Handler, jika ingin mengubah data di Server, sehingga jelas kapan perubahan terjadi
     - menggunakan Effect bisa menyebabkan perubahan data di Server terjadi berkali-kali karena render ulang Component
+
+____ 
+Memo
+  > Memoization
+    - adalah teknik optimasi untuk mempercepatprogram komputer, dengan cara menyimpan data secara sementara dari hasil kalkulasi (yang biasanya berat). sehingga tidak 
+      perulangan di kalkulasi ulang
+    - ini adalah bagian dari Performance Hooks, dimana kita bisa menggunakan function useMemo(callback, [dependencies])
+    - https://react.dev/reference/react/useMemo
+    - ini cocok untuk kasus misal kita perlu memanggil kode yang berat, dan hasilnya selalu sama, dibandingkan kita panggil terus-terusan setiap proses render, lebih baik 
+      kita lakukan sekali saja, dan pada proses pemanggilan berikutnya, kita cukup kembalikan hasil yang pertama
+
+  > Contoh Penggunaan
+    - misal pada aplikasi Notes, kita ingin tambahkan proses untuk mencari Notes
+    - jika pengguna melakukan pencarian dengan value yang sama, dibanding kita lakukan pencarian ulang, kita bisa kembalikan hasil yang sama saja seperti sebelumnya

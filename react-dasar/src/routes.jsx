@@ -1,5 +1,5 @@
 // Halaman Umum
-import NotesPage from "./pages/NotesPage";
+import Introduction from "./pages/intro";
 // import HelloWorld from "./pages/hello-world/helloWorld";
 import Materi6 from "./pages/materi6";
 import Materi7 from "./pages/materi7";
@@ -34,11 +34,12 @@ import Materi35 from "./pages/materi35";
 import Materi36 from "./pages/materi36";
 import Materi37 from "./pages/materi37";
 import Materi38 from "./pages/materi38";
+import Materi39 from "./pages/materi39";
 
 
 
 const routes = [
-    { path: "/", element: <NotesPage /> },
+    { path: "/", element: <Introduction /> },
     { path: "/component", element: <Materi6 />, label:'component'},
     { path: "/materi-7", element: <Materi7 />, label:'jsx'},
     { path: "/materi-8", element: <Materi8 />, label:'javascript di jsx'},
@@ -72,6 +73,7 @@ const routes = [
     { path: "/materi-36", element: <Materi36 />, label:'effect dependencies'},
     { path: "/materi-37", element: <Materi37 />, label:'async code di effect'},
     { path: "/materi-38", element: <Materi38 />, label:'jangan gunakan effect'},
+    { path: "/materi-39", element: <Materi39 />, label:'memo'},
 ];
 
 export default routes;

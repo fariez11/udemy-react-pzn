@@ -19,11 +19,11 @@ export default function NoteForm() {
     }
 
     return (
-        <div className="col-5">
-            <div className="d-flex gap-3">
+        <div className="col-7">
+            <div className="d-flex gap-2">
                 <input type="text" className="form-control w-75" placeholder="Add Note" value={text} onChange={handleChange} />
-                <button className="btn btn-outline-primary w-25" onClick={handleClick}>
-                    add
+                <button className="btn btn-outline-success w-25" onClick={handleClick}>
+                    <i className="bi bi-plus-circle"></i>
                 </button>
             </div>
         </div>

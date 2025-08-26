@@ -17,7 +17,7 @@ export default function NoteForm({ onAddNote }) {
     }
 
     return (
-        <div className="d-flex gap-3">
+        <div className="d-flex gap-3 mb-3">
             <input type="text" className="form-control w-75" placeholder="Add Note" value={text} onChange={handleChange} />
             <button className="btn btn-outline-primary w-25" onClick={handleClick}>
                 add

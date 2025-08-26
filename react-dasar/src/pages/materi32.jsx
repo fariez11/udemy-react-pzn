@@ -4,6 +4,7 @@ import { useImmerReducer } from 'use-immer';
 import { NoteDispatchContext, NotesContext } from './additional/note/context & reducer/noteContext';
 import NoteListContext from './additional/note/context & reducer/noteList';
 import NoteForm from './additional/note/context & reducer/noteForm';
+import { learningList } from '../assets/data/dataObject';
 
 
 export default function Materi32() {
@@ -35,29 +36,8 @@ function Catatan() {
 }
 
 let id = 0;
-const initialNotes = [
-    { id: id++, text: "Learn HTML", done: false },
-    { id: id++, text: "Learn CSS", done: false },
-    { id: id++, text: "Learn Javascript", done: false },
-    { id: id++, text: "Learn React", done: false },
-];
 
 function NoteReducer(catatan, action) {
-    // --- Sebelum mengguanakan immer ---
-    // switch (action.type) {
-    //     case "ADD_NOTE":
-    //         return [...catatan, { id: id++, text: action.text, done: false }];
-    //     case "UPDATE_NOTE":
-    //         return catatan.map((note) =>
-    //             note.id === action.note.id ? action.note : note
-    //         );
-    //     case "DELETE_NOTE":
-    //         return catatan.filter((note) => note.id !== action.note.id);
-    //     default:
-    //         return catatan;
-    // }
-
-    // --- Setelah mengguanakan immer ---
     if (action.type === "ADD_NOTE") {
         catatan.push({ id: id++, text: action.text, done: false });
     }
@@ -73,7 +53,7 @@ function NoteReducer(catatan, action) {
 }
 
 function Result() {
-    const [notes, dispatch] = useImmerReducer(NoteReducer, initialNotes);
+    const [notes, dispatch] = useImmerReducer(NoteReducer, learningList);
 
     return (
         <>

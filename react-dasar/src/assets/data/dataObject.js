@@ -58,6 +58,8 @@ export const messages = [
   },
 ];
 
+
+let id = 0;
 export const motivations = [
   {
     id: 1,
@@ -127,9 +129,16 @@ export const motivations = [
 ];
 
 export const todos = [
-  { id:0,text: "Belajar HTML dan CSS", isCompleted: true, isDeleted:true },
-  { id:1,text: "Belajar JSX dan Javascript di JSX", isCompleted: true },
-  { id:2,text: "Belajar Props dan Nested Component", isCompleted: true },
-  { id:3,text: "Belajar Style", isCompleted: true },
-  { id:4,text: "Belajar Conditional", isCompleted: false },
+  { id: 0, text: "Belajar HTML dan CSS", isCompleted: true, isDeleted: true },
+  { id: 1, text: "Belajar JSX dan Javascript di JSX", isCompleted: true },
+  { id: 2, text: "Belajar Props dan Nested Component", isCompleted: true },
+  { id: 3, text: "Belajar Style", isCompleted: true },
+  { id: 4, text: "Belajar Conditional", isCompleted: false },
+];
+
+export const learningList = [
+  { id: id++, text: "Learn HTML", done: false },
+  { id: id++, text: "Learn CSS", done: false },
+  { id: id++, text: "Learn Javascript", done: false },
+  { id: id++, text: "Learn React", done: false },
 ];

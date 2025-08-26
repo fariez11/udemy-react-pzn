@@ -24,7 +24,7 @@
   background-color: rgba(251, 251, 251, 0.2)  !important;
   color: white !important;
   border-radius: 5px 5px 0px 0px !important;
-  border-bottom: rgba(251, 251, 251, 0.2) 3px solid !important;
+  border-bottom: rgba(251, 251, 251, 0.1) 3px solid !important;
   -webkit-border-radius: 5px 5px 0px 0px !important;
   -moz-border-radius: 5px 5px 0px 0px !important;
   -ms-border-radius: 5px 5px 0px 0px !important;
@@ -41,7 +41,7 @@
 }
 
 .scroll-body{
-  scrollbar-color: #3B8280 rgba(0, 0, 0, 0);
+  scrollbar-color: #A8C7C6 rgba(0, 0, 0, 0);
   padding-left: 10px;
 }
 

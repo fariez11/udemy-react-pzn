@@ -3,6 +3,7 @@ import TabbedCard from '../components/tabCard';
 import { useImmer, useImmerReducer } from 'use-immer';
 import NoteList from './additional/note/noteList';
 import NoteForm from './additional/note/noteForm';
+import { learningList } from '../assets/data/dataObject';
 
 export default function Materi29() {
     return (
@@ -63,12 +64,6 @@ function Catatan() {
 
 // ======== Data & Reducer ========
 let id = 0;
-const initialNotes = [
-    { id: id++, text: "Learn HTML", done: false },
-    { id: id++, text: "Learn CSS", done: false },
-    { id: id++, text: "Learn Javascript", done: false },
-    { id: id++, text: "Learn React", done: false },
-];
 
 function NoteReducer(catatan, action) {
     // --- Sebelum mengguanakan immer ---
@@ -101,7 +96,7 @@ function NoteReducer(catatan, action) {
 }
 
 function Result() {
-    const [notes, setNotes] = useImmer(initialNotes);
+    const [notes, setNotes] = useImmer(learningList);
 
     function handleAddNote(text) {
         setNotes((draft) => {
@@ -124,7 +119,7 @@ function Result() {
     }
 
     // --- Sesudah menggunakan Reducer ---
-    const [catatan, dispatch] = useImmerReducer(NoteReducer, initialNotes);
+    const [catatan, dispatch] = useImmerReducer(NoteReducer, learningList);
 
     function handleAddNoteReducer(text) {
         dispatch({ type: "ADD_NOTE", text: text });
@@ -140,17 +135,19 @@ function Result() {
 
     return (
         <div>
-            <h3>Note App</h3>
-            <NoteForm onAddNote={handleAddNoteReducer} />
-            <div className="row m-0">
+            <h3 className='mb-1'>Note App</h3>
+            <div className="row mx-0">
                 <div className="col">
                     <p className='divider c-green my-3'>sebelum menggunakan reducer</p>
+                    <NoteForm onAddNote={handleAddNote} />
                     <NoteList notes={notes} onChange={handleChangeNote} onDelete={handleDeleteNote} />
                 </div>
                 <div className="col">
                     <p className='divider c-info my-3'>setelah menggunakan reducer</p>
+                    <NoteForm onAddNote={handleAddNoteReducer} />
                     <NoteList notes={catatan} onChange={handleChangeNoteReducer} onDelete={handleDeleteNoteReducer} />
                 </div>
+                <span className='text-center text-muted mt-3'>*perbedaan ada di bagian code</span>
             </div>
         </div>
     )
