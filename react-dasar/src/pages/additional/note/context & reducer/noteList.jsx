@@ -32,7 +32,7 @@ export default function NoteListContext() {
                 <input type="text" className="form-control" ref={searchInput} />
                 <button className="btn btn-outline-success" onClick={handleSearch}><i className="bi bi-search"></i></button>
             </div>
-            <span className="text-muted">*perhatikan log (penggunaan useMemo)</span>
+            <span className="text-muted">*perhatikan log (materi 39)</span>
         </>
     );
 }

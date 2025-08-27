@@ -35,6 +35,7 @@ import Materi36 from "./pages/materi36";
 import Materi37 from "./pages/materi37";
 import Materi38 from "./pages/materi38";
 import Materi39 from "./pages/materi39";
+import Materi40 from "./pages/materi40";
 
 
 
@@ -74,6 +75,7 @@ const routes = [
     { path: "/materi-37", element: <Materi37 />, label:'async code di effect'},
     { path: "/materi-38", element: <Materi38 />, label:'jangan gunakan effect'},
     { path: "/materi-39", element: <Materi39 />, label:'memo'},
+    { path: "/materi-40", element: <Materi40 />, label:'custom hook'},
 ];
 
 export default routes;

@@ -679,5 +679,12 @@ Memo
       kita lakukan sekali saja, dan pada proses pemanggilan berikutnya, kita cukup kembalikan hasil yang pertama
 
   > Contoh Penggunaan
-    - misal pada aplikasi Notes, kita ingin tambahkan proses untuk mencari Notes
+    - misal pada aplikasi Notes, kita ingin tambahkan proses untuk mencari Note
     - jika pengguna melakukan pencarian dengan value yang sama, dibanding kita lakukan pencarian ulang, kita bisa kembalikan hasil yang sama saja seperti sebelumnya
+
+____________ 
+Custom Hooks
+  - React secara default sudah memiliki banyak Hooks yang bisa kita gunakan untuk mempermudah membuat aplikasi menggunakan React
+  - Namun, kita juga bisa membuat Hooks secara manual jika kita mau
+  - Membuat Hooks biasanya menggunakan function dengan awalan "use"
+  - Contoh, kita akan membuat Hooks untuk mendeteksi apakah sedang Online atau Offline
