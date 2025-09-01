@@ -19,7 +19,7 @@ export default function TabbedCard({ noteContent, resultContent }) {
             </div>
 
             <div className="card-body px-3 pb-3 rounded-bottom-3">
-                <div className="overflow-y-auto scroll-body" style={{ maxHeight: "calc(95vh - 100px)" }}>
+                <div className="overflow-y-auto scroll-body" style={{ maxHeight: "calc(90vh - 100px)" }}>
 
                     <div className="tab-content" id="myTabsContent">
                         <div className="tab-content" id="myTabsContent">

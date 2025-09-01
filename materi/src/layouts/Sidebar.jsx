@@ -1,32 +1,50 @@
 // components/Sidebar.jsx
 import { Link, useLocation } from "react-router-dom";
-import '@assets/sidebar.css';
-import routes from "../routes";
+import '@assets/css/sidebar.css';
+import { reactDasar, reactRouter } from "../routes";
 import { useState } from "react";
 
 export default function Sidebar() {
-  const location = useLocation();
-  const [open, setOpen] = useState(false)
 
+  const location = useLocation();
+
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const toggleMenu = (menuName) => {
+    setOpenMenu((prev) => (prev === menuName ? null : menuName));
+  };
+
+  function ListMenu({ menu }) {
+    return (
+      <div className="overflow-y-auto mx-1 rounded-2 scroll sub-menu">
+        <ul className="nav flex-column py-1 px-1" >
+          {menu.map((link) => (
+            <li className="nav-item menu" key={link.path}>
+              <Link className={`nav-link ${location.pathname === link.path ? 'active' : ''}`} to={link.path} style={{ color: '#005C5A' }}> {link.label} </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 
   return (
-    <div className="vh-100 px-3 pt-3 position-fixed" style={{ width: '250px' }}>
-      <Link className="nav-link" to="/"><h5 className="ms-2 mb-3 text-light">.React FUNdamental</h5></Link>
-      <div className="py-2 rounded-3 sidebar">
-        <div className="overflow-y-auto scroll me-2">
-          <li className="list-unstyled text-white mx-2 my-1 p-2 px-3 rounded-3 d-flex justify-content-between" style={{ backgroundColor:'#005C5A' }} onClick={() => setOpen(!open)}> 
-            <span>React Dasar</span> 
-            <i className={'ms-4 bi ' + (!open ? 'bi-chevron-down' : 'bi-chevron-up')}></i> 
+    <div className="py-2 rounded-3 sidebar">
+        <div className="overflow-hidden rounded-3" style={{maxHeight : '100%'}}>
+        <ul className="me-2 ps-2 rounded-2 p-0">
+          <li className="parent-menu" data-bs-toggle="collapse" onClick={() => toggleMenu("dasar")}>
+            <span>React Dasar</span>
+            <i className={"ms-4 bi " + (openMenu === "dasar" ? "bi-chevron-left" : "bi-chevron-down")}></i>
           </li>
-          {open && (
-            <ul className="nav flex-column ps-2 pe-1">
-              {routes.slice(1).map((link, index) => (
-                <li className="nav-item mt-1" key={index}><Link className={`nav-link text-white ${location.pathname === link.path ? 'active' : ''}`} to={link.path} key={index}>{link.label}</Link></li>
-              ))}
-            </ul>
-          )}
-        </div>
+          {openMenu === 'dasar' && <ListMenu menu={reactDasar} />}
+          <li className="parent-menu" onClick={() => toggleMenu("router")}>
+            <span>React Router</span>
+            <i className={"ms-4 bi " + (openMenu === "router" ? "bi-chevron-left" : "bi-chevron-down")}></i>
+          </li>
+          {openMenu === 'router' && <ListMenu menu={reactRouter} />}
+        </ul>
       </div>
     </div>
-  )
+  );
+
 }
