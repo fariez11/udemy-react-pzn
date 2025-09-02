@@ -688,3 +688,28 @@ Custom Hooks
   - Namun, kita juga bisa membuat Hooks secara manual jika kita mau
   - Membuat Hooks biasanya menggunakan function dengan awalan "use"
   - Contoh, kita akan membuat Hooks untuk mendeteksi apakah sedang Online atau Offline
+
+__________________________________
+Pengenalan Single Page Application
+  > Client atau Server Side
+    - Saat kita membuat Web, terdapat dua pilihan yang bisa kita pilih, CSR (Client Side Render) atau SSR (Server Side Render)
+    - Saat kita menggunakan Frontend Framework seperti React, biasanya pilihan pertama adalah menggunakan CSR (Client Side Render)
+    - Hal ini akan menjadikan bagian Server tidak menangani halaman Web lagi dan tidak perlu membuat halaman HTML lagi, semua dikerjakan di Client oleh React
+    - Secara otomatis CSR akan semakin cepat dibandingkan SSR, karena komunikasi ke Server bisa dibuat minimal dan data yang dikirim/diterima terlalu besar
+
+  > Diagram Server Side Render        \ 
+                                        >  gambar berada di asset
+  > Diagram Client Side Render        /
+
+  > Multi Page Application
+    - sebelumnya, ketika belajar React Dasar, kita membuat banyak sekali halaman HTML, dan tiap halaman HTML menampilkkan component React
+    - hal ini artinya walaupun aplikasi yang sudah kita buat adalah CSR, namun tetap MultiPage
+    - Problem dengan MPA (Multi Page Application) adalah, setiap berganri halaman maka Browser akan menjalankan ulang program React nya dari awal lagi
+    - Hal ini menyebabkan walaupun sudah mengguanakan CSR, namun kemungkinan tidak optimal kerena harus di load ulang semuanya ketika berpindah halaman
+  
+  > Single Page Application
+    - kebalikan dari MPA, adalah SPA (Single Page Application), dimana kita hanya membuat satu halaman HTML
+    - nanti di halaman itu akan menerima semua request dan isi halamannya akan berubah sesuai dengan request yang diminta oleh user atau sesuai response dari server
+    - keuntungan dari SPA adalah perpindahan halaman lebihj cepat, karena hanya mengubah isi content saja, tidak terus me-load ulang seluruh halaman lagi
+    - namun sayangnya, secara default, React tidak mendukung SPA dengan baik
+    - kita harus lakukan semuanya secara manual jika ingin mengganti-ganti isi dari halaman, dan itu sangat rumit dilakukan

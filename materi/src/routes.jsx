@@ -37,6 +37,7 @@ import Materi38 from "./pages/react-dasar/materi38";
 import Materi39 from "./pages/react-dasar/materi39";
 import Materi40 from "./pages/react-dasar/materi40";
 import IntroReactRouter from "./pages/react-router/intro";
+import Materi45 from "./pages/react-router/materi45";
 
 export const defaultMenu = [
     { path: "/", element: <Introduction /> },
@@ -82,5 +83,6 @@ export const reactDasar = [
 
 export const reactRouter = [
     { path: "/materi-43", element: <IntroReactRouter />, label: 'intro' },
+    { path: "/materi-45", element: <Materi45 />, label: 'pengenalan SPA' },
 ]
 

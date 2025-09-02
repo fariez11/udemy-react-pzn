@@ -30,16 +30,16 @@ export default function Sidebar() {
 
   return (
     <div className="py-2 rounded-3 sidebar">
-        <div className="overflow-hidden rounded-3" style={{maxHeight : '100%'}}>
+        <div className="overflow-y-hidden rounded-3" style={{maxHeight : '100%'}}>
         <ul className="me-2 ps-2 rounded-2 p-0">
           <li className="parent-menu" data-bs-toggle="collapse" onClick={() => toggleMenu("dasar")}>
             <span>React Dasar</span>
-            <i className={"ms-4 bi " + (openMenu === "dasar" ? "bi-chevron-left" : "bi-chevron-down")}></i>
+            <i className={"ms-4 bi " + (openMenu === "dasar" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
           {openMenu === 'dasar' && <ListMenu menu={reactDasar} />}
           <li className="parent-menu" onClick={() => toggleMenu("router")}>
             <span>React Router</span>
-            <i className={"ms-4 bi " + (openMenu === "router" ? "bi-chevron-left" : "bi-chevron-down")}></i>
+            <i className={"ms-4 bi " + (openMenu === "router" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
           {openMenu === 'router' && <ListMenu menu={reactRouter} />}
         </ul>
