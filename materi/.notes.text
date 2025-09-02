@@ -688,7 +688,6 @@ Custom Hooks
   - Namun, kita juga bisa membuat Hooks secara manual jika kita mau
   - Membuat Hooks biasanya menggunakan function dengan awalan "use"
   - Contoh, kita akan membuat Hooks untuk mendeteksi apakah sedang Online atau Offline
-
 __________________________________
 Pengenalan Single Page Application
   > Client atau Server Side
@@ -713,3 +712,20 @@ Pengenalan Single Page Application
     - keuntungan dari SPA adalah perpindahan halaman lebihj cepat, karena hanya mengubah isi content saja, tidak terus me-load ulang seluruh halaman lagi
     - namun sayangnya, secara default, React tidak mendukung SPA dengan baik
     - kita harus lakukan semuanya secara manual jika ingin mengganti-ganti isi dari halaman, dan itu sangat rumit dilakukan
+
+______________ 
+Router Library
+  - salah satu hal yang bisa kita lakukan dibanding menggangti-ganti halaman secara manual, adalah menggunakan library khusus untuk itu, yaitu Router Library
+  - Router Library adalah library yang digunakan agar Component yang ditampilkan bisa berbeda-beda tergantung dari URL yang diakses
+  - Dengan begitu, kita bisa fokus membuat Component untuk halaman, tidak perlu memikirkan lagi kompleksitas bagaimana cara melakukan routing (menentukan Component mana
+    yang ditampilkan untuk URL diakses)
+  - untungnya, banyak sekali Router Library yang tersedia untuk React
+
+  > React Router
+    - ada banyak sekali Router Library yang bisa kita gunakan untuk React
+    - https://react.libhunt.com/libs/router/react
+    - namun pada materi ini, kita akan menggunakan salah satu Router Library yang populer, yaitu adalah React Router
+    - https://reactrouter.com
+    - React Router adalah salah satu library untuk routing yang open source dan saat ini sangat populer digunakan di ekosistem React
+    - https://github.com/remix-run/react-router
+
