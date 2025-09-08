@@ -40,3 +40,11 @@
     - Atribut ini digunakan sebagai default halaman Index
     - ini biasanya digunakan untuk path awal, misal /, atau untuk nested path /data/...
     - contoh sebelumnya, saat kita membuka /data, maka tidak ada komponen yang ditampilkkan, kita bisa tampilkan komponen yang kita mau dengan menggunakan Route Index
+
+# Outlet
+  - saat kita membuat halaman Web, kadang beberapa halaman memiliki Layout yang sama, misal header dan footer nya sama, namun isi contentnya berbeda
+  - sebenarnya kita bisa menggunakan JSX untuk melakukan ini dengan menggunakan children
+  - namun, react router memiliki cara yang lebih mudah, kita bisa membuat Route dengan component yang digunakan sebagai Layout
+  - lalu kita bisa tambahkan Route di dalamnya yang digunakan sebagai children 
+  - namun, kita tidak menggunakan children Prop lagi, melainkan menggunakan Component Outlet
+  https://api.reactrouter.com/v7/functions/react_router.Outlet.html
