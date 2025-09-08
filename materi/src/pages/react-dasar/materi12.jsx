@@ -38,8 +38,8 @@ function Note() {
 
 function Result() {
     return (
-        <div className="mx-2">
-            <ul className="list-group col-6">
+        <div className="d-flex justify-content-center">
+            <ul className="list-group w-50">
                 {todos.length === 0 ? (
                     <li className="list-group-item text-muted">No todos found</li>
                 ) : (

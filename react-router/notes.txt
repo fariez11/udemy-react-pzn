@@ -11,6 +11,7 @@
   > Menambah Library React Router
     - npm i react-router
 
+
 # Setup
   - berbeda dengan MPA, ketika membuat SPA, kita cukup membuat satu halam html sebagai entry point (titik masuk) semua request
   - nanti, penentuan komponen mana yang akan ditampilkan, diurus oleh React Router
@@ -18,6 +19,7 @@
   > Browser Router
     - ketika menggunakan React Router, saat membuat melakukan render komponen menggunakan React, kita bisa bungkus aplikasi React kita menggunaka komponen Browser Router
     - https://api.reactrouter.com/v7/functions/react_router.BrowserRouter.html
+
 
 # Routing
   - adalah pemetaan antata URL, path dan komponen yang akan ditampilkan 
@@ -32,3 +34,9 @@
   - jika kita harus membuat satu per satu, maka akan tidak efektif ketika pembuatan kode nya
   - untungnya, React Router mendukung Nested Route
   - kita bisa menggunakan komponen Route di dalam komponen Route, dan secara otomatis Route path diatasnya akan digunakan sebagai prefix path untuk child Routenya 
+
+  > Index Route 
+    - komponen Route memiliki attribut spesial bernama Index
+    - Atribut ini digunakan sebagai default halaman Index
+    - ini biasanya digunakan untuk path awal, misal /, atau untuk nested path /data/...
+    - contoh sebelumnya, saat kita membuka /data, maka tidak ada komponen yang ditampilkkan, kita bisa tampilkan komponen yang kita mau dengan menggunakan Route Index

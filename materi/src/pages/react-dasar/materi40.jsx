@@ -32,12 +32,12 @@ function Result() {
     return (
         <>
             <h3>Online Check</h3>
-            <div className={'card text-center ' + (connection.isOnline ? 'bg-success-subtle' : 'bg-danger-subtle')}>
-                <h5 className={'my-5 ' + (connection.isOnline ? 'text-success' : 'text-danger')}><i className={connection.isOnline ? 'bi bi-wifi' : 'bi bi-wifi-off'}></i> {connection.isOnline ? 'Sedang Terhubung Dengan Wifi' : 'Sedang Tidak Terhubung Degan Wifi'}</h5>
+            <div className={'card text-center ' + (connection.isOnline ? 'bg-info-subtle' : 'bg-danger-subtle')}>
+                <h5 className={'my-5 ' + (connection.isOnline ? 'text-info' : 'text-danger')}><i className={connection.isOnline ? 'bi bi-wifi' : 'bi bi-wifi-off'}></i> {connection.isOnline ? 'Sedang Terhubung Dengan Wifi' : 'Sedang Tidak Terhubung Degan Wifi'}</h5>
             </div>
 
-            <div className="text-center">
-                <span className="text-muted">*jika ingin ada perubahan coba hidup / matikan koneksi anda</span>
+            <div className="text-center mt-2">
+                <p className="text-muted">*jika ingin ada perubahan coba hidup / matikan koneksi anda</p>
             </div>
         </>
     )
