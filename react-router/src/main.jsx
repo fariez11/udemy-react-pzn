@@ -11,6 +11,7 @@ import Seller from './pages/Seller.jsx'
 import Product from './pages/Product.jsx'
 import Data from './pages/Data.jsx'
 import Layout from './pages/Layout.jsx'
+import ProductDetail from './pages/ProductDetail.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/data' element={<Layout />} >
           <Route index element={<Data />} />
           <Route path='products' element={<Product />} />
+          <Route path='products/:id' element={<ProductDetail  />} />
           <Route path='customers' element={<Customer />} />
           <Route path='sellers' element={<Seller />} />
         </Route>

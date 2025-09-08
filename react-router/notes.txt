@@ -48,3 +48,20 @@
   - lalu kita bisa tambahkan Route di dalamnya yang digunakan sebagai children 
   - namun, kita tidak menggunakan children Prop lagi, melainkan menggunakan Component Outlet
   https://api.reactrouter.com/v7/functions/react_router.Outlet.html
+
+# Route Param 
+  - saat kita membuat URL path, kadang kita tidak membuat Path yang statis kadang kita membuat Path yang dinamis
+  - misal kita ingin menambahkan id / kode pada Path, misal product/123, dimana 123 adalah id dari product
+  - di React Router, kita juga bisa lakukan itu dengan menambah tanda : (titik dua) diikuti dengan nama param, misal /products/:id, id dianggap sebagai parameter dinamis
+  - jika kita menggunakan /product/123, maka 123 akan dianggap sebagai data parameter id
+
+  > useParams()
+    - saat kita membuat Path yang dinamis, biasanya kita ingin mendapatkan informasi Path yang dinamis tersebut
+    - seluruh dynamyc param yang terdapat di URL Path secara otomatis akan disimpan dalam object, dan kita bisa mengambilnya menggunakan function useParams()
+    - https://api.reactrouter.com/v7/functions/react_router.useParams.html
+    - misal, sekarang kita akan coba tambahkan useParams() pada komponen ProductDetail
+  
+  > Multiple Route Param
+    - kita bisa menambahkan dynamyc param pada Path lebih dari satu 
+    - yang penting kita gunakan nama dynamyc param yang berbeda, misal : /user/:userId/address/:addressId
+    - maka kita bisa dapatkan informasi userId dan addressId di Object hasil dari useParams()
