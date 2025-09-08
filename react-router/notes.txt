@@ -65,3 +65,14 @@
     - kita bisa menambahkan dynamyc param pada Path lebih dari satu 
     - yang penting kita gunakan nama dynamyc param yang berbeda, misal : /user/:userId/address/:addressId
     - maka kita bisa dapatkan informasi userId dan addressId di Object hasil dari useParams()
+
+# Star Segment
+  - jika route diakhiri dengan /* (star segment), maka itu akan cocok dengan karakter apapun, termasuk karakter / itu sendiri
+  - misal, ketika kita memiliki path /files/*, maka itu akan cocok dengan /files/contoh dan /files/lagi/contoh
+  - star segment juga bisa diambil nilainya pada useParams()
+
+  > Star Segment sebagai Not Found Page
+    - apa yang terjadi jika kita mengakses URL Path yang tidak tersedia di Router?
+    - kita akan mendapatkan error bahwa tidak ada route yang cocok dengan path yang kita akses
+    - salah satu yang biasa dilakukan di React Router adalah, kita bisa menambahkan star segment untuk path /* pada bagian bawah sebagai handler untuk halaman Not Found 
+    - sekarang kita akan coba buat komponen NotFound, dan registrasikan ke Route path /*
