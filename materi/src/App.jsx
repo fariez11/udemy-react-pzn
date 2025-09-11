@@ -20,7 +20,7 @@ export default function App() {
     <div className="row m-0" style={base}>
       <div className="col-3 px-4 py-2 vh-100">
         {/* <div  style={{ width: "250px", overflow: "auto" }}> */}
-        <a href="/" className="text-decorarion-none"> <h5 className="my-2 pb-2 text-light text-center">.React FUNdamental</h5></a>
+        <a href="/" className="text-decoration-none"> <h5 className="my-2 pb-2 text-light text-center">.React FUNdamental</h5></a>
         <Sidebar />
       </div>
       <div className="col m-0 p-0">

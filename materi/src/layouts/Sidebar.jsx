@@ -1,12 +1,12 @@
 // components/Sidebar.jsx
-import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import '@assets/css/sidebar.css';
 import { reactDasar, reactRouter } from "../routes";
 import { useState } from "react";
 
 export default function Sidebar() {
 
-  const location = useLocation();
+  // const location = useLocation();
 
   const [openMenu, setOpenMenu] = useState(null);
 
@@ -20,7 +20,8 @@ export default function Sidebar() {
         <ul className="nav flex-column py-1 px-1" >
           {menu.map((link) => (
             <li className="nav-item menu" key={link.path}>
-              <Link className={`nav-link ${location.pathname === link.path ? 'active' : ''}`} to={link.path} style={{ color: '#005C5A' }}> {link.label} </Link>
+              {/* <Link className={`nav-link ${location.pathname === link.path ? 'active' : ''}`} to={link.path} style={{ color: '#005C5A' }}> {link.label} </Link> */}
+              <NavLink className="nav-link" to={link.path} style={{ color: '#005C5A' }}> { link.label } </NavLink>
             </li>
           ))}
         </ul>
