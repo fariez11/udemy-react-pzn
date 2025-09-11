@@ -76,3 +76,30 @@
     - kita akan mendapatkan error bahwa tidak ada route yang cocok dengan path yang kita akses
     - salah satu yang biasa dilakukan di React Router adalah, kita bisa menambahkan star segment untuk path /* pada bagian bawah sebagai handler untuk halaman Not Found 
     - sekarang kita akan coba buat komponen NotFound, dan registrasikan ke Route path /*
+
+# Navigation
+  - salah satu yang biasa kita lakukan saat membuat web, adalah berpindah dari satu halaman ke halaman lainnya 
+  - biasanya untuk berpindah halaman, kita biasanya akan menggunakan Anchor Element, yaitu menggunakan tag <a>
+  - namun permasalahannya adalah, ketika menggunakan Anchor Element, maka browser akan melakukan reload ke halaman baru,
+    yang artinya halaman akan dimuat ulang, termasuk object React juga akan dibuat ulang semuanya
+  - hal ini mungkin akan memperlambat proses perpindahan halaman
+
+  > Link Element
+    - React Router menyediakan komponen lain
+    - komponen Link ini digunakan sebagai pengganti Anchor Element
+    - berbeda dengan Anchor Element, komponen Link ini tidak akan melakukan reload halaman
+    - https://api.reactrouter.com/v7/functions/react_router.Link.html
+
+  > Attribute To
+    - di komponen Link, attr To menerima parameter object, dimana terdapat attribute pathname, search dan hash
+        ~> attr pathname : untuk lokasi path  
+        ~> attr search : untuk query param 
+        ~> attr hash : untuk fragment
+
+  > NavLink
+    - salah satu yang biasa kita lakukan ketika membuat Link adalah, membedakan style Link yang sedang aktif dan tidak aktif
+    - biasanya, kita lakukan pengecekan, jika URL path yang sedang dikunjungi sama dengan tujuan Link, maka kita ubah stylenya
+      menjadi aktif
+    - React Router menyediakan komponen khusus untuk mempermudah hal ini, cara penggunaanya sama seperti komponen Link, namun
+      bedanya jika URL path saat ini sama dengan tujuan NavLink, maka secara otomatis NavLink akan menggunakan style a.active
+    - https://api.reactrouter.com/v7/functions/react_router.NavLink.html

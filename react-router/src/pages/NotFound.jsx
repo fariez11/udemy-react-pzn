@@ -9,7 +9,7 @@ export default function NotFound() {
                 width: "100%",
                 height: "100vh",
                 objectFit: "contain",   // gambar menyesuaikan
-                padding: "0px",        // contoh padding
+                padding: "0px",         // contoh padding
                 boxSizing: "border-box" // padding masuk hitungan ukuran
             }}
         />
