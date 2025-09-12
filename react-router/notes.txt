@@ -116,3 +116,10 @@
 
   *catatan: - mundur untuk balik kehalaman sebelumnya                     b ~> a
             - maju untuk balik ke halaman setelah back (mundur)           a ~> b 
+
+# Use Search Param
+  - saat menggunakan URL, kadang kita akan memanfaatkan Query Parameter untuk mengirim data
+  - React Router menyediakan Hooks useSearchParams() yang bisa kita gunakan untuk mendapatkan data Query Parameter
+  - https://api.reactrouter.com/v7/functions/react_router.useSearchParams.html
+  - useSearchParams() akan mengembalikan Array yang berisi object (URLSearchParams dan setter functionnya)
+  - https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams

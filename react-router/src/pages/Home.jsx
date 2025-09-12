@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <>
             <icons.BsHouse size={50}/>
-            <h1>Halaman Home</h1>
+            <h2>Halaman Home</h2>
             <span> Selamat Datang di Halaman Home</span>
             <br />
             <Button varriant="primary" className='mt-5' onClick={handleClick}> go to about page</Button>
