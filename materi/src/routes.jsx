@@ -1,6 +1,5 @@
 // Halaman Umum
 import Introduction from "./pages/react-dasar/intro";
-// import HelloWorld from "./pages/hello-world/helloWorld";
 import Materi6 from "./pages/react-dasar/materi6";
 import Materi7 from "./pages/react-dasar/materi7";
 import Materi8 from "./pages/react-dasar/materi8";
@@ -39,12 +38,11 @@ import Materi40 from "./pages/react-dasar/materi40";
 import IntroReactRouter from "./pages/react-router/intro";
 import Materi45 from "./pages/react-router/materi45";
 import Materi46 from "./pages/react-router/materi46";
+import IntroReactRedux from "./pages/react-redux/intro";
 
-export const defaultMenu = [
-    { path: "/", element: <Introduction /> },
-]
 
 export const reactDasar = [
+    { path: "/", element: <Introduction /> , label: 'intro react dasar' },
     { path: "/component", element: <Materi6 />, label: 'component' },
     { path: "/materi-7", element: <Materi7 />, label: 'jsx' },
     { path: "/materi-8", element: <Materi8 />, label: 'javascript di jsx' },
@@ -83,8 +81,12 @@ export const reactDasar = [
 ];
 
 export const reactRouter = [
-    { path: "/materi-43", element: <IntroReactRouter />, label: 'intro' },
+    { path: "/materi-43", element: <IntroReactRouter />, label: 'intro react router' },
     { path: "/materi-45", element: <Materi45 />, label: 'pengenalan SPA' },
     { path: "/materi-46", element: <Materi46 />, label: 'router library' },
+]
+
+export const reactRedux = [
+    { path: "/materi-58", element: <IntroReactRedux />, label: 'intro react redux' },
 ]
 

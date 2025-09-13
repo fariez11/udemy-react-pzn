@@ -1,7 +1,7 @@
 // components/Sidebar.jsx
 import { NavLink } from "react-router-dom";
 import '@assets/css/sidebar.css';
-import { reactDasar, reactRouter } from "../routes";
+import { reactDasar, reactRouter, reactRedux } from "../routes";
 import { useState } from "react";
 
 export default function Sidebar() {
@@ -43,6 +43,11 @@ export default function Sidebar() {
             <i className={"ms-4 bi " + (openMenu === "router" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
           {openMenu === 'router' && <ListMenu menu={reactRouter} />}
+          <li className="parent-menu" onClick={() => toggleMenu("redux")}>
+            <span>React Redux</span>
+            <i className={"ms-4 bi " + (openMenu === "redux" ? "bi-chevron-down" : "bi-chevron-left")}></i>
+          </li>
+          {openMenu === 'redux' && <ListMenu menu={reactRedux} />}
         </ul>
       </div>
     </div>

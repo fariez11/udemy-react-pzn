@@ -1,0 +1,21 @@
+## Membuat Project
+  - npm create vite@latest belajar-react-redux -- --template react
+  - update ke versi 19
+  - install react-router
+  
+  - install @reduxjs/toolkit
+  - install react-redux
+
+# Global State Management   
+  - sebelumnya, kita sudah belajar tentang State Management di React, untuk manajemen data di dalam komponen
+  - kita juga sudah belajar tentang Context, yang digunakan untuk manajemen data dari komponen parent ke child
+  - lantas bagaimana jika kita kebutuhan  data (state) yang memang ingin bisa diakses secara global? yang artinya
+    bisa diakses dari manapun, komponen manapun, bahkan jika berbeda parent sama sekali. Layaknya Global State Management
+  - jawabannya, kita butuh bantuan sebuah tempat untuk menyimpan State tersebut, atau kita bisa sebut Store 
+
+  > Redux 
+    - Redux adalah Store library untuk menyimpan State
+    - Redux membolehkan kita menyimpan state dan diakses dari komponen atau halaman manapun
+    - ini menjadikan manajemen state di multi komponen akan jadi lebih mudah menggunakan Redux
+    - Redux adalah project opensource yang populer untuk Global State Management 
+    - https://redux.js.org/
