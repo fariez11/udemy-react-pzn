@@ -123,3 +123,10 @@
   - https://api.reactrouter.com/v7/functions/react_router.useSearchParams.html
   - useSearchParams() akan mengembalikan Array yang berisi object (URLSearchParams dan setter functionnya)
   - https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+
+# Use Location 
+  - untuk mendapatkan URL saat ini, sebenarnya kita bisa menggunakan window.location.href
+  - tapi React Router menyediakan Hook useLocation(), yang bisa digunakan untuk mendapatkan lokasi path saat ini
+  - https://api.reactrouter.com/v7/functions/react_router.useLocation.html
+  - hasil return dari useLocation() adalah object Location, sehingga kita bisa dapat infrormasi lengkap dari location, seperti path, query sampai ke #fragment
+  - https://api.reactrouter.com/v7/interfaces/react_router.Location.html

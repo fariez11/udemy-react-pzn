@@ -1,9 +1,11 @@
-import { NavLink, Outlet, useNavigate } from "react-router";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router";
 import '../assets/css/sidebar.css'
 import Button from "react-bootstrap/Button";
 
 export default function Layout() {
     const navigate = useNavigate();
+
+    const loc = useLocation()
     return (
         <>
             <div className="header bg-secondary rounded-top-3 py-2">
@@ -29,6 +31,7 @@ export default function Layout() {
 
             <div className="footer bg-secondary rounded-bottom-3 py-2">
                 <h4>footer</h4>
+                <span>location : {loc.pathname}{loc.search}{loc.hash}</span>
             </div>
         </>
     )
