@@ -54,6 +54,11 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+body {
+  background-color: #212529 !important; /* warna dark */
+  color: #f8f9fa !important;            /* warna teks terang */
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
