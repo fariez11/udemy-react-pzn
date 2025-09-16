@@ -10,11 +10,17 @@ export default function CounterDouble() {
     const multipleCounter = useSelector((state) => state.counter * number)
 
     return (
-        <div style={{ backgroundColor : '#47494D' }} className="p-3 rounded-bottom-4 text-center">
-            <span className=" fst-italic rounded-4 px-2 pb-1" style={{ backgroundColor : 'rgba(0,0,0, 0.2)' }}>counter double component</span>
-            <h4 className="my-3">double counter = {resultDouble}</h4>
-            <Form.Range min={1} max={10} className="mt-2 mx-auto text-center" style={{ width: '100px' }} placeholder="Normal text" value={number} onChange={(e => setNumber(e.target.value))} />
-            <h4 className="my-2">number * {number} = {multipleCounter}</h4>
+        <div style={{ backgroundColor: '#47494D' }} className="p-3 rounded-bottom-4 text-center">
+            <span className="fst-italic rounded-4 px-2 pb-1" style={{ backgroundColor: 'rgba(0,0,0, 0.2)' }}>counter double component</span>
+            <div className="row m-0 mt-3">
+                <div className="col">
+                    <h4 className="my-3">double <br /> counter = {resultDouble}</h4>
+                </div>
+                <div className="col">
+                    <Form.Range min={1} max={10} className="mt-2 mx-auto text-center" style={{ width: '100px' }} placeholder="Normal text" value={number} onChange={(e => setNumber(e.target.value))} />
+                    <h4 className="my-2">number * {number} = {multipleCounter}</h4>
+                </div>
+            </div>
         </div>
     )
 
