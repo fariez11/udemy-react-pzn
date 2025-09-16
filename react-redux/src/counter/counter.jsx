@@ -22,16 +22,16 @@ export default function Counter() {
     }
 
     return (
-        <div style={{ backgroundColor: '#3A3D41' }} className="p-3 rounded-top-4">
+        <div style={{ backgroundColor: '#34373B' }} className="p-3 rounded-top-4">
             <span className="text-start fst-italic rounded-4 px-2 pb-1" style={{ backgroundColor: 'rgba(0,0,0, 0.2)' }}>counter component</span>
             <h3 className="my-3">hasil = {counter}</h3>
             <div className="d-flex gap-3">
                 <ButtonGroup>
-                    <Button variant="dark" onClick={kurang}>kurang</Button>
-                    <Button variant="dark" onClick={() => dispatch(decrement(2))}>kurang 2</Button>
-                    <Button variant="dark" onClick={ulang}><Icon.BsArrowCounterclockwise /> </Button>
-                    <Button variant="dark" onClick={tambah}>tambah</Button>
-                    <Button variant="dark" onClick={() => dispatch(increment(2))}>tambah 2</Button>
+                    <Button variant="dark" className="px-3" onClick={kurang}>kurang</Button>
+                    <Button variant="dark" className="px-3" onClick={() => dispatch(decrement(2))}>kurang 2</Button>
+                    <Button variant="dark" className="px-3" onClick={ulang}><Icon.BsArrowCounterclockwise /> </Button>
+                    <Button variant="dark" className="px-3" onClick={tambah}>tambah</Button>
+                    <Button variant="dark" className="px-3" onClick={() => dispatch(increment(2))}>tambah 2</Button>
                 </ButtonGroup>
             </div>
         </div>

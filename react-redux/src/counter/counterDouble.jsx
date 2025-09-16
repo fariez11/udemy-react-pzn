@@ -10,7 +10,7 @@ export default function CounterDouble() {
     const multipleCounter = useSelector((state) => state.counter * number)
 
     return (
-        <div style={{ backgroundColor: '#47494D' }} className="p-3 rounded-bottom-4 text-center">
+        <div style={{ backgroundColor: '#3C3F43' }} className="p-3 rounded-bottom-4 text-center">
             <span className="fst-italic rounded-4 px-2 pb-1" style={{ backgroundColor: 'rgba(0,0,0, 0.2)' }}>double counter component</span>
             <div className="row m-0 mt-3">
                 <div className="col">
