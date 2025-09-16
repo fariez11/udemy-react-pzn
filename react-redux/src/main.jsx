@@ -1,35 +1,37 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { configureStore } from '@reduxjs/toolkit'
-import { counterSlice } from './counterSlice.jsx'
 import { Provider } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Counter from './counter.jsx'
-import CounterDouble from './counterDouble.jsx'
+import './index.css'
+import App from './App.jsx'
+import Counter from './counter/counter.jsx'
+import CounterDouble from './counter/counterDouble.jsx'
+import { CounterSlice } from './counter/counterSlice.jsx'
+import { todoListSlice } from './todoList/todoListSlice.jsx'
 
 const store = configureStore({
   reducer: {
-    counter: counterSlice.reducer
+    counter: CounterSlice.reducer,
+    todo: todoListSlice.reducer
   }
 })
- 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route path={"/"} element={<App />} />
-        <Route path={"/counter"} element={
-          <>
-            <Counter />         
-            <CounterDouble />         
-          </>
-        } />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path={"/"} element={<App />} />
+          <Route path={"/counter"} element={
+            <>
+              <Counter />
+              <CounterDouble />
+            </>
+          } />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   </StrictMode>
 )

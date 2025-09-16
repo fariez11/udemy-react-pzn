@@ -1,0 +1,21 @@
+import { useDispatch, useSelector } from "react-redux"
+import { getDoubleCounter } from "./counterSlice"
+import Form from "react-bootstrap/Form"
+import { useState } from "react";
+
+
+export default function CounterDouble() {
+    const [number, setNumber] = useState(1);
+    const resultDouble = useSelector(getDoubleCounter)
+    const multipleCounter = useSelector((state) => state.counter * number)
+
+    return (
+        <div style={{ backgroundColor : '#47494D' }} className="p-3 rounded-bottom-4 text-center">
+            <span className=" fst-italic rounded-4 px-2 pb-1" style={{ backgroundColor : 'rgba(0,0,0, 0.2)' }}>counter double component</span>
+            <h4 className="my-3">double counter = {resultDouble}</h4>
+            <Form.Range min={1} max={10} className="mt-2 mx-auto text-center" style={{ width: '100px' }} placeholder="Normal text" value={number} onChange={(e => setNumber(e.target.value))} />
+            <h4 className="my-2">number * {number} = {multipleCounter}</h4>
+        </div>
+    )
+
+}
