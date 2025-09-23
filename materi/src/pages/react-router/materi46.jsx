@@ -2,7 +2,7 @@ import TabbedCard from "../../components/tabCard";
 
 export default function Materi46() {
     return (
-        <TabbedCard noteContent={<Note />} resultContent={<Result />} />
+        <TabbedCard noteContent={<Note />} resultContent={null} />
     )
 }
 

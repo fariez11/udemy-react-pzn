@@ -2,7 +2,7 @@ import TabbedCard from "../../components/tabCard"
 
 export default function Materi38() {
     return (
-        <TabbedCard noteContent={<Note />} resultContent={<Result />} />
+        <TabbedCard noteContent={<Note />} resultContent={null} />
     )
 }
 
@@ -50,13 +50,6 @@ function Note() {
                 <li>Hindari penggunaan <code>Effect</code> untuk mengubah data di server, karena render ulang dapat menyebabkan perubahan data terjadi berkali-kali.</li>
                 <li>Jika tidak ada interaksi dengan External System, maka sebaiknya jangan gunakan Effect</li>
             </ul>
-        </>
-    )
-}
-
-function Result() {
-    return (
-        <>
         </>
     )
 }

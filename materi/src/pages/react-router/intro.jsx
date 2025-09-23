@@ -2,7 +2,7 @@ import TabbedCard from "../../components/tabCard";
 
 export default function IntroReactRouter() {
     return (
-        <TabbedCard noteContent={<Note />} resultContent={<Result />} />
+        <TabbedCard noteContent={<Note />} resultContent={null} />
     )
 }
 
@@ -21,11 +21,5 @@ function Note() {
                 https://github.com/ProgrammerZamanNow/belajar-reactjs-router
             </a>
         </>
-    )
-}
-
-function Result(){
-    return (
-        <></>
     )
 }

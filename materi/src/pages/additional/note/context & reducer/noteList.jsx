@@ -7,6 +7,8 @@ export default function NoteListContext() {
     const [search, setSearch] = useState("")
     const searchInput = useRef(null)
 
+    const loc = window.location.pathname;
+
     const filterNote = useMemo(() => {                                  // contoh menggunakan useMemo (materi 39)
         console.log('Filtering Notes');
 
@@ -32,7 +34,8 @@ export default function NoteListContext() {
                 <input type="text" className="form-control" ref={searchInput} />
                 <button className="btn btn-outline-success" onClick={handleSearch}><i className="bi bi-search"></i></button>
             </div>
-            <span className="text-muted">*perhatikan log (materi 39)</span>
+            
+            {loc === '/materi-39' ? <span className="text-muted">*perhatikan log</span> : null}
         </>
     );
 }

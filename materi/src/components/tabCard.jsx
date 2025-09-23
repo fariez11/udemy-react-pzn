@@ -1,4 +1,6 @@
 export default function TabbedCard({ noteContent, resultContent }) {
+
+
     return (
         <div className="card w-100 p-0 border-0">
             <div className="card-header pt-2 pb-0 px-0">
@@ -9,12 +11,21 @@ export default function TabbedCard({ noteContent, resultContent }) {
                             catatan
                         </a>
                     </li>
-                    <li className="nav-item flex-fill text-center" role="presentation">
-                        <a className="nav-link tab-card text-light" id="result-tab" data-bs-toggle="tab" data-bs-target="#result" type="button"
-                            role="tab" aria-controls="profile" aria-selected="true" >
-                            hasil
-                        </a>
-                    </li>
+
+                    {resultContent ? 
+                        <li className="nav-item flex-fill text-center" role="presentation">
+                            <a className="nav-link tab-card text-light" id="result-tab" data-bs-toggle="tab" data-bs-target="#result" type="button"
+                                role="tab" aria-controls="profile" aria-selected="true" >
+                                hasil kode
+                            </a>
+                        </li>
+                        : 
+                        <li className="nav-item flex-fill text-center" role="presentation">
+                            <a className="nav-link tab-card text-light" type="button" role="tab" aria-selected="true" aria-disabled>
+                                hanya berisi catatan 
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
 
@@ -28,9 +39,11 @@ export default function TabbedCard({ noteContent, resultContent }) {
                                     {noteContent}
                                 </div>
                             </div>
-                            <div className="tab-pane fade show " id="result" role="tabpanel" aria-labelledby="result-tab">
-                                {resultContent}
-                            </div>
+                            {resultContent &&
+                                <div className="tab-pane fade show " id="result" role="tabpanel" aria-labelledby="result-tab">
+                                    {resultContent}
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

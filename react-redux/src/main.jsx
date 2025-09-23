@@ -10,11 +10,14 @@ import Counter from './counter/counter.jsx'
 import CounterDouble from './counter/counterDouble.jsx'
 import { CounterSlice } from './counter/counterSlice.jsx'
 import { todoListSlice } from './todoList/todoListSlice.jsx'
+import ListTodo from './todoList/listTodo.jsx'
+import AddTodo from './todoList/addTodo.jsx'
+import UpdateTodo from './todoList/updateTodo.jsx'
 
 const store = configureStore({
   reducer: {
     counter: CounterSlice.reducer,
-    todo: todoListSlice.reducer
+    todoList: todoListSlice.reducer
   }
 })
 
@@ -30,6 +33,9 @@ createRoot(document.getElementById('root')).render(
               <CounterDouble />
             </>
           } />
+          <Route path={"/todo-list"} element={<ListTodo />} />
+          <Route path={"/todo-list/add"} element={<AddTodo />} />
+          <Route path={"/todo-list/edit/:id"} element={<UpdateTodo />} />
         </Routes>
       </BrowserRouter>
     </Provider>

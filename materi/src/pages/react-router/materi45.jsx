@@ -4,7 +4,7 @@ import imgClientSideRender from "@assets/img/client-side-render.png"
 
 export default function Materi45() {
     return (
-        <TabbedCard noteContent={<Note />} resultContent={<Result />} />
+        <TabbedCard noteContent={<Note />} resultContent={null} />
     )
 }
 
@@ -39,11 +39,5 @@ function Note() {
                 <li>Problem dengan MPA (Multi Page Application) adalah, setiap berganti halaman maka Browser akan menjalankan ulang</li>
             </ul>
         </>
-    )
-}
-
-function Result() {
-    return (
-        <></>
     )
 }

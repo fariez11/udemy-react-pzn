@@ -22,7 +22,7 @@ export default function Counter() {
     }
 
     return (
-        <div style={{ backgroundColor: '#34373B' }} className="p-3 rounded-top-4">
+        <div style={{ backgroundColor: '#34373B' }} className="p-3 py-4 rounded-top-4">
             <span className="text-start fst-italic rounded-4 px-2 pb-1" style={{ backgroundColor: 'rgba(0,0,0, 0.2)' }}>counter component</span>
             <h3 className="my-3">hasil = {counter}</h3>
             <div className="d-flex gap-3">

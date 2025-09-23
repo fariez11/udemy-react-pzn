@@ -39,6 +39,9 @@ import IntroReactRouter from "./pages/react-router/intro";
 import Materi45 from "./pages/react-router/materi45";
 import Materi46 from "./pages/react-router/materi46";
 import IntroReactRedux from "./pages/react-redux/intro";
+import Materi47_48 from "./pages/react-router/materi47-48";
+import Materi49 from "./pages/react-router/materi49";
+import Materi50 from "./pages/react-router/materi50";
 
 
 export const reactDasar = [
@@ -84,6 +87,9 @@ export const reactRouter = [
     { path: "/materi-43", element: <IntroReactRouter />, label: 'intro react router' },
     { path: "/materi-45", element: <Materi45 />, label: 'pengenalan SPA' },
     { path: "/materi-46", element: <Materi46 />, label: 'router library' },
+    { path: "/materi-47", element: <Materi47_48 />, label: 'setup & membuat project' },
+    { path: "/materi-49", element: <Materi49 />, label: 'routing' },
+    { path: "/materi-50", element: <Materi50 />, label: 'nested route' },
 ]
 
 export const reactRedux = [

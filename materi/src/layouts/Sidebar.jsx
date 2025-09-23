@@ -6,15 +6,13 @@ import { useState } from "react";
 
 export default function Sidebar() {
 
-  // const location = useLocation();
-
   const [openMenu, setOpenMenu] = useState(null);
 
   const toggleMenu = (menuName) => {
     setOpenMenu((prev) => (prev === menuName ? null : menuName));
   };
 
-  function ListMenu({ menu }) {
+  function SubMenu({ menu }) {
     return (
       <div className="overflow-y-auto mx-1 rounded-2 scroll sub-menu">
         <ul className="nav flex-column py-1 px-1" >
@@ -37,17 +35,17 @@ export default function Sidebar() {
             <span>React Dasar</span>
             <i className={"ms-4 bi " + (openMenu === "dasar" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
-          {openMenu === 'dasar' && <ListMenu menu={reactDasar} />}
+          {openMenu === 'dasar' && <SubMenu menu={reactDasar} />}
           <li className="parent-menu" onClick={() => toggleMenu("router")}>
             <span>React Router</span>
             <i className={"ms-4 bi " + (openMenu === "router" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
-          {openMenu === 'router' && <ListMenu menu={reactRouter} />}
+          {openMenu === 'router' && <SubMenu menu={reactRouter} />}
           <li className="parent-menu" onClick={() => toggleMenu("redux")}>
             <span>React Redux</span>
             <i className={"ms-4 bi " + (openMenu === "redux" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
-          {openMenu === 'redux' && <ListMenu menu={reactRedux} />}
+          {openMenu === 'redux' && <SubMenu menu={reactRedux} />}
         </ul>
       </div>
     </div>
