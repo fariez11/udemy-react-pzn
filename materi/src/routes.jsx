@@ -42,6 +42,7 @@ import IntroReactRedux from "./pages/react-redux/intro";
 import Materi47_48 from "./pages/react-router/materi47-48";
 import Materi49 from "./pages/react-router/materi49";
 import Materi50 from "./pages/react-router/materi50";
+import IntroCaseStudy from "./pages/studi-kasus/intro";
 
 
 export const reactDasar = [
@@ -94,5 +95,9 @@ export const reactRouter = [
 
 export const reactRedux = [
     { path: "/materi-58", element: <IntroReactRedux />, label: 'intro react redux' },
+]
+
+export const caseStudy = [
+    { path: "/case-study", element: <IntroCaseStudy />, label: 'studi kasus' },
 ]
 

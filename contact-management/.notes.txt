@@ -1,0 +1,18 @@
+# Setup Backend
+  > Setup CORS
+    - saat nanti menjalankan aplikasi dikomputer, Backend Project dan Frontend Project akan berjalan di HTTP Port yang berbeda
+    - secara default, Browser akan melarang ini, dan akan terjadi error CORS (Cors Origin Resource Sharing)
+    - jadi kita perlu membolehkan hal ini dulu, caranya kita perlu setup di Backend Project dengan menambahkan library CORS untuk ExpressJS
+    - npm install cors
+
+# Setup Frontend
+  > React Use
+    - salah satu hooks library yang populer di React adalah react-use, berisi Hooks yang bisa digunakan dengan mudah
+    - pada materi ini kita akan menggunakan library ini juga untuk membantu mempermudah pembuatan project
+    - https://github.com/streamich/react-use
+    - npm i react-use
+
+  > Sweet Alert
+    - adalah library yang bisa gunakan untuk menampilkan alert yang lebih baik dibandingkan alert bawaan dari Web Browser
+    - https://sweetalert2.github.io
+    - npm i sweetalert2
