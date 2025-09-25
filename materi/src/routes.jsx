@@ -38,7 +38,7 @@ import Materi40 from "./pages/react-dasar/materi40";
 import IntroReactRouter from "./pages/react-router/intro";
 import Materi45 from "./pages/react-router/materi45";
 import Materi46 from "./pages/react-router/materi46";
-import IntroReactRedux from "./pages/react-redux/intro";
+import IntroReactRedux from "./pages/react-redux/intro";    
 import Materi47_48 from "./pages/react-router/materi47-48";
 import Materi49 from "./pages/react-router/materi49";
 import Materi50 from "./pages/react-router/materi50";
@@ -46,7 +46,7 @@ import IntroCaseStudy from "./pages/studi-kasus/intro";
 
 
 export const reactDasar = [
-    { path: "/", element: <Introduction /> , label: 'intro react dasar' },
+    { path: "/", element: <Introduction /> , label: 'intro' },
     { path: "/component", element: <Materi6 />, label: 'component' },
     { path: "/materi-7", element: <Materi7 />, label: 'jsx' },
     { path: "/materi-8", element: <Materi8 />, label: 'javascript di jsx' },
@@ -85,7 +85,7 @@ export const reactDasar = [
 ];
 
 export const reactRouter = [
-    { path: "/materi-43", element: <IntroReactRouter />, label: 'intro react router' },
+    { path: "/materi-43", element: <IntroReactRouter />, label: 'intro' },
     { path: "/materi-45", element: <Materi45 />, label: 'pengenalan SPA' },
     { path: "/materi-46", element: <Materi46 />, label: 'router library' },
     { path: "/materi-47", element: <Materi47_48 />, label: 'setup & membuat project' },
@@ -94,10 +94,10 @@ export const reactRouter = [
 ]
 
 export const reactRedux = [
-    { path: "/materi-58", element: <IntroReactRedux />, label: 'intro react redux' },
+    { path: "/materi-58", element: <IntroReactRedux />, label: 'intro' },
 ]
 
 export const caseStudy = [
-    { path: "/case-study", element: <IntroCaseStudy />, label: 'studi kasus' },
+    { path: "/case-study", element: <IntroCaseStudy />, label: 'intro' },
 ]
 

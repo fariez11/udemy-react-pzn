@@ -1,12 +1,12 @@
 import Sidebar from "./layouts/Sidebar";
 import { Routes, Route, Link } from "react-router-dom";
-import {reactDasar, reactRouter, reactRedux } from "./routes";
+import {reactDasar, reactRouter, reactRedux, caseStudy } from "./routes";
 import FloatingToggle from "./components/floatingToggle";
 import useOnline from "./pages/additional/online/onlineHook";
 
 export default function App() {
 
-  const routes = [...reactDasar, ...reactRouter, ...reactRedux]
+  const routes = [...reactDasar, ...reactRouter, ...reactRedux, ...caseStudy]
 
   const base = {
     height: "100vh",

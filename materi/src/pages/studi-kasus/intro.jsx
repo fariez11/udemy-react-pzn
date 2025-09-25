@@ -9,7 +9,7 @@ export default function IntroCaseStudy() {
 function Note() {
     return (
         <>
-            <h3>Intro Stuid Kasus</h3>
+            <h3>Intro Studi Kasus</h3>
 
             <h6>Slide</h6>
             <a href="https://docs.google.com/presentation/d/1bgRdARHvPbgRXa3GRLg-nUyRmgMcXiWv0ItgxOLjqh8/edit?usp=sharing" target="_blank">

@@ -1,7 +1,7 @@
 // components/Sidebar.jsx
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import '@assets/css/sidebar.css';
-import { reactDasar, reactRouter, reactRedux } from "../routes";
+import { reactDasar, reactRouter, reactRedux, caseStudy } from "../routes";
 import { useState } from "react";
 
 export default function Sidebar() {
@@ -19,7 +19,7 @@ export default function Sidebar() {
           {menu.map((link) => (
             <li className="nav-item menu" key={link.path}>
               {/* <Link className={`nav-link ${location.pathname === link.path ? 'active' : ''}`} to={link.path} style={{ color: '#005C5A' }}> {link.label} </Link> */}
-              <NavLink className="nav-link" to={link.path} style={{ color: '#005C5A' }}> { link.label } </NavLink>
+              <NavLink className="nav-link" to={link.path} style={{ color: '#005C5A' }}> {link.label} </NavLink>
             </li>
           ))}
         </ul>
@@ -29,7 +29,7 @@ export default function Sidebar() {
 
   return (
     <div className="py-2 rounded-3 sidebar">
-        <div className="overflow-y-hidden rounded-3" style={{maxHeight : '100%'}}>
+      <div className="overflow-y-hidden rounded-3" style={{ maxHeight: '100%' }}>
         <ul className="me-2 ps-2 rounded-2 p-0">
           <li className="parent-menu" data-bs-toggle="collapse" onClick={() => toggleMenu("dasar")}>
             <span>React Dasar</span>
@@ -46,6 +46,11 @@ export default function Sidebar() {
             <i className={"ms-4 bi " + (openMenu === "redux" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
           {openMenu === 'redux' && <SubMenu menu={reactRedux} />}
+          <li className="parent-menu" onClick={() => toggleMenu("case")}>
+            <span>Studi Kasus</span>
+            <i className={"ms-4 bi " + (openMenu === "case" ? "bi-chevron-down" : "bi-chevron-left")}></i>
+          </li>
+          {openMenu === 'case' && <SubMenu menu={caseStudy} />}
           
         </ul>
       </div>
