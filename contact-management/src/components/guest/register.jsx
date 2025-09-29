@@ -24,7 +24,7 @@ export default function Register() {
 
         if (response.status === 200) {
             await successAlert('User created successfully');
-            await navigate({ pathname: '/login' });
+            await navigate({ pathname: '/' });
         } else {
             await dangerAlert(responseMsg.errors);
         }
@@ -95,7 +95,7 @@ export default function Register() {
                 </div>
                 <div className="text-center text-sm text-gray-400">
                     Already have an account?
-                    <Link to="/login" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">
+                    <Link to="/" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">
                         Sign in
                     </Link>
                 </div>
