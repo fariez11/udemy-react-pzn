@@ -11,10 +11,6 @@ export default function  Logout(){
 
         const response = await userLogout(token)
         const responseBody = await response.json()
-
-        console.log(token);
-        console.log(response);
-        
         if(response.status === 200){
             setToken("")
             await successAlert('user logout successfully')
@@ -22,7 +18,6 @@ export default function  Logout(){
         }else{
             await dangerAlert(responseBody.errors)
         }
-
     }
 
     useEffectOnce(() => {

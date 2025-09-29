@@ -2,7 +2,6 @@ import { useState } from "react"
 import { updateName, userSession } from "../../lib/api/userApi"
 import { dangerAlert, successAlert } from "../../lib/alert/alert"
 import { useEffectOnce, useLocalStorage } from "react-use"
-import { useNavigate } from "react-router"
 
 export default function Profile() {
 
@@ -10,16 +9,15 @@ export default function Profile() {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [token, _] = useLocalStorage("token", "")
-    const navigate = useNavigate()
-    
+
 
     async function fetchUserSession() {
         const response = await userSession(token)
         const responseBody = await response.json()
 
-        if(response.status === 200){
+        if (response.status === 200) {
             setName(responseBody.data.name)
-        }else{
+        } else {
             await dangerAlert(responseBody.errors)
         }
     }
@@ -29,40 +27,40 @@ export default function Profile() {
     })
 
 
-    async function handleUpdateProfile(e){
+    async function handleUpdateProfile(e) {
         e.preventDefault()
 
-        const response = await updateName(token, {name})
+        const response = await updateName(token, { name })
         const responseBody = await response.json()
 
-        if(response.status === 200){
+        if (response.status === 200) {
             await successAlert('Name Updated Succesfully')
             // await navigate({ pathname : '/dashboard/'})
-        }else{
+        } else {
             await dangerAlert(responseBody.errors)
         }
     }
 
 
-    async function handleUpdatePassword(e){
+    async function handleUpdatePassword(e) {
         e.preventDefault()
 
-        if(password !== confirmPassword){
+        if (password !== confirmPassword) {
             await dangerAlert('Confirm Password do not match')
             return
         }
 
-        const response = await updateName(token, {password})
+        const response = await updateName(token, { password })
         const responseBody = await response.json()
 
-        if(response.status === 200){
+        if (response.status === 200) {
 
             setPassword('')
             setConfirmPassword('')
 
             await successAlert('Password Updated Succesfully')
             // await navigate({ pathname : '/dashboard/'})
-        }else{
+        } else {
             await dangerAlert(responseBody.errors)
         }
     }
@@ -90,9 +88,9 @@ export default function Profile() {
                                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                             <i className="fas fa-user text-gray-500" />
                                         </div>
-                                        <input type="text" id="name" name="name" 
-                                        className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
-                                         placeholder="Enter your full name" required value={name} onChange={(e) => setName(e.target.value)} />
+                                        <input type="text" id="name" name="name"
+                                            className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                                            placeholder="Enter your full name" required value={name} onChange={(e) => setName(e.target.value)} />
                                     </div>
                                 </div>
                                 <div className="mt-6">
@@ -118,9 +116,9 @@ export default function Profile() {
                                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                             <i className="fas fa-lock text-gray-500" />
                                         </div>
-                                        <input type="password" id="new_password" name="new_password" 
-                                        className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" 
-                                        placeholder="Enter your new password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                                        <input type="password" id="new_password" name="new_password"
+                                            className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                                            placeholder="Enter your new password" required value={password} onChange={(e) => setPassword(e.target.value)} />
                                     </div>
                                 </div>
                                 <div className="mb-5">
@@ -129,9 +127,9 @@ export default function Profile() {
                                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                             <i className="fas fa-check-double text-gray-500" />
                                         </div>
-                                        <input type="password" id="confirm_password" name="confirm_password" 
-                                        className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" 
-                                        placeholder="Confirm your new password" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                                        <input type="password" id="confirm_password" name="confirm_password"
+                                            className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                                            placeholder="Confirm your new password" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                                     </div>
                                 </div>
                                 <div className="mt-6">

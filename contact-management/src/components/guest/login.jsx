@@ -20,7 +20,7 @@ export default function Login() {
         if(response.status === 200){
             const token = responseBody.data.token
             setToken(token)
-            await navigate({ pathname : '/dashboard/contact'})
+            await navigate({ pathname : '/dashboard/user'})
         }else{
             await dangerAlert(responseBody.errors)
         }
