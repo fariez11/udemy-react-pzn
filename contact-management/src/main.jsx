@@ -13,6 +13,8 @@ import CreateContact from './components/contact/createContact'
 import Contact from './components/contact/contact'
 import EditContract from './components/contact/editContact'
 import DetailContact from './components/contact/detailContact'
+import AddAddress from './components/address/addAddress'
+import EditAddress from './components/address/editAddress'
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
@@ -32,8 +34,21 @@ createRoot(document.getElementById('root')).render(
         <Route path='contact'>
           <Route index element={<Contact />} />
           <Route path='create' element={<CreateContact />} />
-          <Route path='edit/:id' element={<EditContract />} />
-          <Route path='detail/:id' element={<DetailContact />} />
+          <Route path=':id'>
+            <Route index element={<DetailContact />} />
+            <Route path='edit' element={<EditContract />} />
+            <Route path='address'>
+              <Route path='add' element={<AddAddress />} />
+              <Route path='edit/:id' element={<EditAddress />} />
+            </Route>
+          </Route>
+          {/* <Route path='edit/:id' element={<EditContract />} />
+          <Route path='detail/:id' element={<DetailContact />}>
+            <Route path='address'>
+              <Route path='add' element={<AddAddress />} />
+              <Route path='edit/:id' element={<EditAddress />} />
+            </Route>
+          </Route> */}
         </Route>
       </Route>
     </Routes>
