@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { contactDetail } from "../../lib/api/contactApi";
-import { useEffectOnce, useLocalStorage } from "react-use";
-import { dangerAlert } from "../../lib/alert/alert";
-import { addressList } from "../../lib/api/addressApi";
+import { useLocalStorage } from "react-use";
+import { confirmAlert, dangerAlert, successAlert } from "../../lib/alert/alert";
+import { addressDelete, addressList } from "../../lib/api/addressApi";
 
 export default function DetailContact() {
 
@@ -11,6 +11,7 @@ export default function DetailContact() {
     const [token, _] = useLocalStorage('token', '')
     const [contact, setContact] = useState({})
     const [addresses, setAddress] = useState([])
+    const [reload, setReload] = useState(false)
 
     async function fetchDetailContact() {
         const response = await contactDetail(token, id)
@@ -26,19 +27,37 @@ export default function DetailContact() {
     async function fetchAddress() {
         const response = await addressList(token, id)
         const responseBody = await response.json()
-        console.log(responseBody);
-        
+
         if (response.status === 200) {
             setAddress(responseBody.data)
+            setReload(!reload)
         } else {
             dangerAlert(responseBody.errors)
         }
     }
 
-    useEffectOnce(() => {
+    useEffect(() => {
         fetchDetailContact()
         fetchAddress()
-    })
+    },[reload])
+
+
+    async function handleDeleteAddress(addressId){
+
+        if(!await confirmAlert('Are you sure want to delete this address')){
+            return
+        }
+
+        const response =  await addressDelete(token, id, addressId)
+        const responseBody = await response.json()
+
+        if(response.status === 200){
+            successAlert('Address Delete Successfully')
+            setReload(!reload)
+        }else{
+            dangerAlert(responseBody.errors)
+        }
+    }
 
     return (
         <main className="container mx-auto px-4 py-8 flex-grow">
@@ -49,7 +68,7 @@ export default function DetailContact() {
             </div>
             <div className="flex justify-center mb-4">
                 <h1 className="text-2xl font-bold text-white flex items-center justify-items-center">
-                    <i className="fas fa-user-plus text-white-400 mr-3" /> Detail Contact
+                    <i className="fas fa-id-card text-white-400 mr-3" /> Detail Contact
                 </h1>
             </div>
             <div className="bg-gray-800 bg-opacity-80 rounded-xl shadow-custom border border-gray-700 overflow-hidden max-w-2xl mx-auto animate-fade-in">
@@ -139,16 +158,16 @@ export default function DetailContact() {
                                             <span>{address.country}</span>
                                         </p>
                                         <p className="flex items-center">
-                                            <i className="fas fa-envelope text-gray-500 w-6" />
+                                            <i className="fas fa-mail-bulk text-gray-500 w-6" />
                                             <span className="font-medium w-24">Postal Code:</span>
                                             <span>{address.postal_code}</span>
                                         </p>
                                     </div>
                                     <div className="flex justify-end space-x-3">
-                                        <a to="edit_address.html" className="px-4 py-2 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                                        <Link to={`address/${address.id}/edit`} className="px-4 py-2 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
                                             <i className="fas fa-edit mr-2" /> Edit
-                                        </a>
-                                        <button className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                                        </Link>
+                                        <button onClick={() => handleDeleteAddress(address.id)} className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
                                             <i className="fas fa-trash-alt mr-2" /> Delete
                                         </button>
                                     </div>

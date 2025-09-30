@@ -49,14 +49,14 @@ export default function AddAddress() {
 
     return (
         <div className="container mx-auto px-4 py-8 flex-grow">
-            <div className="flex items-center mb-6">
+            {/* <div className="flex items-center mb-6">
                 <Link to={`/dashboard/contact/${id}`} className="text-blue-400 hover:text-blue-300 mr-4 flex items-center transition-colors duration-200">
                     <i className="fas fa-arrow-left mr-2" /> Back to Detail Contacts
                 </Link>
-            </div>
+            </div> */}
             <div className="flex justify-center mb-4">
                 <h1 className="text-2xl font-bold text-white flex items-center justify-items-center">
-                    <i className="fas fa-user-plus text-white-400 mr-3" /> Add New Address
+                    <i className="fas fa-map-marker-alt text-white-400 mr-3" /> Add New Address
                 </h1>
             </div>
             <div className="bg-gray-800 bg-opacity-80 rounded-xl shadow-custom border border-gray-700 overflow-hidden max-w-2xl mx-auto animate-fade-in">

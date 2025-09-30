@@ -39,7 +39,7 @@ createRoot(document.getElementById('root')).render(
             <Route path='edit' element={<EditContract />} />
             <Route path='address'>
               <Route path='add' element={<AddAddress />} />
-              <Route path='edit/:id' element={<EditAddress />} />
+              <Route path=':addressId/edit' element={<EditAddress />} />
             </Route>
           </Route>
           {/* <Route path='edit/:id' element={<EditContract />} />

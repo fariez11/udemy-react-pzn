@@ -48,11 +48,11 @@ export default function EditContract() {
     
     return (
         <div className="container mx-auto px-4 py-8 flex-grow">
-            <div className="flex items-center mb-6">
+            {/* <div className="flex items-center mb-6">
                 <Link to="/dashboard/contact" className="text-blue-400 hover:text-blue-300 mr-4 flex items-center transition-colors duration-200">
                     <i className="fas fa-arrow-left mr-2" /> Back to Contacts
                 </Link>
-            </div>
+            </div> */}
             <div className="flex justify-center mb-4">
                 <h1 className="text-2xl font-bold text-white flex items-center justify-items-center">
                     <i className="fas fa-user-plus text-white-400 mr-3" /> Edit Contact

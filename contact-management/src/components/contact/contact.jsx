@@ -112,17 +112,14 @@ export default function Contact() {
             dangerAlert(responseBody.errors)
         }
 
-
-
-
     }
 
-
+    
 
     return (
         <div>
             <div className="flex items-center mb-6">
-                <i className="fas fa-users text-blue-400 text-2xl mr-3" />
+                <i className="fas fa-users text-white-400 text-2xl mr-3" />
                 <h1 className="text-2xl font-bold text-white">My Contacts</h1>
             </div>
             <div className="bg-gray-800 bg-opacity-80 rounded-xl shadow-custom border border-gray-700 p-6 mb-8 animate-fade-in">
