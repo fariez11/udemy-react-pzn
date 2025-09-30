@@ -28,6 +28,30 @@ export const contactList = async (token, { name, email, phone, page }) => {
   });
 };
 
+export const contactDetail = async (token, id) => {
+  return await fetch(`${import.meta.env.VITE_API_PATH}/contacts/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: token,
+    },
+  });
+};
+
+export const contactUpdate = async (token, id, param) => {
+  return await fetch(`${import.meta.env.VITE_API_PATH}/contacts/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: token,
+    },
+    body: JSON.stringify(param),
+  });
+};
+
+
 export const contactDelete = async (token, id) => {
   return await fetch(`${import.meta.env.VITE_API_PATH}/contacts/${id}`, {
     method: "DELETE",
@@ -38,3 +62,5 @@ export const contactDelete = async (token, id) => {
     },
   });
 };
+
+
