@@ -1,12 +1,12 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useEffectOnce, useLocalStorage } from "react-use";
-import { contactList } from "../../lib/api/contactApi";
-import { dangerAlert } from "../../lib/alert/alert";
-import { Link } from "react-router";
-import { userLogin } from "../../lib/api/userApi";
+import { contactDelete, contactList } from "../../lib/api/contactApi";
+import { confirmAlert, dangerAlert, successAlert } from "../../lib/alert/alert";
+import { Link, useNavigate } from "react-router";
 
 export default function Contact() {
 
+    const navigate = useNavigate()
     const [token, _] = useLocalStorage('token', '')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -24,40 +24,10 @@ export default function Contact() {
         return pages
     }
 
-    async function handlePageChange(page){
+    async function handlePageChange(page) {
         setPage(page)
         setReload(!reload)
     }
-
-
-    function handleReset() {
-        setName("")
-        setEmail("")
-        setPhone("")
-    }
-
-    async function handleSearch(e) {
-        e.preventDefault()
-        setPage(1)
-        setReload(!reload)
-    }
-
-    async function fetchContact() {
-        const response = await contactList(token, { name, email, phone, page })
-        const responseBody = await response.json()
-
-        if (response.status === 200) {
-            setContacts(responseBody.data)
-            setTotalPage(responseBody.paging.total_page)
-        } else {
-            dangerAlert(responseBody.errors)
-        }
-    }
-
-    useEffect(() => {
-        fetchContact().then(() => console.log('contact fetched'))
-    }, [reload])
-
 
     useEffectOnce(() => {
         const toggleButton = document.getElementById('toggleSearchForm');
@@ -95,6 +65,60 @@ export default function Contact() {
             toggleButton.addEventListener('click', toggleSearchForm);
         }
     })
+
+    async function handleSearch(e) {
+        e.preventDefault()
+        setPage(1)
+        setReload(!reload)
+    }
+
+    function handleReset() {
+        setName("")
+        setEmail("")
+        setPhone("")
+    }
+
+    async function fetchContact() {
+        const response = await contactList(token, { name, email, phone, page })
+        const responseBody = await response.json()
+
+        if (response.status === 200) {
+            setContacts(responseBody.data)
+            setTotalPage(responseBody.paging.total_page)
+        } else {
+            dangerAlert(responseBody.errors)
+        }
+    }
+
+    useEffect(() => {
+        fetchContact().then(() => console.log('contact fetched'))
+    }, [reload])
+
+
+    async function handleContactDelete(id) {
+
+        if (!await confirmAlert('Are you sure want to delete this contact')) {
+            return
+        }
+
+        const response = await contactDelete(token, id)
+        const responseBody = await response.json()
+
+        console.log(responseBody);
+        if (response.status === 200) {
+            successAlert('Contact Deleted Successfully')
+            // await navigate({ pathname : '/dashboard/contact'})
+            setReload(!reload)
+        } else {
+            dangerAlert(responseBody.errors)
+        }
+
+
+
+
+    }
+
+
 
     return (
         <div>
@@ -208,7 +232,7 @@ export default function Contact() {
                                 <Link to={`/edit/${contact.id}`} className="px-4 py-2 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
                                     <i className="fas fa-edit mr-2" /> Edit
                                 </Link>
-                                <button className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                                <button type="submit" onClick={() => handleContactDelete(contact.id)} className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
                                     <i className="fas fa-trash-alt mr-2" /> Delete
                                 </button>
                             </div>
@@ -220,8 +244,8 @@ export default function Contact() {
                 <nav className="flex items-center space-x-3 bg-gray-800 bg-opacity-80 rounded-xl shadow-custom border border-gray-700 p-3 animate-fade-in">
 
                     {page > 1 && <Link to="#" onClick={() => handlePageChange(page - 1)} className="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center">
-                            <i className="fas fa-chevron-left mr-2" /> Previous
-                        </Link>
+                        <i className="fas fa-chevron-left mr-2" /> Previous
+                    </Link>
                     }
 
 
@@ -232,7 +256,7 @@ export default function Contact() {
                     ))}
 
                     {page < totalPage &&
-                        <Link to="#" onClick={() => handlePageChange(page + 1 )} className="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center">
+                        <Link to="#" onClick={() => handlePageChange(page + 1)} className="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center">
                             Next <i className="fas fa-chevron-right ml-2" />
                         </Link>
                     }
