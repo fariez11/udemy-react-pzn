@@ -41,6 +41,8 @@ export default function CreateContact() {
             onEmailChange={(e) => setEmail(e.target.value)}
             onPhoneChange={(e) => setPhone(e.target.value)}
             onSubmit={handleSubmit}
+            iconButton="fa-plus-circle"
+            textButton="Create Contact"
         />
         
     )

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router";
 
-export default function FormContact({ title, first_name, last_name, email, phone, onFirstNameChange, onLastNameChange, onEmailChange, onPhoneChange, onSubmit}) 
+export default function FormContact({ title, first_name, last_name, email, phone, onFirstNameChange, onLastNameChange, onEmailChange, onPhoneChange, onSubmit, iconButton, textButton}) 
 {
     const navigate = useNavigate()
     return (
@@ -67,7 +67,7 @@ export default function FormContact({ title, first_name, last_name, email, phone
                                 <i className="fas fa-times mr-2" /> Cancel
                             </Link>
                             <button type="submit" className="px-5 py-3 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5 flex items-center">
-                                <i className="fas fa-plus-circle mr-2" /> Create Contact
+                                <i className={`fas ${iconButton} mr-2`} /> {textButton}
                             </button>
                         </div>
                     </form>

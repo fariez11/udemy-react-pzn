@@ -59,6 +59,8 @@ export default function EditContract() {
             onEmailChange={(e) => setEmail(e.target.value)}
             onPhoneChange={(e) => setPhone(e.target.value)}
             onSubmit={handleUpdateContact}
+            iconButton='fa-check-circle'
+            textButton='Save Changes'
         />
     )
 }
