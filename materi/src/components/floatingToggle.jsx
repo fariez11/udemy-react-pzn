@@ -16,13 +16,27 @@ const styles = `
     .fade-in {
         animation: fadeIn 2s ease-in-out;
     }
+
+    .bubble{
+        max-width: 650px;
+        background-color: rgba(1, 129, 127, 0.3);
+        color: rgba(251,251,251, 0.3);
+        border-radius: 16px 3px 16px 16px;
+        transition: background-color 500ms cubic-bezier(.22,.9,.3,1),
+            color 500ms cubic-bezier(.22,.9,.3,1);
+    }
+        
+    .bubble:hover {
+        background-color: rgba(1, 129, 127, 0.9);
+        color: rgba(251,251,251, 0.9);
+    }
 `;
 
-const bubble = {
-    maxWidth: "650px",
-    backgroundColor: "rgba(1, 129, 127, 0.6)",
-    borderRadius: "16px 3px 16px 16px",
-};
+// const bubble = {
+//     maxWidth: "650px",
+//     backgroundColor: "rgba(1, 129, 127, 0.5)",
+//     borderRadius: "16px 3px 16px 16px",
+// };
 
 const messages = [
     {
@@ -86,7 +100,7 @@ export default function FloatingToggle() {
     return (
         <>
             <style>{styles}</style>
-            <div className="position-fixed bottom-0 end-0 m-3 p-2 px-3 fade-in fade-out" key={fadeKey} style={bubble}>
+            <div className="quote position-fixed bottom-0 end-0 m-3 p-2 px-3 fade-in fade-out bubble" key={fadeKey}>
                 <blockquote className="blockquote fs-6 text-white p-0 m-0">
                     <p className="pb-3">"{text}"</p>
                     <footer className="blockquote-footer text-white">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { userLogin } from "../../lib/api/userApi";
-import { useLocalStorage} from "react-use"
+import { useLocalStorage } from "react-use"
 import { dangerAlert } from "../../lib/alert/alert";
 
 export default function Login() {
@@ -11,19 +11,24 @@ export default function Login() {
     const navigate = useNavigate()
     const [_, setToken] = useLocalStorage('token', '')
 
-    async function handleSubmit(e){
+    async function handleSubmit(e) {
         e.preventDefault();
 
-        const response = await userLogin({username, password});
-        const responseBody = await response.json()
+        try {
+            const response = await userLogin({ username, password });
+            const responseBody = await response.json()
 
-        if(response.status === 200){
-            const token = responseBody.data.token
-            setToken(token)
-            await navigate({ pathname : '/dashboard/user'})
-        }else{
-            await dangerAlert(responseBody.errors)
+            if (response.status === 200) {
+                const token = responseBody.data.token
+                setToken(token)
+                await navigate({ pathname: '/dashboard/contact' })
+            } else {
+                await dangerAlert(responseBody.errors)
+            }
+        } catch (error) {
+            dangerAlert('Cannot connect to server, please check the server')
         }
+
 
 
     }
@@ -44,7 +49,7 @@ export default function Login() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i className="fas fa-user text-gray-500" /></div>
                         <input type="text" id="username" name="username"
                             className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
-                            placeholder="Enter your username" required="" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                            placeholder="Enter your username" required="" value={username} onChange={(e) => setUsername(e.target.value)} />
                     </div>
                 </div>
                 <div className="mb-6">
@@ -56,7 +61,7 @@ export default function Login() {
                         </div>
                         <input type="password" id="password" name="password"
                             className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
-                            placeholder="Enter your password" required="" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                            placeholder="Enter your password" required="" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                 </div>
                 <div className="mb-6">
@@ -65,8 +70,8 @@ export default function Login() {
                         <i className="fas fa-sign-in-alt mr-2" /> Sign In
                     </button>
                 </div>
-                <div className="text-center text-sm text-gray-400">
-                    Don't have an account?
+                <div className="flex justify-center text-sm text-gray-400 space-x-1">
+                    <span> Don't have an account?</span>
                     <Link to="/register" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">
                         Sign up
                     </Link>

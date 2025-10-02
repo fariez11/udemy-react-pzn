@@ -11,7 +11,6 @@ export default function DetailContact() {
     const [token, _] = useLocalStorage('token', '')
     const [contact, setContact] = useState({})
     const [addresses, setAddress] = useState([])
-    const [reload, setReload] = useState(false)
 
     async function fetchDetailContact() {
         const response = await contactDetail(token, id)
@@ -30,7 +29,6 @@ export default function DetailContact() {
 
         if (response.status === 200) {
             setAddress(responseBody.data)
-            setReload(!reload)
         } else {
             dangerAlert(responseBody.errors)
         }
@@ -39,7 +37,7 @@ export default function DetailContact() {
     useEffect(() => {
         fetchDetailContact()
         fetchAddress()
-    },[reload])
+    })
 
 
     async function handleDeleteAddress(addressId){
@@ -53,7 +51,7 @@ export default function DetailContact() {
 
         if(response.status === 200){
             successAlert('Address Delete Successfully')
-            setReload(!reload)
+            await fetchAddress()
         }else{
             dangerAlert(responseBody.errors)
         }
@@ -180,7 +178,7 @@ export default function DetailContact() {
                         <Link to="/dashboard/contact" className="px-5 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center shadow-md">
                             <i className="fas fa-arrow-left mr-2" /> Back
                         </Link>
-                        <Link to={`/dashboard/contact/edit/${id}`} className="px-5 py-3 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5 flex items-center">
+                        <Link to={`/dashboard/contact/${id}/edit`} className="px-5 py-3 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5 flex items-center">
                             <i className="fas fa-user-edit mr-2" /> Edit Contact
                         </Link>
                     </div>

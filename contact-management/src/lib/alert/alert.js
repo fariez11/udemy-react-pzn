@@ -24,8 +24,8 @@ export const confirmAlert = async (message) => {
     title: 'Are you sure?',
     text: message,
     showCancelButton: true,
-    cancelButtonColor: '#D33',
-    confirmButtonColor: '#3085D6',
+    confirmButtonColor: '#D33',
+    cancelButtonColor: '#3085D6',
     confirmButtonText: 'Yes'
   })
 

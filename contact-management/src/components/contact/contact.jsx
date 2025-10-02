@@ -90,7 +90,7 @@ export default function Contact() {
     }
 
     useEffect(() => {
-        fetchContact().then(() => console.log('contact fetched'))
+        fetchContact().then(() => {})
     }, [reload])
 
 

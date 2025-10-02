@@ -93,8 +93,8 @@ export default function Register() {
                         <i className="fas fa-user-plus mr-2" /> Register
                     </button>
                 </div>
-                <div className="text-center text-sm text-gray-400">
-                    Already have an account?
+                <div className="flex justify-center text-sm text-gray-400 space-x-1">
+                    <span>Already have an account?</span>
                     <Link to="/" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">
                         Sign in
                     </Link>
