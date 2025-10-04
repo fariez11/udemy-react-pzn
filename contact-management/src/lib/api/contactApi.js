@@ -1,66 +1,27 @@
+import { apiCall } from "./apiService";
+
 export const contactCreate = async (token, param) => {
-  return await fetch(`${import.meta.env.VITE_API_PATH}/contacts`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: token,
-    },
-    body: JSON.stringify(param),
-  });
+  return apiCall(`${baseUrl}/contacts`, 'POST', token, param)
 };
 
 export const contactList = async (token, { name, email, phone, page }) => {
-  const url = new URL(`${import.meta.env.VITE_API_PATH}/contacts`);
+  const queryParams = new URLSearchParams();
+  if (name) queryParams.append("name", name);
+  if (email) queryParams.append("email", email);
+  if (phone) queryParams.append("phone", phone);
+  if (page) queryParams.append("page", page);
 
-  if (name) url.searchParams.append("name", name);
-  if (email) url.searchParams.append("email", email);
-  if (phone) url.searchParams.append("phone", phone);
-  if (page) url.searchParams.append("page", page);
-
-  return await fetch(url, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: token,
-    },
-  });
+  return apiCall(`/contacts${queryParams.toString() ? `?queryParams.toString()` : ''}`, 'GET', token);
 };
 
 export const contactDetail = async (token, id) => {
-  return await fetch(`${import.meta.env.VITE_API_PATH}/contacts/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: token,
-    },
-  });
+ return apiCall(`/contacts/${id}`, 'GET', token)
 };
 
 export const contactUpdate = async (token, id, param) => {
-  return await fetch(`${import.meta.env.VITE_API_PATH}/contacts/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: token,
-    },
-    body: JSON.stringify(param),
-  });
+  return apiCall(`/contacts/${id}`, 'PUT', token, param)
 };
-
 
 export const contactDelete = async (token, id) => {
-  return await fetch(`${import.meta.env.VITE_API_PATH}/contacts/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: token,
-    },
-  });
+  return apiCall(`/contacts/${id}`, 'DELETE', token)
 };
-
-

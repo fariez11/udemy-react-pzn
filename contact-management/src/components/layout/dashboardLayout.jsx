@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router";
 import { userSession } from "../../lib/api/userApi";
-import { useInterval, useLocalStorage } from "react-use";
+import { useLocalStorage } from "react-use";
 import { dangerAlert } from "../../lib/alert/alert";
 
 export default function DashboardLayout() {

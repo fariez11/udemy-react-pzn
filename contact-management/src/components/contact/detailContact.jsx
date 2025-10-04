@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router";
 import { contactDetail } from "../../lib/api/contactApi";
-import { useLocalStorage } from "react-use";
+import { useEffectOnce, useLocalStorage } from "react-use";
 import { confirmAlert, dangerAlert, successAlert } from "../../lib/alert/alert";
 import { addressDelete, addressList } from "../../lib/api/addressApi";
 
@@ -34,7 +34,7 @@ export default function DetailContact() {
         }
     }
 
-    useEffect(() => {
+    useEffectOnce(() => {
         fetchDetailContact()
         fetchAddress()
     })

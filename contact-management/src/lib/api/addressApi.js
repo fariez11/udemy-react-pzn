@@ -1,71 +1,21 @@
+import { apiCall } from './apiService'
+
 export const addressAdd = async (token, id, param) => {
-  return await fetch(
-    `${import.meta.env.VITE_API_PATH}/contacts/${id}/addresses`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(param),
-    }
-  );
+  return apiCall(`/contacts/${id}/addresses`, 'POST', token, param)
 };
 
 export const addressList = async (token, id) => {
-  return await fetch(
-    `${import.meta.env.VITE_API_PATH}/contacts/${id}/addresses`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: token,
-      }
-    }
-  );
+  return apiCall(`/contacts/${id}/addresses`, 'GET', token)
 };
 
 export const addressDetail = async (token, contactId, addressId) => {
-  return await fetch(
-    `${import.meta.env.VITE_API_PATH}/contacts/${contactId}/addresses/${addressId}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: token,
-      }
-    }
-  );
+  return apiCall(`/contacts/${contactId}/addresses/${addressId}`, 'GET', token)
 };
 
 export const addressUpdate = async (token, contactId, addressId, param) => {
-  return await fetch(
-    `${import.meta.env.VITE_API_PATH}/contacts/${contactId}/addresses/${addressId}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(param)
-    }
-  );
+  return apiCall(`/contacts/${contactId}/addresses/${addressId}`, 'PUT', token, param)
 };
 
 export const addressDelete = async (token, contactId, addressId) => {
-  return await fetch(
-    `${import.meta.env.VITE_API_PATH}/contacts/${contactId}/addresses/${addressId}`,
-    {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: token,
-      }
-    }
-  );
+  return apiCall(`/contacts/${contactId}/addresses/${addressId}`, 'DELETE', token)
 };
