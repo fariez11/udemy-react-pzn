@@ -11,7 +11,7 @@ export const contactList = async (token, { name, email, phone, page }) => {
   if (phone) queryParams.append("phone", phone);
   if (page) queryParams.append("page", page);
 
-  return apiCall(`/contacts${queryParams.toString() ? `?queryParams.toString()` : ''}`, 'GET', token);
+  return apiCall(`/contacts${queryParams.toString() ? `?${queryParams.toString()}` : ''}`, 'GET', token);
 };
 
 export const contactDetail = async (token, id) => {

@@ -43,6 +43,7 @@ import Materi47_48 from "./pages/react-router/materi47-48";
 import Materi49 from "./pages/react-router/materi49";
 import Materi50 from "./pages/react-router/materi50";
 import IntroCaseStudy from "./pages/studi-kasus/intro";
+import SetupCaseStudy from "./pages/studi-kasus/setup";
 
 
 export const reactDasar = [
@@ -99,5 +100,6 @@ export const reactRedux = [
 
 export const caseStudy = [
     { path: "/case-study", element: <IntroCaseStudy />, label: 'intro' },
+    { path: "/setup", element: <SetupCaseStudy />, label: 'setup & challenge' },
 ]
 

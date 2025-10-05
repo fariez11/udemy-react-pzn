@@ -80,7 +80,7 @@ export default function Contact() {
     async function fetchContact() {
         const response = await contactList(token, { name, email, phone, page })
         const responseBody = await response.json()
-
+        
         if (response.status === 200) {
             setContacts(responseBody.data)
             setTotalPage(responseBody.paging.total_page)

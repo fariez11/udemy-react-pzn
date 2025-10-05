@@ -1,0 +1,29 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+  -webkit-animation: fadeIn 2s ease-in-out;
+}
+
+.bubble {
+  max-width: 650px;
+  background-color: rgba(1, 129, 127, 0.3);
+  color: rgba(251, 251, 251, 0.3);
+  border-radius: 16px 3px 16px 16px;
+  transition: background-color 500ms cubic-bezier(0.22, 0.9, 0.3, 1),
+    color 500ms cubic-bezier(0.22, 0.9, 0.3, 1);
+}
+
+.bubble:hover {
+  background-color: rgba(1, 129, 127, 0.9);
+  color: rgba(251, 251, 251, 0.9);
+}

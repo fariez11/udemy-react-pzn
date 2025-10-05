@@ -23,6 +23,8 @@ export default function Login() {
                 setToken(token)
                 await navigate({ pathname: '/dashboard/contact' })
             } else {
+                setUsername('')
+                setPassword('')
                 await dangerAlert(responseBody.errors)
             }
         } catch (error) {

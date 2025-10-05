@@ -8,6 +8,13 @@ export default function Sidebar() {
 
   const [openMenu, setOpenMenu] = useState(null);
 
+  const menus = [
+    { key: "dasar", label: "React Dasar", items: reactDasar },
+    { key: "router", label: "React Router", items: reactRouter },
+    { key: "redux", label: "React Redux", items: reactRedux },
+    { key: "case", label: "Studi Kasus", items: caseStudy },
+  ];
+
   const toggleMenu = (menuName) => {
     setOpenMenu((prev) => (prev === menuName ? null : menuName));
   };
@@ -31,7 +38,7 @@ export default function Sidebar() {
     <div className="py-2 rounded-3 sidebar">
       <div className="overflow-y-hidden rounded-3" style={{ maxHeight: '100%' }}>
         <ul className="me-2 ps-2 rounded-2 p-0">
-          <li className="parent-menu" data-bs-toggle="collapse" onClick={() => toggleMenu("dasar")}>
+          {/* <li className="parent-menu" data-bs-toggle="collapse" onClick={() => toggleMenu("dasar")}>
             <span>React Dasar</span>
             <i className={"ms-4 bi " + (openMenu === "dasar" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
@@ -50,8 +57,27 @@ export default function Sidebar() {
             <span>Studi Kasus</span>
             <i className={"ms-4 bi " + (openMenu === "case" ? "bi-chevron-down" : "bi-chevron-left")}></i>
           </li>
-          {openMenu === 'case' && <SubMenu menu={caseStudy} />}
-          
+          {openMenu === 'case' && <SubMenu menu={caseStudy} />} */}
+          {menus.map((menu) => (
+            <li key={menu.key}>
+              <div
+                className="parent-menu"
+                onClick={() => toggleMenu(menu.key)}
+                data-bs-toggle="collapse"
+              >
+                <span>{menu.label}</span>
+                <i
+                  className={
+                    "ms-4 bi " +
+                    (openMenu === menu.key
+                      ? "bi-chevron-down"
+                      : "bi-chevron-left")
+                  }
+                />
+              </div>
+              {openMenu === menu.key && <SubMenu menu={menu.items} />}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

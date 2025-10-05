@@ -1,48 +1,11 @@
 // FloatingToggle.jsx
 import { useState, useEffect } from "react";
-
-const styles = `
-    @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    }
-
-    .fade-in {
-        animation: fadeIn 2s ease-in-out;
-    }
-
-    .bubble{
-        max-width: 650px;
-        background-color: rgba(1, 129, 127, 0.3);
-        color: rgba(251,251,251, 0.3);
-        border-radius: 16px 3px 16px 16px;
-        transition: background-color 500ms cubic-bezier(.22,.9,.3,1),
-            color 500ms cubic-bezier(.22,.9,.3,1);
-    }
-        
-    .bubble:hover {
-        background-color: rgba(1, 129, 127, 0.9);
-        color: rgba(251,251,251, 0.9);
-    }
-`;
-
-// const bubble = {
-//     maxWidth: "650px",
-//     backgroundColor: "rgba(1, 129, 127, 0.5)",
-//     borderRadius: "16px 3px 16px 16px",
-// };
-
+import '@assets/css/FloatingToggle.css'
 const messages = [
     {
         text: "Finish what you started.",
         translation: "Selesaikan apa yang sudah kamu mulai.",
-        author: "Unknown",
+        author: "YB",
     },
     {
         text: "Finish what you started.",
@@ -78,6 +41,11 @@ const messages = [
         text: "I had to develop the mentality and stay positive about making my comeback.",
         translation: "Saya harus membentuk pola pikir dan tetap positif untuk bangkit kembali.",
         author: "Alonzo Mourning",
+    },
+    {
+        text: "Dont let money change you",
+        translation: "Jangan biarkan uang mengubahmu.",
+        author: "Ade Setiawan",
     }
 
 ];
@@ -85,10 +53,12 @@ const messages = [
 export default function FloatingToggle() {
     const [index, setIndex] = useState(0);
     const [fadeKey, setFadeKey] = useState(0);
+    const [hover, setHover] = useState(false)
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % messages.length);
+            // setIndex((prevIndex) => (prevIndex + 1) % messages.length);
+            setIndex(() => Math.floor(Math.random() * messages.length));
             setFadeKey((prev) => prev + 1);
         }, 7000);
 
@@ -99,15 +69,11 @@ export default function FloatingToggle() {
 
     return (
         <>
-            <style>{styles}</style>
-            <div className="quote position-fixed bottom-0 end-0 m-3 p-2 px-3 fade-in fade-out bubble" key={fadeKey}>
-                <blockquote className="blockquote fs-6 text-white p-0 m-0">
-                    <p className="pb-3">"{text}"</p>
-                    <footer className="blockquote-footer text-white">
-                        <span className="fw-lighter fst-italic">{translation}</span>
-                        <br />
-                        <p>{author}</p>
-                    </footer>
+            <div className="quote position-fixed bottom-0 end-0 m-3 p-2 px-3 fade-in fade-out bubble" 
+                key={fadeKey} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+                <blockquote className="blockquote fs-6 text-white p-0 m-0 text-end">
+                    <p className="fst-italic">"{!hover ? text : translation}"</p>
+                    <p>{author}</p>
                 </blockquote>
             </div>
         </>
