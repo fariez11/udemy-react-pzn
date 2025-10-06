@@ -38,7 +38,7 @@ import Materi40 from "./pages/react-dasar/materi40";
 import IntroReactRouter from "./pages/react-router/intro";
 import Materi45 from "./pages/react-router/materi45";
 import Materi46 from "./pages/react-router/materi46";
-import IntroReactRedux from "./pages/react-redux/intro";    
+import IntroReactRedux from "./pages/react-redux/intro";
 import Materi47_48 from "./pages/react-router/materi47-48";
 import Materi49 from "./pages/react-router/materi49";
 import Materi50 from "./pages/react-router/materi50";
@@ -50,10 +50,16 @@ import Materi53 from "./pages/react-router/materi53";
 import Materi54 from "./pages/react-router/materi54";
 import Materi55 from "./pages/react-router/materi55";
 import Materi56 from "./pages/react-router/materi56";
+import CreateProject from "./pages/react-redux/setup";
+import Materi63 from "./pages/react-redux/materi63";
+import Materi64 from "./pages/react-redux/materi64";
+import Materi65 from "./pages/react-redux/materi65";
+import Materi66 from "./pages/react-redux/materi66";
+import Materi67 from "./pages/react-redux/materi67";
 
 
 export const reactDasar = [
-    { path: "/", element: <Introduction /> , label: 'intro' },
+    { path: "/", element: <Introduction />, label: 'intro' },
     { path: "/component", element: <Materi6 />, label: 'component' },
     { path: "/materi-7", element: <Materi7 />, label: 'jsx' },
     { path: "/materi-8", element: <Materi8 />, label: 'javascript di jsx' },
@@ -108,6 +114,12 @@ export const reactRouter = [
 
 export const reactRedux = [
     { path: "/materi-58", element: <IntroReactRedux />, label: 'intro' },
+    { path: "/materi-60", element: <CreateProject />, label: 'setup & membuat project' },
+    { path: "/materi-63", element: <Materi63 />, label: 'store' },
+    { path: "/materi-64", element: <Materi64 />, label: 'state' },
+    { path: "/materi-65", element: <Materi65 />, label: 'action' },
+    { path: "/materi-66", element: <Materi66 />, label: 'global state' },
+    { path: "/materi-67", element: <Materi67 />, label: 'selector' },
 ]
 
 export const caseStudy = [
