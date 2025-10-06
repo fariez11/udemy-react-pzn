@@ -16,14 +16,56 @@
 
 .bubble {
   max-width: 650px;
-  background-color: rgba(1, 129, 127, 0.3);
+  background-color: rgba(1, 129, 127, 0.4);
   color: rgba(251, 251, 251, 0.3);
   border-radius: 16px 3px 16px 16px;
   transition: background-color 500ms cubic-bezier(0.22, 0.9, 0.3, 1),
     color 500ms cubic-bezier(0.22, 0.9, 0.3, 1);
 }
 
+.quote,
+.translate {
+  position: absolute;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transition: opacity 1s ease, transform 1s ease;
+  -webkit-transition: opacity 1s ease, transform 1s ease;
+  -moz-transition: opacity 1s ease, transform 1s ease;
+  -ms-transition: opacity 1s ease, transform 1s ease;
+  -o-transition: opacity 1s ease, transform 1s ease;
+}
+
 .bubble:hover {
   background-color: rgba(1, 129, 127, 0.9);
   color: rgba(251, 251, 251, 0.9);
+}
+
+.quote {
+  opacity: 1;
+}
+
+
+.translate {
+  opacity: 0;
+}
+
+.bubble:hover .quote {
+  opacity: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.bubble:hover .translate {
+  opacity: 1;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
 }

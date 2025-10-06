@@ -8,11 +8,6 @@ const messages = [
         author: "YB",
     },
     {
-        text: "Finish what you started.",
-        translation: "Selesaikan apa yang sudah kamu mulai.",
-        author: "Unknown",
-    },
-    {
         text: "Even if it’s hard now, it will be worth it in the end. Keep going!",
         translation: "Meskipun sekarang terasa sulit, semuanya akan sepadan pada akhirnya. Teruslah maju!",
         author: "Unknown",
@@ -57,8 +52,8 @@ export default function FloatingToggle() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            // setIndex((prevIndex) => (prevIndex + 1) % messages.length);
-            setIndex(() => Math.floor(Math.random() * messages.length));
+            setIndex((prevIndex) => (prevIndex + 1) % messages.length);
+            // setIndex(() => Math.floor(Math.random() * messages.length));
             setFadeKey((prev) => prev + 1);
         }, 7000);
 
@@ -69,12 +64,10 @@ export default function FloatingToggle() {
 
     return (
         <>
-            <div className="quote position-fixed bottom-0 end-0 m-3 p-2 px-3 fade-in fade-out bubble" 
+            <div className="position-fixed bottom-0 end-0 m-3 p-2 px-3 fade-in fade-out bubble"
                 key={fadeKey} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                <blockquote className="blockquote fs-6 text-white p-0 m-0 text-end">
-                    <p className="fst-italic">"{!hover ? text : translation}"</p>
-                    <p>{author}</p>
-                </blockquote>
+                <p> {!hover ? text : translation}</p>
+                <p className="text-end">{author}</p>
             </div>
         </>
     );

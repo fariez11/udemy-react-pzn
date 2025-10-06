@@ -16,11 +16,18 @@
 }
 
 .example:hover {
-  transform: scale(1.01);
+  /*transform: scale(1.01);
   -webkit-transform: scale(1.01);
   -moz-transform: scale(1.01);
   -ms-transform: scale(1.01);
   -o-transform: scale(1.01);
+  */
+  background-color: #e6f6f5;
+  /* transition: background 0.8s ease;
+  -webkit-transition: background 0.8s ease;
+  -moz-transition: background 0.8s ease;
+  -ms-transition: background 0.8s ease;
+  -o-transition: background 0.8s ease; */
 }
 
 /* Awalnya, quote (en) tampak penuh */
@@ -31,6 +38,10 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transition: opacity 1s ease, transform 1s ease;
   -webkit-transition: opacity 1s ease, transform 1s ease;
   -moz-transition: opacity 1s ease, transform 1s ease;
