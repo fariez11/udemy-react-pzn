@@ -44,6 +44,12 @@ import Materi49 from "./pages/react-router/materi49";
 import Materi50 from "./pages/react-router/materi50";
 import IntroCaseStudy from "./pages/studi-kasus/intro";
 import SetupCaseStudy from "./pages/studi-kasus/setup";
+import Materi51 from "./pages/react-router/materi51";
+import Materi52 from "./pages/react-router/materi52";
+import Materi53 from "./pages/react-router/materi53";
+import Materi54 from "./pages/react-router/materi54";
+import Materi55 from "./pages/react-router/materi55";
+import Materi56 from "./pages/react-router/materi56";
 
 
 export const reactDasar = [
@@ -91,7 +97,13 @@ export const reactRouter = [
     { path: "/materi-46", element: <Materi46 />, label: 'router library' },
     { path: "/materi-47", element: <Materi47_48 />, label: 'setup & membuat project' },
     { path: "/materi-49", element: <Materi49 />, label: 'routing' },
-    { path: "/materi-50", element: <Materi50 />, label: 'nested route' },
+    { path: "/materi-50", element: <Materi50 />, label: 'outlet' },
+    { path: "/materi-51", element: <Materi51 />, label: 'route param' },
+    { path: "/materi-52", element: <Materi52 />, label: 'star segment' },
+    { path: "/materi-53", element: <Materi53 />, label: 'navigation' },
+    { path: "/materi-54", element: <Materi54 />, label: 'use Navigate' },
+    { path: "/materi-55", element: <Materi55 />, label: 'use Search Param' },
+    { path: "/materi-56", element: <Materi56 />, label: 'use Location' },
 ]
 
 export const reactRedux = [

@@ -28,12 +28,11 @@
   - dan untuk pemetaan tiap Routing nya, kita bisa gunakan komponen <Route>
   - https://api.reactrouter.com/v7/functions/react_router.Route.html
     
-
-# Nested Route
-  - saat nanti kita membuat routing, kadang terdapat routing yang dimiliki prefix yang sama
-  - jika kita harus membuat satu per satu, maka akan tidak e  fektif ketika pembuatan kode nya
-  - untungnya, React Router mendukung Nested Route
-  - kita bisa menggunakan komponen Route di dalam komponen Route, dan secara otomatis Route path diatasnya akan digunakan sebagai prefix path untuk child Routenya 
+  > Nested Route
+    - saat nanti kita membuat routing, kadang terdapat routing yang dimiliki prefix yang sama
+    - jika kita harus membuat satu per satu, maka akan tidak e  fektif ketika pembuatan kode nya
+    - untungnya, React Router mendukung Nested Route
+    - kita bisa menggunakan komponen Route di dalam komponen Route, dan secara otomatis Route path diatasnya akan digunakan sebagai prefix path untuk child Routenya 
 
   > Index Route 
     - komponen Route memiliki attribut spesial bernama Index

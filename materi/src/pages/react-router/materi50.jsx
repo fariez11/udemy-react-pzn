@@ -9,22 +9,14 @@ export default function Materi50() {
 function Notes() {
     return (
         <>
-            <h3>Nested Route</h3>
+            <h3>Outlet</h3>
             <ul>
-                <li>saat nanti kita membuat routing, kadang terdapat routing yang memiliki prefix yang sama</li>
-                <li>jika kita harus membuat satu per satu, maka akan tidak efektif ketika pembuatan kode nya</li>
-                <li>untungnya, React Router mendukung Nested Route</li>
-                <li>kita bisa menggunakan komponen <code>&lt;Route&gt;</code> di dalam komponen <code>&lt;Route&gt;</code>,
-                    dan secara otomatis Route path diatasnya akan digunakan sebagai prefix path untuk child Routenya</li>
-            </ul>
-
-            <h6>Index Route</h6>
-            <ul>
-                <li>komponen <code>&lt;Route&gt;</code> memiliki atribut spesial bernama <code>index</code></li>
-                <li>Atribut ini digunakan sebagai default halaman Index</li>
-                <li>ini biasanya digunakan untuk path awal, misal <code>/</code>, atau untuk nested path <code>/data/...</code></li>
-                <li>contoh sebelumnya, saat kita membuka <code>/data</code>, maka tidak ada komponen yang ditampilkan,
-                    kita bisa tampilkan komponen yang kita mau dengan menggunakan Route Index</li>
+                <li>saat kita membuat halaman Web, kadang beberapa halaman memiliki Layout yang sama, misal header dan footer nya sama, namun isi contentnya berbeda</li>
+                <li>sebenarnya kita bisa menggunakan JSX untuk melakukan ini dengan menggunakan <code>children</code></li>
+                <li>namun, React Router memiliki cara yang lebih mudah, kita bisa membuat <code>Route</code> dengan component yang digunakan sebagai Layout</li>
+                <li>lalu kita bisa tambahkan <code>Route</code> di dalamnya yang digunakan sebagai children</li>
+                <li>namun, kita tidak menggunakan <code>children</code> Prop lagi, melainkan menggunakan Component <code>Outlet</code></li>
+                <li><a href="https://api.reactrouter.com/v7/functions/react_router.Outlet.html" target="_blank">Dokumentasi Outlet</a></li>
             </ul>
         </>
     )
