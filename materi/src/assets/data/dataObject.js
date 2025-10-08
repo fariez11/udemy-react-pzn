@@ -150,20 +150,17 @@ export const floatMessages = [
   },
   {
     text: "Even if it’s hard now, it will be worth it in the end. Keep going!",
-    translation:
-      "Meskipun sekarang terasa sulit, semuanya akan sepadan pada akhirnya. Teruslah maju!",
+    translation: "Meskipun sekarang terasa sulit, semuanya akan sepadan pada akhirnya. Teruslah maju!",
     author: "Unknown",
   },
   {
     text: "Every step you take brings you closer to your goal.",
-    translation:
-      "Setiap langkah yang kamu ambil membawamu lebih dekat ke tujuanmu.",
+    translation: "Setiap langkah yang kamu ambil membawamu lebih dekat ke tujuanmu.",
     author: "Unknown",
   },
   {
     text: "Success doesn’t come overnight. Keep working, and your time will come.",
-    translation:
-      "Kesuksesan tidak datang dalam semalam. Teruslah bekerja, waktumu akan tiba.",
+    translation: "Kesuksesan tidak datang dalam semalam. Teruslah bekerja, waktumu akan tiba.",
     author: "Dwayne Johnson",
   },
   {
@@ -173,14 +170,12 @@ export const floatMessages = [
   },
   {
     text: "Mistakes are proof that you’re trying. Keep learning and growing.",
-    translation:
-      "Kesalahan adalah bukti bahwa kamu sedang berusaha. Terus belajar dan berkembang.",
+    translation: "Kesalahan adalah bukti bahwa kamu sedang berusaha. Terus belajar dan berkembang.",
     author: "John C. Maxwell",
   },
   {
     text: "I had to develop the mentality and stay positive about making my comeback.",
-    translation:
-      "Saya harus membentuk pola pikir dan tetap positif untuk bangkit kembali.",
+    translation: "Saya harus membentuk pola pikir dan tetap positif untuk bangkit kembali.",
     author: "Alonzo Mourning",
   },
   {
@@ -190,8 +185,7 @@ export const floatMessages = [
   },
   {
     text: "The only way to do great work is to love what you do.",
-    translation:
-      "Satu-satunya cara untuk menghasilkan karya yang hebat adalah dengan mencintai apa yang Anda lakukan.",
+    translation: "Satu-satunya cara untuk menghasilkan karya yang hebat adalah dengan mencintai apa yang Anda lakukan.",
     author: "Steve Jobs",
   },
 ];
