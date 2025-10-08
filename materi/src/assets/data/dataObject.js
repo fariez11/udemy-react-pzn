@@ -188,4 +188,18 @@ export const floatMessages = [
     translation: "Satu-satunya cara untuk menghasilkan karya yang hebat adalah dengan mencintai apa yang Anda lakukan.",
     author: "Steve Jobs",
   },
+  
 ];
+
+export const laravelQuotes = [
+  {
+    text: "Order your soul. Reduce your wants.",
+    translation: "Aturlah dirimu. Kurangi keinginanmu.",
+    author: "Saint Augustine",
+  },
+  {
+    text: "Simplicity is the consequence of refined emotions.",
+    translation: "Kesederhanaan adalah hasil dari emosi yang terasah.",
+    author: "Saint Augustine",
+  }
+]
