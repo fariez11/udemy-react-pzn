@@ -1,6 +1,6 @@
 import '@assets/css/NotesPage.css';
 import TabbedCard from '../../components/tabCard';
-import { messages } from '@assets/data/dataObject';
+import { religi } from '@assets/data/dataObject';
 
 export default function Materi7() {
     return (
@@ -61,7 +61,7 @@ function Result() {
 
     return (
         <ul className="list-group list-group-flush">
-            {messages.map((msg, index) => (
+            {religi.map((msg, index) => (
                 <li key={index} className="list-group-item">
                     <p className="fw-semibold">"{msg.text}"
                         <small className="text-muted  text-end"> - {msg.author}</small>
