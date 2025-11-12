@@ -1,5 +1,6 @@
-export default function TabbedCard({ noteContent, resultContent }) {
+import '@assets/css/tabCard.css';
 
+export default function TabbedCard({ noteContent, resultContent }) {
 
     return (
         <div className="card w-100 p-0 border-0">
@@ -12,17 +13,17 @@ export default function TabbedCard({ noteContent, resultContent }) {
                         </a>
                     </li>
 
-                    {resultContent ? 
+                    {resultContent ?
                         <li className="nav-item flex-fill text-center" role="presentation">
                             <a className="nav-link tab-card text-light" id="result-tab" data-bs-toggle="tab" data-bs-target="#result" type="button"
                                 role="tab" aria-controls="profile" aria-selected="true" >
                                 hasil kode
                             </a>
                         </li>
-                        : 
+                        :
                         <li className="nav-item flex-fill text-center" role="presentation">
                             <a className="nav-link tab-card text-light" type="button" role="tab" aria-selected="true" aria-disabled>
-                                hanya berisi catatan 
+                                hanya berisi catatan
                             </a>
                         </li>
                     }

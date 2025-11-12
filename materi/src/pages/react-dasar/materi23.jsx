@@ -1,4 +1,3 @@
-import '@assets/css/NotesPage.css';
 import LoggerDisplay from '../../components/logDisplay';
 import TabbedCard from '../../components/tabCard';
 import React, { useState } from "react";

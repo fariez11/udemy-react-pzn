@@ -1,6 +1,4 @@
-import '@assets/css/NotesPage.css';
 import TabbedCard from '../../components/tabCard';
-import LogDisplay from '../../components/logDisplay';
 
 export default function Materi14() {
     return (

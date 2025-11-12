@@ -1,4 +1,3 @@
-import '@assets/css/NotesPage.css';
 import TabbedCard from '../../components/tabCard';
 import { todos } from '@assets/data/dataObject';
 import Todo from '../additional/Todo';

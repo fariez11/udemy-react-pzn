@@ -1,4 +1,3 @@
-import '@assets/css/NotesPage.css';
 import TabbedCard from '../../components/tabCard';
 
 export default function Materi18() {

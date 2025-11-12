@@ -1,0 +1,55 @@
+/* ===== Drawer Bootstrap (Tailwind-like style) ===== */
+/* .offcanvas-end {
+  width: 420px;
+  max-width: 95%;
+  border-left: 0;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.15);
+}
+
+.modal-backdrop.custom-backdrop {
+  background-color: rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(4px);
+} */
+
+/* agar panel muncul dari kanan */
+.offcanvas-end {
+  /* height: auto; 
+  max-height: 95vh; 
+  margin-top: 2vh; 
+  bottom: 10vh; */
+  width: 450px;
+  max-width: 90%;
+  border-left: none;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  /* border-radius: 11px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  -ms-border-radius: 11px;
+  -o-border-radius: 11px; */
+}
+
+/* backdrop lebih smooth & gelap */
+.modal-backdrop.custom-backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+}
+
+.offcanvas-header {
+  padding: 14px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.offcanvas-body {
+  padding: 1rem;
+}
+
+@media (max-width: 576px) {
+  .offcanvas-end {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    max-height: 92vh;
+    margin-top: auto;
+  }
+}

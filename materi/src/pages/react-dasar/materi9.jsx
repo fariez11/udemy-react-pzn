@@ -1,5 +1,6 @@
-import '@assets/css/NotesPage.css';
 import TabbedCard from '../../components/tabCard';
+import OffCanvas from '../../components/offcanvas';
+import Title from '../../components/title';
 
 
 export default function Materi9() {
@@ -8,7 +9,11 @@ export default function Materi9() {
         text: 'text ini dikirim dari spread syntax melalui props'
     }
     return (
-        <TabbedCard noteContent={<Note />} resultContent={<Result text={data.text} />} />
+
+        <>
+            <TabbedCard noteContent={<Note />} resultContent={<Result text={data.text} />} />
+            <OffCanvas content={<Additional />} />
+        </>
     );
 }
 
@@ -16,7 +21,7 @@ export default function Materi9() {
 function Note() {
     return (
         <>
-            <h3>Props</h3>
+            <Title text={'Props'} additional={true} />
             <ul>
                 <li>React Component menggunakan <strong>Props</strong> untuk berkomunikasi.</li>
                 <li>Parent Component bisa mengirim informasi ke Child Component dengan menggunakan Props.</li>
@@ -44,7 +49,21 @@ function Note() {
                 <li>Jika kita hanya ingin meneruskan semua Props ke Child Component tanpa menyebutkan satu per satu, kita bisa menggunakan <strong>Spread Syntax</strong> di JavaScript.
                 </li>
             </ul>
+
         </>
+    )
+}
+
+function Additional() {
+
+    return (
+        <span>
+            <ul>
+                <li>
+                    <span> props adalah element html yang memiliki atribut yang dapat digunakan untuk menerusakan informasi yang mengubah perilaku element tersebut. misalnya, src dari <code>&lt;img /&gt;</code> untuk mengubah gambar yang ditampilkan dan href dari <code>&lt;a /&gt;</code> untuk menguah tujuan link</span>
+                </li>
+            </ul>
+        </span>
     )
 }
 

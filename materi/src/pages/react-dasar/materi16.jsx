@@ -1,4 +1,3 @@
-import '@assets/css/NotesPage.css';
 import TabbedCard from '../../components/tabCard';
 import LogDisplay from '../../components/logDisplay';
 
