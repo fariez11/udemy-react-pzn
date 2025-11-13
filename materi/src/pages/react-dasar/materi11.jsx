@@ -1,6 +1,7 @@
 import '@assets/css/materi11.css'
 import TabbedCard from '../../components/tabCard';
 import { motivations } from '@assets/data/dataObject';
+import Title from '../../components/title';
 
 export default function Materi11() {
     return (
@@ -11,7 +12,7 @@ export default function Materi11() {
 function Note() {
     return (
         <>
-            <h3>Style</h3>
+            <Title text={'Style'} additional={true} />
             <ul>
                 <li>Sampai saat ini, kita hanya membahas HTML dan JS di JSX, lalu bagaimana dengan <strong>CSS</strong>?</li>
                 <li>CSS sendiri bukan bagian dari JSX. Jika kita ingin membuat style CSS, kita perlu membuatnya dalam file CSS, atau  langsung di atribut <code>style</code> menggunakan kurung kurawal ganda yang pernah dicontohkan sebelumnya.</li>

@@ -1,6 +1,7 @@
 import TabbedCard from '../../components/tabCard';
 import { todos } from '@assets/data/dataObject';
 import Todo from '../additional/Todo';
+import Title from '../../components/title';
 
 export default function Materi13() {
     return (
@@ -11,7 +12,7 @@ export default function Materi13() {
 function Note() {
     return (
         <>
-            <h3>Collection Component</h3>
+            <Title text={'Collection Component'} additional={true} />
             <ul>
                 <li>Kita sering kali ingin menampilkan Component yang sama berulang-ulang berdasarkan koleksi data.</li>
                 <li>JSX sendiri tidak memiliki fitur perulangan seperti <code>for</code> atau <code>foreach</code>. </li>

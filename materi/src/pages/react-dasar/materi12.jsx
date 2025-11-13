@@ -1,6 +1,7 @@
 import TabbedCard from '../../components/tabCard';
 import { todos } from '@assets/data/dataObject';
 import Todo from '../additional/Todo';
+import Title from '../../components/title';
 
 export default function Materi12() {
     return (
@@ -11,7 +12,7 @@ export default function Materi12() {
 function Note() {
     return (
         <>
-            <h3>Conditional</h3>
+            <Title text={'Conditional'} additional={true} />
             <ul>
                 <li>Saat kita membuat halaman web, seringkali kita menampilkan tampilan yang berbeda pada kondisi tertentu.</li>
                 <li>Hal ini juga bisa dilakukan di JSX, di mana kita bisa menambahkan kondisi menggunakan JavaScript, dan mengembalikan Component yang berbeda berdasarkan kondisi yang diinginkan.</li>

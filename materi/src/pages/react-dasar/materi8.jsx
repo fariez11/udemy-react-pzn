@@ -1,4 +1,5 @@
 import TabbedCard from '../../components/tabCard';
+import Title from '../../components/title';
 
 export default function Materi8() {
     return (
@@ -9,7 +10,7 @@ export default function Materi8() {
 function Note() {
     return (
         <>
-            <h3>JavaScript di JSX</h3>
+            <Title text={'JavaScript di JSX'} additional={false} />
             <ul>
                 <li>Terkadang, kita memiliki kasus di mana kita ingin mengakses kode JavaScript di dalam JSX.</li>
                 <li>Pada kasus seperti ini, kita bisa menggunakan <strong>kurung kurawal</strong> untuk menyisipkan kode JavaScript di JSX.</li>

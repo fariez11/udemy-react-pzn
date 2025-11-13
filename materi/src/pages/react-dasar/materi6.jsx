@@ -1,4 +1,5 @@
 import TabbedCard from '../../components/tabCard';
+import Title from '../../components/title';
 
 
 export default function Materi6() {
@@ -10,7 +11,7 @@ export default function Materi6() {
 function Note() {
     return (
         <>
-            <h3>Component</h3>
+            <Title text={'Component'} additional={false} />
             <ul>
                 <li><strong>React Component</strong> mendukung semua elemen <strong>HTML</strong> dan <strong>SVG</strong>.</li>
                 <li>Jadi kita tidak perlu khawatir saat membuat Component, karena semua elemen DOM yang umum <em>pasti didukung</em>.</li>

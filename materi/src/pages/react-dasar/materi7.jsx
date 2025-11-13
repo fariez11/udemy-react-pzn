@@ -10,7 +10,7 @@ export default function Materi7() {
 function Note() {
     return (
         <>
-            <h3>JSX</h3>
+            <Title text={'JSX'} additional={false} />
             <ul>
                 <li>
                     Web dibuat menggunakan <strong>HTML</strong>, <strong>CSS</strong>, dan <strong>JavaScript</strong>.

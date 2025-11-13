@@ -1,5 +1,6 @@
 import TabbedCard from '../../components/tabCard';
 import { motivations } from '@assets/data/dataObject';
+import Title from '../../components/title';
 export default function Materi10() {
     return (
         <TabbedCard noteContent={<Note />} resultContent={<Result />} />
@@ -9,7 +10,7 @@ export default function Materi10() {
 function Note() {
     return (
         <>
-            <h3>Nested Component</h3>
+            <Title text={'Nested Component'} additional={true} />
             <ul>
                 <li>JSX mendukung pembuatan <strong>Nested Component</strong>.</li>
                 <li>Hal ini memungkinkan kita membuat Component yang di dalamnya bisa ditambahkan Component lain secara dinamis.</li>
