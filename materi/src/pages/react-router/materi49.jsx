@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard"
+import Title from "../../components/title"
 
 export default function Materi49() {
     return (
@@ -9,7 +10,7 @@ export default function Materi49() {
 function Notes() {
     return (
         <>
-            <h3>Routing</h3>
+            <Title text={'Routing'} additional={false} />
             <ul>
                 <li>adalah pemetaan antara URL, path, dan komponen yang akan ditampilkan</li>
                 <li>untuk melakukan Routing, kita bisa menggunakan komponen <code>&lt;Routes&gt;</code></li>

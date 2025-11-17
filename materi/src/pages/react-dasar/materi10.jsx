@@ -10,7 +10,7 @@ export default function Materi10() {
 function Note() {
     return (
         <>
-            <Title text={'Nested Component'} additional={true} />
+            <Title text={'Nested Component'} additional={false} />
             <ul>
                 <li>JSX mendukung pembuatan <strong>Nested Component</strong>.</li>
                 <li>Hal ini memungkinkan kita membuat Component yang di dalamnya bisa ditambahkan Component lain secara dinamis.</li>

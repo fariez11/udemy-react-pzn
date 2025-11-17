@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi56() {
     return (
@@ -9,7 +10,7 @@ export default function Materi56() {
 function Notes() {
     return (
         <>
-            <h3>Use Location</h3>
+            <Title text={'Use Location'} additional={false} />
             <ul>
                 <li>untuk mendapatkan URL saat ini, sebenarnya kita bisa menggunakan <code>window.location.href</code></li>
                 <li>tapi React Router menyediakan Hook <code>useLocation()</code>, yang bisa digunakan untuk mendapatkan lokasi path saat ini</li>

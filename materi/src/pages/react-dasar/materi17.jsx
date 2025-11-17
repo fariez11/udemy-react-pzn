@@ -1,4 +1,5 @@
 import TabbedCard from '../../components/tabCard';
+import Title from '../../components/title';
 
 export default function Materi17() {
     return (
@@ -9,8 +10,7 @@ export default function Materi17() {
 function Note() {
     return (
         <>
-            <h3>Event Propagation</h3>
-
+            <Title text={'Event Propagation'} additional={false} />
             <ul>
                 <li>Event di React Component akan selalu disebarkan ke Component yang ada di atasnya (<strong>Event Propagation</strong>).</li>
                 <li>Misalnya, kita memiliki <code>&lt;div&gt;</code> dengan event <code>onClick</code>, lalu di dalamnya ada <code>&lt;button&gt;</code> yang juga memiliki <code>onClick</code>.</li>

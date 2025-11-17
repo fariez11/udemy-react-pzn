@@ -1,5 +1,6 @@
 import TabbedCard from '../../components/tabCard';
 import { useRef, useState } from 'react';
+import Title from '../../components/title';
 
 export default function Materi33() {
     return (
@@ -10,7 +11,7 @@ export default function Materi33() {
 function Note() {
     return (
         <>
-            <h3>Ref</h3>
+            <Title text={'Ref'} additional={false} />
             <ul>
                 <li><strong>Ref Hooks</strong>: Fitur Hooks yang lain selain State dan Context, adalah Ref Hooks. Ketika ingin Component mengingat informasi, tapi tidak mau memicu render ulang, maka kita bisa menggunakan Ref.</li>
                 <li>Menggunakan Ref Hooks bisa menggunakan method <code>useRef()</code>.</li>

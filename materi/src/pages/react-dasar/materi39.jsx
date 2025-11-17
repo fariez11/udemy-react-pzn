@@ -5,6 +5,7 @@ import NoteListContext from '../additional/note/context & reducer/noteList';
 import NoteForm from '../additional/note/context & reducer/noteForm';
 import { learningList } from '../../assets/data/dataObject';
 import LoggerDisplay from '../../components/logDisplay';
+import Title from '../../components/title';
 
 
 export default function Materi39() {
@@ -16,7 +17,7 @@ export default function Materi39() {
 function Catatan() {
     return (
         <>
-            <h3>Memo</h3>
+            <Title text={'Memo'} additional={false} />
             <h6>Memoization</h6>
             <ul>
                 <li>adalah teknik optimasi untuk mempercepat program komputer, dengan cara menyimpan data secara sementara dari hasil kalkulasi (yang biasanya berat), sehingga tidak perlu dilakukan kalkulasi ulang.</li>

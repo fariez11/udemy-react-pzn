@@ -1,6 +1,7 @@
 import { useImmer } from 'use-immer';
 import TabbedCard from '../../components/tabCard';
 import { useState } from "react";
+import Title from '../../components/title';
 
 export default function Materi26() {
     return (
@@ -14,7 +15,7 @@ export default function Materi26() {
 function Note() {
     return (
         <>
-            <h3>Sharing State</h3>
+            <Title text={'Sharing State'} additional={false} />
             <ul>
                 <li>
                     Kadang, kita ingin membuat <strong>State</strong> yang digunakan oleh beberapa <em>Component</em> sekaligus dan selalu berubah bersama-sama.

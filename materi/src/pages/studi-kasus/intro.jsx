@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function IntroCaseStudy() {
     return (
@@ -9,7 +10,7 @@ export default function IntroCaseStudy() {
 function Note() {
     return (
         <>
-            <h3>Intro Studi Kasus</h3>
+            <Title text={'Intro Studi Kasus'} additional={false} />
 
             <h6>Slide</h6>
             <a href="https://docs.google.com/presentation/d/1bgRdARHvPbgRXa3GRLg-nUyRmgMcXiWv0ItgxOLjqh8/edit?usp=sharing" target="_blank">

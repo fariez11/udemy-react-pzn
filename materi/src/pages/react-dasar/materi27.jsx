@@ -1,5 +1,6 @@
 import TabbedCard from '../../components/tabCard';
 import React, { useState, useRef } from "react";
+import Title from '../../components/title';
 
 export default function Materi27() {
     return (
@@ -12,7 +13,7 @@ export default function Materi27() {
 function Note() {
     return (
         <>
-            <h3>Mempertahankan State</h3>
+            <Title text={'Mempertahankan State'} additional={false} />
             <ul>
                 <li>State di React bersifat terisolasi antar <em>Component</em>. React melacak State berdasarkan <strong>posisi komponen</strong> di dalam struktur UI.</li>
                 <li>Kita bisa mengatur kapan ingin <strong>mempertahankan</strong> State dan kapan ingin <strong>mereset</strong> State.</li>

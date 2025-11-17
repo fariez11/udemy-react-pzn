@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 import useOnline from "../additional/online/onlineHook";
 
 export default function Materi40() {
@@ -10,7 +11,7 @@ export default function Materi40() {
 function Note() {
     return (
         <>
-            <h3>Custom Hooks</h3>
+            <Title text={'Custom Hooks'} additional={false} />
             <ul>
                 <li>React secara default sudah memiliki banyak Hooks yang bisa kita gunakan untuk mempermudah membuat aplikasi menggunakan React</li>
                 <li>Namun, kita juga bisa membuat Hooks secara manual jika kita mau</li>

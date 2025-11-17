@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Setup() {
     return (
@@ -9,7 +10,7 @@ export default function Setup() {
 function Notes() {
     return (
         <>
-            <h3>Setup Backend</h3>
+            <Title text={'Setup Back End'} additional={false} />
             <h6>Setup CORS</h6>
             <ul>
                 <li>saat nanti menjalankan aplikasi di komputer, Backend Project dan Frontend Project akan berjalan di HTTP Port yang berbeda</li>
@@ -18,7 +19,7 @@ function Notes() {
                 <li><code>npm install cors</code></li>
             </ul>
 
-            <h3>Setup Frontend</h3>
+            <Title text={'Setup Front End'} additional={false} />
             <h6>React Use</h6>
             <ul>
                 <li>salah satu hooks library yang populer di React adalah react-use, berisi Hooks yang bisa digunakan dengan mudah</li>
@@ -34,7 +35,8 @@ function Notes() {
                 <li><code>npm i sweetalert2</code></li>
             </ul>
 
-            <h3>Challenge</h3>
+
+            <Title text={'Challenge'} additional={false} />
             <h6>Implement Index Path</h6>
             <ul>
                 <li>buat halaman path <code>/</code></li>

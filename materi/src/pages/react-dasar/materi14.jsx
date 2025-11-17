@@ -1,4 +1,5 @@
 import TabbedCard from '../../components/tabCard';
+import Title from '../../components/title';
 
 export default function Materi14() {
     return (
@@ -9,7 +10,7 @@ export default function Materi14() {
 function Note() {
     return (
         <>
-            <h3>Pure Component</h3>
+            <Title text={'Pure Component'} additional={false} />
             <ul>
                 <li>Dalam pemrograman, kita mengenal yang namanya <strong>Pure Function</strong>.</li>
                 <li>Sumber: <a href="https://en.wikipedia.org/wiki/Pure_function" target="_blank">https://en.wikipedia.org/wiki/Pure_function</a></li>

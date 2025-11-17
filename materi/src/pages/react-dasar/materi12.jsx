@@ -12,7 +12,7 @@ export default function Materi12() {
 function Note() {
     return (
         <>
-            <Title text={'Conditional'} additional={true} />
+            <Title text={'Conditional'} additional={false} />
             <ul>
                 <li>Saat kita membuat halaman web, seringkali kita menampilkan tampilan yang berbeda pada kondisi tertentu.</li>
                 <li>Hal ini juga bisa dilakukan di JSX, di mana kita bisa menambahkan kondisi menggunakan JavaScript, dan mengembalikan Component yang berbeda berdasarkan kondisi yang diinginkan.</li>

@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard"
+import Title from "../../components/title"
 
 export default function Materi50() {
     return (
@@ -9,7 +10,7 @@ export default function Materi50() {
 function Notes() {
     return (
         <>
-            <h3>Outlet</h3>
+            <Title text={'Outlet'} additional={false} />
             <ul>
                 <li>saat kita membuat halaman Web, kadang beberapa halaman memiliki Layout yang sama, misal header dan footer nya sama, namun isi contentnya berbeda</li>
                 <li>sebenarnya kita bisa menggunakan JSX untuk melakukan ini dengan menggunakan <code>children</code></li>

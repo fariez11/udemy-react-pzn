@@ -1,5 +1,6 @@
 import TabbedCard from '../../components/tabCard';
 import { religi } from '@assets/data/dataObject';
+import Title from '../../components/title';
 
 export default function Materi7() {
     return (

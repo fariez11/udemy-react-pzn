@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi52() {
     return (
@@ -9,7 +10,7 @@ export default function Materi52() {
 function Notes() {
     return (
         <>
-            <h3>Star Segment</h3>
+            <Title text={'Star Segment'} additional={false} />
             <ul>
                 <li>jika route diakhiri dengan <code>/*</code> (star segment), maka itu akan cocok dengan karakter apapun, termasuk karakter <code>/</code> itu sendiri</li>
             <li>misal, ketika kita memiliki path <code>/files/*</code>, maka itu akan cocok dengan <code>/files/contoh</code> dan <code>/files/lagi/contoh</code></li>

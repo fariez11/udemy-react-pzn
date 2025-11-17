@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi65() {
     return (
@@ -9,7 +10,7 @@ export default function Materi65() {
 function Note() {
     return (
         <>
-            <h3>Action</h3>
+            <Title text={'Action'} additional={false} />
             <ul>
                 <li><b>Action</b> di Redux sebenarnya adalah Reducer, namun cara membuatnya lebih mudah</li>
                 <li>kita bisa membuat Action dengan cara membuat semua function Reducer di <b>Slice</b></li>

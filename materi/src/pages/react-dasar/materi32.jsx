@@ -4,6 +4,7 @@ import { NoteDispatchContext, NotesContext } from '../additional/note/context & 
 import NoteListContext from '../additional/note/context & reducer/noteList';
 import NoteForm from '../additional/note/context & reducer/noteForm';
 import { learningList } from '../../assets/data/dataObject';
+import Title from '../../components/title';
 
 
 export default function Materi32() {
@@ -17,7 +18,7 @@ export default function Materi32() {
 function Catatan() {
     return (
         <>
-            <h3>Context & Reducer</h3>
+            <Title text={'Context & Reducer'} additional={false} />
             <ul>
                 <li>Sebelumnya kita sudah bahas tentang Reducer, sama seperti State, Reducer juga bisa kita integrasikan dengan Context.</li>
                 <li>Pada kasus ketika membuat Component yang sudah kompleks, dan menggunakan Reducer, kita bisa mengirim State dan Reducer menggunakan Context ke Child Component.</li>

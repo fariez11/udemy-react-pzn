@@ -9,7 +9,7 @@ export default function Materi66() {
 function Notes() {
     return (
         <>
-            <h3>Global State</h3>
+            <Title text={'Global State'} additional={false} />
             <ul>
                 <li>State yang disimpan di <b>Store</b> bisa diakses secara <b>global</b> dari komponen manapun</li>
                 <li>contoh kasus: kita menambahkan elemen di beberapa URL berbeda, meskipun komponennya sama, tetap bisa menggunakan <b>state yang sama</b> karena datanya diambil dari Store</li>

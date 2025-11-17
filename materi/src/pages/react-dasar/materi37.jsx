@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TabbedCard from "../../components/tabCard";
 import Product from "../additional/product/Product";
+import Title from "../../components/title";
 
 export default function Materi37() {
     return (
@@ -11,7 +12,7 @@ export default function Materi37() {
 function Note() {
     return (
         <>
-            <h3>Async Code di `useEffect`</h3>
+            <Title text={'Async Code di `useEffect`'} additional={false} />
 
             <p>
                 Ketika berinteraksi dengan sistem eksternal seperti memanggil API atau melakukan operasi asynchronous lainnya,

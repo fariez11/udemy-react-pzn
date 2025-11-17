@@ -3,6 +3,7 @@ import { useImmer, useImmerReducer } from 'use-immer';
 import NoteList from '../additional/note/noteList';
 import NoteForm from '../additional/note/noteForm';
 import { learningList } from '../../assets/data/dataObject';
+import Title from '../../components/title';
 
 export default function Materi29() {
     return (
@@ -15,7 +16,7 @@ export default function Materi29() {
 function Catatan() {
     return (
         <>
-            <h3>Reducer</h3>
+            <Title text={'Reducer'} additional={false} />
             <ul>
                 <li>Sebelumnya kita sudah bahas banyak tentang <strong>Hooks State</strong> menggunakan <code>useState()</code>.</li>
                 <li>Selain itu, terdapat fitur Hooks State lain, yaitu <strong>Reducer</strong>, menggunakan <a href="https://react.dev/reference/react/useReducer" target="_blank">useReducer</a>.</li>

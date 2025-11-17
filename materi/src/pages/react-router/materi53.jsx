@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi53() {
     return (
@@ -9,7 +10,7 @@ export default function Materi53() {
 function Notes() {
     return (
         <>
-            <h3>Navigation</h3>
+            <Title text={'Navigation'} additional={false} />
             <ul>
                 <li>salah satu yang biasa kita lakukan saat membuat web adalah berpindah dari satu halaman ke halaman lainnya</li>
                 <li>biasanya untuk berpindah halaman, kita menggunakan Anchor Element, yaitu menggunakan tag <code>&lt;a&gt;</code></li>

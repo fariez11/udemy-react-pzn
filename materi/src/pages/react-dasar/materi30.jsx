@@ -2,6 +2,7 @@ import TabbedCard from '../../components/tabCard';
 import { ProfileContext } from '../additional/profile/profileContext';
 import Profile from '../additional/profile/profile';
 import ProfileAddress from '../additional/profile/profileAddress';
+import Title from '../../components/title';
 
 export default function Materi30() {
     return (
@@ -14,7 +15,7 @@ export default function Materi30() {
 function Catatan() {
     return (
         <>
-            <h3>Context</h3>
+            <Title text={'Context'} additional={false} />
 
             <h6>Context</h6>
             <ul>

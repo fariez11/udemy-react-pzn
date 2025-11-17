@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi54() {
     return (
@@ -9,7 +10,7 @@ export default function Materi54() {
 function Notes() {
     return (
         <>
-            <h3>Use Navigate</h3>
+            <Title text={'Use Navigate'} additional={false} />
             <ul>
                 <li>pada kasus tertentu, mungkin kita ingin melakukan navigasi dari satu halaman ke halaman lain menggunakan JS</li>
                 <li>untuk melakukan ini, React Router menyediakan Hooks <code>useNavigate()</code> <a href="https://api.reactrouter.com/v7/functions/react_router.useNavigate.html" target="_blank">Dokumentasi useNavigate</a></li>

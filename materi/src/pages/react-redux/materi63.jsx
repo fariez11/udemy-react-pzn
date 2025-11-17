@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi63() {
     return (
@@ -9,7 +10,7 @@ export default function Materi63() {
 function Note() {
     return (
         <>
-            <h3>Store</h3>
+            <Title text={'Store'} additional={false} />
             <ul>
                 <li>merupakan tempat dimana data <b>State</b> disimpan</li>
                 <li>saat menggunakan Redux, kita perlu membuat <b>Store</b> terlebih dahulu</li>

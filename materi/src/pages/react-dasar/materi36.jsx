@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TabbedCard from "../../components/tabCard";
 import Product from "../additional/product/Product";
+import Title from "../../components/title";
 
 export default function Materi36() {
     return (
@@ -10,7 +11,7 @@ export default function Materi36() {
 function Note() {
     return (
         <>
-            <h3>Effect Dependencies</h3>
+            <Title text={'Effect Dependencies'} additional={false} />
             <p>
                 <strong>useEffect</strong> di React digunakan untuk menangani efek samping setelah komponen selesai di-render.
                 Secara default, <code>useEffect</code> akan dieksekusi setiap kali render selesai, yang berarti efek akan dipanggil setiap kali komponen mengalami perubahan.

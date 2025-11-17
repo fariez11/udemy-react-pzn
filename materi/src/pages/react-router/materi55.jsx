@@ -9,7 +9,7 @@ export default function Materi55() {
 function Notes() {
     return (
         <>
-            <h3>Use Search Param</h3>
+            <Title text={'User Search Param'} additional={false} />
             <ul>
                 <li>saat menggunakan URL, kadang kita akan memanfaatkan Query Parameter untuk mengirim data</li>
                 <li>React Router menyediakan Hooks <code>useSearchParams()</code> yang bisa kita gunakan untuk mendapatkan data Query Parameter</li>

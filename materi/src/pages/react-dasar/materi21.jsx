@@ -1,6 +1,7 @@
 import TabbedCard from '../../components/tabCard';
 import React, { useState, useRef } from "react";
 import LoggerDisplay from '../../components/logDisplay';
+import Title from '../../components/title';
 
 export default function Materi21() {
     return (
@@ -12,8 +13,7 @@ export default function Materi21() {
 function Note() {
     return (
         <>
-            <h3>Render</h3>
-
+            <Title text={'Render'} additional={false} />
             <p>
                 Sebelum <strong>Component</strong> yang kita buat ditampilkan di layar, component harus dirender oleh React.
                 Oleh karena itu, kita perlu tahu bagaimana proses React bekerja ketika menampilkan Component yang kita buat.

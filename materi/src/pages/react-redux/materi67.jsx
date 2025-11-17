@@ -9,7 +9,7 @@ export default function Materi67() {
 function Notes() {
     return (
         <>
-            <h3>Selector</h3>
+            <Title text={'Selector'} additional={false} />
             <ul>
                 <li>sebelumnya kita sudah bisa mendapatkan data <b>State</b> menggunakan <code>useSelector()</code></li>
                 <li>kadang kita ingin membuat <b>fungsi khusus</b> untuk mengambil data dari State → inilah yang disebut <b>Selector</b></li>

@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi34() {
     return (
@@ -10,7 +11,7 @@ export default function Materi34() {
 function Note() {
     return (
         <>
-            <h3>Manipulasi DOM dengan Ref</h3>
+            <Title text={'Manipulasi DOM Dengan Ref'} additional={false} />
             <ul>
                 <li>React secara otomatis akan mengupdate DOM ketika melakukan render ulang jadi kita tidak perlu memanipulasi DOM secara manual lagi.</li>
                 <li>Tapi, kadang kita mungkin perlu mengakses DOM secara manual, contoh memindahkan fokus ke salah satu element, atau scroll ke element tertentu, dan lain-lain.</li>

@@ -9,7 +9,7 @@ export default function Materi46() {
 function Note() {
     return (
         <>
-            <h3>Router Library</h3>
+            <Title text={'Router Library'} additional={false} />
             <ul>
                 <li>Salah satu hal yang bisa kita lakukan dibanding mengganti-ganti halaman secara manual, adalah menggunakan library khusus untuk itu, yaitu Router Library</li>
                 <li>Router Library adalah library yang digunakan agar Component yang ditampilkan bisa berbeda-beda tergantung dari URL yang diakses</li>

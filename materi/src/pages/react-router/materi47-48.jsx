@@ -1,15 +1,16 @@
-import TabCard from "../../components/TabCard"
+import TabbedCard from "../../components/tabCard"
+import Title from "../../components/title"
 
 export default function Materi47_48() {
     return (
-        <TabCard noteContent={<Notes />} resultContent={null} />
+        <TabbedCard noteContent={<Notes />} resultContent={null} />
     )
 }
 
 function Notes() {
     return (
         <>
-            <h3>Setup & Membuat Project</h3>
+            <Title text={'Setup & Membuat Project'} additional={false} />
             <h6>Membuat Project</h6>
             <ul>
                 <li><code>npm create vite@latest react-router -- --template react</code></li>

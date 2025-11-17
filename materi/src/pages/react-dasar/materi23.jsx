@@ -1,6 +1,7 @@
 import LoggerDisplay from '../../components/logDisplay';
 import TabbedCard from '../../components/tabCard';
 import React, { useState } from "react";
+import Title from '../../components/title';
 
 export default function Materi23() {
     return (
@@ -14,7 +15,7 @@ export default function Materi23() {
 function Note() {
     return (
         <>
-            <h3>State Update</h3>
+            <Title text={'State Update'} additional={false} />
             <ul>
                 <li>seperti yang sebelumnya dibahas, melakukan update State berkali-kali, tidak akan mengubah data State di Snapshoot saat itu, melainkan hanya memicu untuk render ulang dengan data State baru</li>
                 <li>tapi, kadang-kadang, kita memang mungkin ada keperluan untuk mengubah data di State yang sama berkali-kali</li>

@@ -1,4 +1,5 @@
 import TabbedCard from '../../components/tabCard';
+import Title from '../../components/title';
 
 export default function Materi18() {
     return (
@@ -9,7 +10,7 @@ export default function Materi18() {
 function Note() {
     return (
         <>
-            <h3>Side Effect</h3>
+            <Title text={'Side Effect'} additional={false} />
             <ul>
                 <li><strong>Apakah komponen boleh memiliki Side Effect (efek samping)?</strong></li>
                 <ul>

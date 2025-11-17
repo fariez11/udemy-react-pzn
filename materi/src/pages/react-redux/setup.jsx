@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function CreateProject() {
     return (
@@ -9,7 +10,7 @@ export default function CreateProject() {
 function Note() {
     return (
         <>
-            <h3>Setup & Membuat Project</h3>
+            <Title text={'Setup & Membuat Project'} additional={false} />
             <h6>Membuat Project</h6>
             <ul>
                 <li><code>npm create vite@latest belajar-react-redux -- --template react</code></li>
@@ -25,8 +26,6 @@ function Note() {
                 <li>caranya: aplikasi yang kita buat dibungkus dalam komponen <code>Provider</code> milik redux</li>
                 <li>selanjutnya ada parameter yang wajib dibuat, yaitu <b>Store</b> (materi selanjutnya)</li>
             </ul>
-
-
         </>
     )
 }

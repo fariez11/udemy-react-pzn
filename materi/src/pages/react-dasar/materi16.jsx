@@ -1,5 +1,6 @@
 import TabbedCard from '../../components/tabCard';
 import LogDisplay from '../../components/logDisplay';
+import Title from '../../components/title';
 
 export default function Materi16() {
     return (
@@ -10,7 +11,7 @@ export default function Materi16() {
 function Note() {
     return (
         <>
-            <h3>Event Object</h3>
+            <Title text={'Event Object'} additional={false} />
             <ul>
                 <li>Saat kita membuat Event Handler Function, kita bisa menambah <strong>Event Object</strong> sebagai parameter di function tersebut.</li>
                 <li>React Event Object kompatibel dengan standard DOM Event Object.</li>

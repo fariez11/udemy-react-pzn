@@ -11,7 +11,7 @@ export default function Materi45() {
 function Note() {
     return (
         <>
-            <h3>Pengenalan Single Page Application</h3>
+            <Title text={'Pengenalan Single Page Application'} additional={false} />
 
             <h6>Client atau Server Side</h6>
             <ul>

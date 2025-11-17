@@ -1,4 +1,5 @@
 import TabbedCard from '../../components/tabCard';
+import Title from '../../components/title';
 
 export default function Materi15() {
     return (
@@ -9,8 +10,7 @@ export default function Materi15() {
 function Note() {
     return (
         <>
-            <h3>Event Handler</h3>
-
+            <Title text={'Event Handler'} additional={false} />
             <ul>
                 <li>Seperti yang kita tahu di HTML Element, kita bisa menambahkan Event Handler.</li>
                 <li>Sama juga dengan React Component, kita bisa menambahkan Event Handler pada Element di React Component.</li>

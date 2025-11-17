@@ -1,5 +1,6 @@
 import TabbedCard from '../../components/tabCard';
 import { useState } from 'react';
+import Title from '../../components/title';
 
 export default function Materi19() {
     return (
@@ -10,10 +11,9 @@ export default function Materi19() {
 function Note() {
     return (
         <>
-            <h3>Hooks</h3>
-
+            <Title text={'Hooks'} additional={false} />
             <ul>
-                <li>Hooks adalah fitur di <strong>React</strong> yang bisa digunakan di dalam <em>Component</em>.</li>
+                <li>adalah fitur di <strong>React</strong> yang bisa digunakan di dalam <em>Component</em>.</li>
                 <li>Ada banyak sekali fitur yang bisa kita gunakan melalui React Hooks.</li>
                 <li>Materi Hooks akan dibahas secara bertahap.</li>
                 <li>Dokumentasi resmi:

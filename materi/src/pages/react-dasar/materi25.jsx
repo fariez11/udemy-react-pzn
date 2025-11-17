@@ -1,6 +1,7 @@
 import { useImmer } from 'use-immer';
 import TabbedCard from '../../components/tabCard';
 import React, { useState } from "react";
+import Title from '../../components/title';
 
 export default function Materi25() {
     return (
@@ -13,7 +14,7 @@ export default function Materi25() {
 function Note() {
     return (
         <>
-            <h3>Array di State</h3>
+            <Title text={'Array Di State'} additional={false} />
             <ul>
                 <li>Sama seperti <strong>object</strong>, <strong>array</strong> di State juga harus kita perlakukan sebagai data yang <em>immutable</em>.</li>
                 <li>Artinya, untuk melakukan operasi seperti menambah, menghapus, atau mengubah isi array, kita harus membuat array baru lalu memperbarui State dengan array tersebut.</li>

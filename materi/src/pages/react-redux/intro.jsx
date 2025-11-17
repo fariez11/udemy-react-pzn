@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function IntroReactRouter() {
     return (
@@ -9,7 +10,7 @@ export default function IntroReactRouter() {
 function Note() {
     return (
         <>
-            <h3>Intro React Redux</h3>
+            <Title text={'Intro React Redux'} additional={false} />
 
             <h6>Slide</h6>
             <a href="https://docs.google.com/presentation/d/1BZzs5mGeEU6HIOZgRoAd3b2eDq9Oy8OBPnFN0lcf-iY/edit?usp=sharing" target="_blank">

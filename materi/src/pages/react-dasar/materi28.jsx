@@ -1,5 +1,6 @@
 import TabbedCard from '../../components/tabCard';
 import React, { useState, useRef } from "react";
+import Title from '../../components/title';
 
 export default function Materi28() {
     return (
@@ -12,7 +13,7 @@ export default function Materi28() {
 function Note() {
     return (
         <>
-            <h3>Reset State</h3>
+            <Title text={'Reset State'} additional={false} />
             <ul>
                 <li>Bagaimana jika pada kondisi tertentu, kita memang ingin melakukan <strong>Reset State</strong>, tidak mau mempertahankan State-nya?</li>
                 <li>Ada beberapa cara yaitu:

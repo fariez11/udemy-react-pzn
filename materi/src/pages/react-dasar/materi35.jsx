@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import TabbedCard from "../../components/tabCard";
 import Product from "../additional/product/Product";
+import Title from "../../components/title";
 
 
 export default function Materi35() {
@@ -12,7 +13,7 @@ export default function Materi35() {
 function Note() {
     return (
         <>
-            <h3>Effect</h3>
+            <Title text={'Effect'} additional={false} />
 
             <h6>Effect Hooks</h6>
             <ul>

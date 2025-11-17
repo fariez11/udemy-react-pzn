@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi64() {
     return (
@@ -9,7 +10,7 @@ export default function Materi64() {
 function Note() {
     return (
         <>
-            <h3>State</h3>
+            <Title text={'State'} additional={false} />
             <ul>
                 <li>setelah membuat <b>Store</b>, kita bisa mulai membuat <b>State</b> di Store</li>
                 <li>integrasi antara Store dan State dilakukan via <b>Reducer</b></li>

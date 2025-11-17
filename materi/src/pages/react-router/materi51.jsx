@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard";
+import Title from "../../components/title";
 
 export default function Materi51() {
     return (
@@ -9,7 +10,7 @@ export default function Materi51() {
 function Notes() {
     return (
         <>
-            <h3>Route Param</h3>
+            <Title text={'Route Param'} additional={false} />
             <ul>
                 <li>saat kita membuat URL path, kadang kita tidak membuat path yang statis, kadang kita membuat path yang dinamis</li>
                 <li>misal kita ingin menambahkan id / kode pada Path, misal <code>/product/123</code>, dimana <code>123</code> adalah id dari product</li>

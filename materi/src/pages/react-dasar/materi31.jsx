@@ -4,6 +4,7 @@ import Profile from '../additional/profile/profile';
 import ProfileAddress from '../additional/profile/profileAddress';
 import ProfileForm from '../additional/profile/profileForm';
 import { useState } from 'react';
+import Title from '../../components/title';
 
 export default function Materi31() {
     return (
@@ -16,7 +17,7 @@ export default function Materi31() {
 function Catatan() {
     return (
         <>
-            <h3>Context & State</h3>
+            <Title text={'Context & State'} additional={false} />
 
             <h6>Penggunaan Context dan State</h6>
             <ul>

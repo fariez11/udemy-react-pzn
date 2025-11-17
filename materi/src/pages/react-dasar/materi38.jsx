@@ -1,4 +1,5 @@
 import TabbedCard from "../../components/tabCard"
+import Title from "../../components/title"
 
 export default function Materi38() {
     return (
@@ -10,6 +11,8 @@ function Note() {
     return (
         <>
             <h3>Jangan Gunakan Effect</h3>
+            <Title text={'Jangan Gunakana Effect'} additional={false} />
+            
             <ul>
                 <li><strong>Effect Hooks</strong> adalah cara di luar kebiasaan biasa di React.</li>
                 <li>Effect memungkinkan kita untuk berinteraksi dengan sistem eksternal seperti Non-React Component, network, dan lain-lain.</li>

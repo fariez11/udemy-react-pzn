@@ -1,6 +1,7 @@
 import { useImmer } from 'use-immer';
 import TabbedCard from '../../components/tabCard';
 import React, { useState } from "react";
+import Title from '../../components/title';
 
 export default function Materi24() {
     return (
@@ -14,7 +15,7 @@ export default function Materi24() {
 function Note() {
     return (
         <>
-            <h3>Object di State</h3>
+            <Title text={'Object Di State'} additional={false} />
             <ul>
                 <li>
                     State bisa menyimpan jenis data JavaScript apapun, termasuk <strong>Object</strong>.
